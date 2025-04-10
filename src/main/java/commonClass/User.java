@@ -1,9 +1,12 @@
 package commonClass;
 
+import java.time.LocalDate;
+
 public class User {
     protected String id;
     protected String name;
     protected String email;
+    protected LocalDate dob;
 
     public String getId() {
         return id;
