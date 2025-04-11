@@ -36,3 +36,13 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# IntelliJ-specific files
+.idea/
+!.idea/compiler.xml
+!.idea/misc.xml
+!.idea/modules.xml
+*.iml
+*.iws
+workspace.xml
+vcs.xml
