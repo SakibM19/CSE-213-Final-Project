@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -146,7 +145,7 @@
             <Font name="Impact" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="198.0" layoutY="102.0" text="My Profile">
+      <Label layoutX="53.0" layoutY="116.0" text="My Profile">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -242,24 +241,6 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <Line endX="201.60000610351562" endY="10.499984741210938" layoutX="146.0" layoutY="143.0" startX="37.600006103515625" startY="10.499984741210938" strokeWidth="5.0">
-         <stroke>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.47519999742507935" green="0.48481523990631104" blue="0.6600000262260437" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" green="0.18654820322990417" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </stroke>
-      </Line>
       <Label layoutX="188.0" layoutY="30.0" text=" RENT A CAR">
          <font>
             <Font name="System Bold" size="27.0" />
