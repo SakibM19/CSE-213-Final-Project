@@ -1,5 +1,8 @@
 package com.example.cse213finalproject;
 
+import javafx.event.Event;
+import javafx.scene.control.TextField;
+
 public class CustomerDashboardViewController
 {
     @javafx.fxml.FXML
