@@ -8,11 +8,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.CsrDashboardController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.alvee.controller.CsrDashboardController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="32.0" layoutX="24.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Downloads/profile.png" />
+            <Image url="@../../../../../../../../../Downloads/profile.png" />
          </image>
       </ImageView>
       <Text layoutX="67.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CSR Name" />
