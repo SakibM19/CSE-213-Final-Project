@@ -1,11 +1,290 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.CustomerDashboardViewController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.CustomerDashboardViewController">
    <children>
-      <Text layoutX="289.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="customer dashboard" />
+      <Button layoutX="618.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#paymentOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Payment">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button layoutX="618.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#placeOrderOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Place Order">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="618.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#tracKBookingOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Track Booking">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button layoutX="618.0" layoutY="213.4" mnemonicParsing="false" onMouseClicked="#feedbackOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Feedback">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="618.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#manageLocationOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Manage Location">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="618.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#couponsAndVouchersOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text=" Coupons &amp; Vouchers">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="648.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#emergencyAssistanceOnMouseClickedButton" prefHeight="94.0" prefWidth="190.0" style="-fx-background-color: RED; -fx-border-color: black;" text="Emergency Assistance" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="198.0" layoutY="102.0" text="My Profile">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.20000000298023224" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="123.0" layoutY="453.0" text="Send your message to Customer Service">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.6399999856948853" green="0.006399999838322401" blue="0.21808257699012756" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.18654820322990417" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="sendMessageToCustomerServiceTextField" layoutX="121.0" layoutY="480.0" prefHeight="26.0" prefWidth="319.0" />
+      <Text layoutX="54.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="54.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="53.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="53.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e-mail: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="53.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Default Pickup Location: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Line endX="412.70001220703125" endY="10.5" layoutX="147.0" layoutY="405.0" startX="-100.20000457763672" startY="10.5" strokeWidth="5.0" />
+      <Line endX="402.20001220703125" layoutX="157.0" layoutY="415.0" startX="402.20001220703125" startY="-362.6000061035156" strokeWidth="5.0" />
+      <Button layoutX="157.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#myFavouritesOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Send Message">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="53.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Line endX="201.60000610351562" endY="10.499984741210938" layoutX="146.0" layoutY="143.0" startX="37.600006103515625" startY="10.499984741210938" strokeWidth="5.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.47519999742507935" green="0.48481523990631104" blue="0.6600000262260437" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.18654820322990417" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <Label layoutX="188.0" layoutY="30.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Button layoutX="618.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#myFavouritesOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="My Favourites">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
