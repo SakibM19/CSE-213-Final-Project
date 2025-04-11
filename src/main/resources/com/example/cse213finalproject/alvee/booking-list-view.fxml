@@ -4,10 +4,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.alvee.controller.BookingListViewController">
    <children>
-      <TableView layoutX="68.0" layoutY="305.0" prefHeight="235.0" prefWidth="764.0">
+      <TableView layoutX="78.0" layoutY="332.0" prefHeight="235.0" prefWidth="764.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
