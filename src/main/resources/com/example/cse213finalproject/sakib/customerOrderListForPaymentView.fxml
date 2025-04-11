@@ -19,7 +19,7 @@
         <columns>
           <TableColumn fx:id="orderIDColumn" prefWidth="149.5999984741211" text="Order ID" />
           <TableColumn fx:id="orderDetailsColumn" prefWidth="180.79998779296875" text="Vehicle ID" />
-            <TableColumn fx:id="orderPeriodDeadlineColumn" prefWidth="148.80001831054688" text="Order Period" />
+            <TableColumn fx:id="orderPeriodDeadlineColumn" prefWidth="148.80001831054688" text="Order Status" />
             <TableColumn fx:id="paymentDeadlineColumn1" prefWidth="201.59995117187498" text="Payment deadline" />
         </columns>
       </TableView>
