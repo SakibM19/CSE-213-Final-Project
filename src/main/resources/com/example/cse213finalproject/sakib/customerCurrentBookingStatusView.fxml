@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerCurrentBookingStatusViewController">
    <children>
-      <Label layoutX="345.0" layoutY="34.0" text=" RENT A CAR">
+      <Label layoutX="329.0" layoutY="34.0" text=" RENT A CAR">
          <font>
             <Font name="System Bold" size="41.0" />
          </font>
@@ -35,7 +35,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label layoutX="392.0" layoutY="115.0" prefHeight="34.0" prefWidth="166.0" text="Booking Status">
+      <Label layoutX="376.0" layoutY="115.0" prefHeight="34.0" prefWidth="166.0" text="Booking Status">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -56,7 +56,7 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Line endX="241.20001220703125" layoutX="405.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
+      <Line endX="241.20001220703125" layoutX="390.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
          <stroke>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
