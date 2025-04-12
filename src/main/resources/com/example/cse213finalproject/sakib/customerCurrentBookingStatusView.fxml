@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerCurrentBookingStatusViewController">
+   <children>
+      <Label layoutX="345.0" layoutY="34.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="392.0" layoutY="115.0" prefHeight="34.0" prefWidth="166.0" text="Booking Status">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.6129441857337952" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Line endX="241.20001220703125" layoutX="405.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <Label fx:id="bookingIdLabel" layoutX="265.0" layoutY="214.0" text="Label">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Text layoutX="139.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking ID:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6105263233184814" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="139.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pickup Date:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5368421077728271" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="139.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dropoff Date:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6105263233184814" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="139.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Type: ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5368421077728271" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="139.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cost:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5368421077728271" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="139.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Status:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6105263233184814" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="416.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pickup Time:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5368421077728271" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="416.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dropoff Time:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5368421077728271" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Label fx:id="pickupDateLabel" layoutX="265.0" layoutY="241.0" text="Label">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="dropoffDateLabel" layoutX="265.0" layoutY="269.0" text="Label">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="vehicleTypeLabel" layoutX="265.0" layoutY="297.0" text="Label">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="totalCostLabel" layoutX="265.0" layoutY="324.0" text="Label">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="pickupTimeLabel" layoutX="546.0" layoutY="242.0" text="Label">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="dropoffTimeLabel" layoutX="546.0" layoutY="269.0" text="Label">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="currentStatusLabel" layoutX="284.0" layoutY="416.0" text="Label">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="139.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: navy;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="584.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#cancelBookingOnMouseClickedButton" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: maroon;" text="Cancel This Booking" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
