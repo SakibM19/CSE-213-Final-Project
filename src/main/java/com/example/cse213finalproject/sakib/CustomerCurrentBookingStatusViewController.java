@@ -33,4 +33,8 @@ public class CustomerCurrentBookingStatusViewController
     @javafx.fxml.FXML
     public void cancelBookingOnMouseClickedButton(Event event) {
     }
+
+    @javafx.fxml.FXML
+    public void placeOrderOfBookingOnMouseClickedButton(Event event) {
+    }
 }

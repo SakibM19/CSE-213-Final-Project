@@ -15,12 +15,12 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerOrderListForPaymentViewController">
    <children>
-      <TableView layoutX="108.0" layoutY="127.0" prefHeight="200.0" prefWidth="682.0" style="-fx-background-color: #D2E5F6;">
+      <TableView layoutX="108.0" layoutY="127.0" prefHeight="200.0" prefWidth="686.0" style="-fx-background-color: #D2E5F6;">
         <columns>
           <TableColumn fx:id="orderIDColumn" prefWidth="149.5999984741211" text="Order ID" />
-          <TableColumn fx:id="orderDetailsColumn" prefWidth="180.79998779296875" text="Vehicle ID" />
-            <TableColumn fx:id="orderPeriodDeadlineColumn" prefWidth="148.80001831054688" text="Order Status" />
-            <TableColumn fx:id="paymentDeadlineColumn1" prefWidth="201.59995117187498" text="Payment deadline" />
+          <TableColumn fx:id="vehicleIdColumn" prefWidth="180.79998779296875" text="Vehicle ID" />
+            <TableColumn fx:id="orderStatusColumn" prefWidth="176.80007934570312" text="Order Status" />
+            <TableColumn fx:id="paymentDeadlineColumn" prefWidth="174.39996337890625" text="Payment deadline" />
         </columns>
       </TableView>
       <Label layoutX="325.0" text=" RENT A CAR">

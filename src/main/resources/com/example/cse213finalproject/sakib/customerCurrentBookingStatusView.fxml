@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerCurrentBookingStatusViewController">
    <children>
       <Label layoutX="329.0" layoutY="34.0" text=" RENT A CAR">
@@ -74,7 +73,7 @@
             </RadialGradient>
          </stroke>
       </Line>
-      <Label fx:id="bookingIdLabel" layoutX="265.0" layoutY="214.0" text="Label">
+      <Label fx:id="bookingIdLabel" layoutX="265.0" layoutY="214.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
@@ -263,7 +262,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Label fx:id="pickupDateLabel" layoutX="265.0" layoutY="241.0" text="Label">
+      <Label fx:id="pickupDateLabel" layoutX="265.0" layoutY="241.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
@@ -284,7 +283,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label fx:id="dropoffDateLabel" layoutX="265.0" layoutY="269.0" text="Label">
+      <Label fx:id="dropoffDateLabel" layoutX="265.0" layoutY="269.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
@@ -305,7 +304,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label fx:id="vehicleTypeLabel" layoutX="265.0" layoutY="297.0" text="Label">
+      <Label fx:id="vehicleTypeLabel" layoutX="265.0" layoutY="297.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
@@ -326,7 +325,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label fx:id="totalCostLabel" layoutX="265.0" layoutY="324.0" text="Label">
+      <Label fx:id="totalCostLabel" layoutX="265.0" layoutY="324.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
@@ -347,7 +346,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label fx:id="pickupTimeLabel" layoutX="546.0" layoutY="242.0" text="Label">
+      <Label fx:id="pickupTimeLabel" layoutX="546.0" layoutY="242.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
@@ -368,7 +367,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label fx:id="dropoffTimeLabel" layoutX="546.0" layoutY="269.0" text="Label">
+      <Label fx:id="dropoffTimeLabel" layoutX="546.0" layoutY="269.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
@@ -389,7 +388,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label fx:id="currentStatusLabel" layoutX="284.0" layoutY="416.0" text="Label">
+      <Label fx:id="currentStatusLabel" layoutX="284.0" layoutY="416.0" prefHeight="19.0" prefWidth="362.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
@@ -410,12 +409,17 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Button layoutX="139.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: navy;" text="Back" textFill="WHITE">
+      <Button layoutX="53.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="31.0" prefWidth="227.0" style="-fx-background-color: navy;" text="Back" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="584.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#cancelBookingOnMouseClickedButton" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: maroon;" text="Cancel This Booking" textFill="WHITE">
+      <Button layoutX="339.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#placeOrderOfBookingOnMouseClickedButton" prefHeight="31.0" prefWidth="227.0" style="-fx-background-color: maroon;" text="Place Order on this Booking" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="621.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#cancelBookingOnMouseClickedButton" prefHeight="31.0" prefWidth="227.0" style="-fx-background-color: maroon;" text="Cancel This Booking" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>

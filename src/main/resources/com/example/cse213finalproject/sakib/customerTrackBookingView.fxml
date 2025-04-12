@@ -12,7 +12,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerTrackBookingViewController">
    <children>
       <Label layoutX="345.0" layoutY="34.0" text=" RENT A CAR">
@@ -75,7 +74,7 @@
             </RadialGradient>
          </stroke>
       </Line>
-      <TableView fx:id="trackBookingTableView" layoutX="184.0" layoutY="157.0" prefHeight="200.0" prefWidth="553.0">
+      <TableView fx:id="trackBookingTableView" layoutX="184.0" layoutY="157.0" prefHeight="200.0" prefWidth="553.0" style="-fx-border-color: navy;">
         <columns>
           <TableColumn fx:id="activeBookingIdTableColumn" prefWidth="552.7999816894531" text="Active Booking ID" />
         </columns>
