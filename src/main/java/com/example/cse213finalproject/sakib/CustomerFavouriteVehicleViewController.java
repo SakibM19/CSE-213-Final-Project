@@ -20,8 +20,6 @@ public class CustomerFavouriteVehicleViewController
     @javafx.fxml.FXML
     private TableColumn vehicleIdFavouriteTableColumn;
     @javafx.fxml.FXML
-    private TableColumn overallFeedbackOnVehicleTableColumn;
-    @javafx.fxml.FXML
     private TableView favouriteVehicleTableView;
     @javafx.fxml.FXML
     private TableColumn vehicleModelFavouriteTableColumn;
@@ -35,6 +33,10 @@ public class CustomerFavouriteVehicleViewController
     private TableColumn lastOrderIdTableColumn;
     @javafx.fxml.FXML
     private TableView pastOrderVehicleListTableView;
+    @javafx.fxml.FXML
+    private TableColumn vehicleTypeFavouriteTableColumn;
+    @javafx.fxml.FXML
+    private TableColumn averageCostTableColumn;
 
     @javafx.fxml.FXML
     public void initialize() {

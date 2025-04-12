@@ -81,8 +81,9 @@
         <columns>
           <TableColumn fx:id="vehicleIdFavouriteTableColumn" prefWidth="110.4000244140625" text="Vehicle ID" />
             <TableColumn fx:id="vehicleModelFavouriteTableColumn" prefWidth="118.39996337890625" text="Vehicle Model" />
-            <TableColumn fx:id="overallFeedbackOnVehicleTableColumn" prefWidth="246.40005493164062" text="Overall FeedBack on this Vehicle" />
             <TableColumn fx:id="lastOrderIdTableColumn" prefWidth="133.5999755859375" text="Last Order ID" />
+            <TableColumn fx:id="vehicleTypeFavouriteTableColumn" prefWidth="133.5999755859375" text="Vehicle Type" />
+            <TableColumn fx:id="averageCostTableColumn" prefWidth="109.60003662109375" text="Average cost" />
         </columns>
       </TableView>
       <Label layoutX="256.0" layoutY="274.0" prefHeight="34.0" prefWidth="391.0" text="Add another vehicle to my Favourite Vehicle List">
@@ -156,8 +157,8 @@
             </LinearGradient>
          </fill>
       </Text>
-      <TextField fx:id="enterVehicleIdTextField" layoutX="606.0" layoutY="465.0" />
-      <Text layoutX="468.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Vehicle ID: ">
+      <TextField fx:id="enterVehicleIdTextField" layoutX="608.0" layoutY="466.0" />
+      <Text layoutX="470.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Vehicle ID: ">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -199,7 +200,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button layoutX="595.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#addToFavouriteOnMouseClickedButton" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: navy;" text="Add Vehicle to Favourite List" textFill="WHITE">
+      <Button layoutX="588.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#addToFavouriteOnMouseClickedButton" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: navy;" text="Add Vehicle to Favourite List" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
