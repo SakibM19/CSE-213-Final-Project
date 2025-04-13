@@ -1,14 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.cse213finalproject.sakib.FleetManagerBlockVehicleViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.FleetManagerBlockVehicleViewController">
+   <children>
+      <Label layoutX="345.0" layoutY="52.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="250.0" layoutY="111.0" prefHeight="34.0" prefWidth="436.0" text="Block/Unblock Vehicle For Maintenance">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.058400001376867294" green="0.7300000190734863" blue="0.14959436655044556" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05914229899644852" green="0.43157893419265747" blue="0.20811696350574493" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Line endX="131.4000244140625" endY="0.4000244140625" layoutX="617.0" layoutY="264.0" startX="-153.00003051757812" startY="0.4000091552734375" stroke="#e33232" strokeWidth="3.0" />
+      <TableView fx:id="fleetVehicleStatusListTableView" layoutX="112.0" layoutY="168.0" prefHeight="288.0" prefWidth="334.0" style="-fx-border-color: navy;">
+         <columns>
+            <TableColumn fx:id="fleetVehicleIdTableView" prefWidth="74.39995574951172" text="Vehicle ID" />
+            <TableColumn fx:id="listVehicleTypeTableView" prefWidth="77.60000610351562" text="Vehicle Type" />
+            <TableColumn fx:id="listVehicleStatusTableView" prefWidth="65.5999755859375" text="Status" />
+            <TableColumn fx:id="expUnblockingDateTableView" prefWidth="114.4000244140625" text="Unblocking Date" />
+         </columns>
+      </TableView>
+      <TextField layoutX="489.0" layoutY="183.0" prefHeight="26.0" prefWidth="274.0" />
+      <Label layoutX="490.0" layoutY="150.0" prefHeight="34.0" prefWidth="274.0" text="Provide Vehicle ID For Updating:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="490.0" layoutY="423.0" mnemonicParsing="false" onMouseClicked="#blockVehicleForMaintenanceOnMouseClickedButton" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #e43232;" text="Block Vehicle for Maintenance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="490.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#unblockVehicleOnMouseClickedButton" prefHeight="31.0" prefWidth="274.0" style="-fx-background-color: #46b000;" text="Unblock Vehicle" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Line endX="18.800018310546875" endY="298.4000244140625" layoutX="445.0" layoutY="155.0" startX="18.800018310546875" startY="2.5213165283203125" stroke="#e33232" strokeWidth="3.0" />
+      <Line endX="341.800048828125" endY="-1.52587890625E-5" layoutX="419.0" layoutY="155.0" startX="-302.0" startY="-1.52587890625E-5" stroke="#e33232" strokeWidth="3.0" />
+      <Label layoutX="492.0" layoutY="275.0" prefHeight="34.0" prefWidth="238.0" text="Enter Reason For Blocking:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="reasonForBlockingComboBox" layoutX="492.0" layoutY="303.0" prefHeight="26.0" prefWidth="274.0" />
+      <Label layoutX="492.0" layoutY="335.0" prefHeight="34.0" prefWidth="201.0" text="Expected Unblocking Date:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="expectedUnblockingDatePicker" layoutX="492.0" layoutY="365.0" prefHeight="26.0" prefWidth="274.0" />
+      <Button layoutX="115.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="34.0" prefWidth="274.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Back">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="492.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#refreshOnMouseClickedButton" prefHeight="34.0" prefWidth="274.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Refresh">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
