@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.FleetManagerTrackVehicleStatusViewController">
+   <children>
+      <Label layoutX="320.0" layoutY="35.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Line endX="106.0" layoutX="562.0" layoutY="289.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <Label layoutX="335.0" layoutY="103.0" prefHeight="34.0" prefWidth="226.0" text="Track Vehicle Status ">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.058400001376867294" green="0.7300000190734863" blue="0.14959436655044556" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05914229899644852" green="0.43157893419265747" blue="0.20811696350574493" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <TableView fx:id="fleetVehicleListTableView" layoutX="101.0" layoutY="172.0" prefHeight="286.0" prefWidth="284.0" style="-fx-border-color: navy;">
+        <columns>
+          <TableColumn fx:id="fleetVehicleIdTableView" prefWidth="194.4000045776367" text="Vehicle IDs of The Fleet" />
+            <TableColumn fx:id="listVehicleTypeTableView" prefWidth="84.79998779296875" text="Vehicle Type" />
+        </columns>
+      </TableView>
+      <TextField fx:id="vehicleIdForTrackingTableView" layoutX="472.0" layoutY="191.0" prefHeight="26.0" prefWidth="195.0" />
+      <Label layoutX="472.0" layoutY="157.0" prefHeight="34.0" prefWidth="226.0" text="Enter Vehicle ID for tracking">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.058400001376867294" green="0.7300000190734863" blue="0.14959436655044556" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05914229899644852" green="0.43157893419265747" blue="0.20811696350574493" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <BottomNavigationButton layoutX="473.0" layoutY="235.0" onMouseClicked="#trackVehicleStatusOnMouseClickedButton" prefHeight="30.0" prefWidth="195.0" style="-fx-background-color: #fca751; -fx-border-color: navy;" text="Track Vehicle Status">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </BottomNavigationButton>
+      <Label layoutX="472.0" layoutY="302.0" prefHeight="34.0" prefWidth="84.0" text="Vehicle ID:">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2877193093299866" green="0.378947377204895" blue="0.29988303780555725" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="472.0" layoutY="336.0" prefHeight="34.0" prefWidth="109.0" text="Vehicle Status:">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2877193093299866" green="0.378947377204895" blue="0.29988303780555725" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="472.0" layoutY="370.0" prefHeight="34.0" prefWidth="84.0" text="Renter ID: ">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2877193093299866" green="0.378947377204895" blue="0.29988303780555725" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="473.0" layoutY="404.0" prefHeight="34.0" prefWidth="156.0" text="Will be available on:  ">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2877193093299866" green="0.378947377204895" blue="0.29988303780555725" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Line endX="241.20001220703125" layoutX="390.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <Line endX="-100.00003051757812" endY="-265.20001220703125" layoutX="560.0" layoutY="438.0" startX="-100.00003051757812" startY="17.20001220703125" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <Button layoutX="323.0" layoutY="535.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Back">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
