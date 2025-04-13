@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
@@ -10,11 +12,12 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.FleetManagerTrackMaintenanceViewController">
    <children>
-      <Label layoutX="338.0" layoutY="55.0" text=" RENT A CAR">
+      <Label layoutX="338.0" layoutY="38.0" text=" RENT A CAR">
          <font>
             <Font name="System Bold" size="41.0" />
          </font>
@@ -35,7 +38,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label layoutX="330.0" layoutY="114.0" prefHeight="34.0" prefWidth="286.0" text="Track Maintenance Status">
+      <Label layoutX="330.0" layoutY="86.0" prefHeight="34.0" prefWidth="286.0" text="Track Maintenance Status">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -56,26 +59,9 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Line endX="241.20001220703125" layoutX="396.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
-         <stroke>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </stroke>
-      </Line>
-      <TextField layoutX="322.0" layoutY="189.0" prefHeight="26.0" prefWidth="274.0" />
-      <Label layoutX="323.0" layoutY="154.0" prefHeight="34.0" prefWidth="274.0" text="Provide Vehicle ID Track Maintanence:">
+      <Line endX="241.20001220703125" layoutX="397.0" layoutY="148.0" startX="-306.3999938964844" startY="-1.52587890625E-5" stroke="#d16666" strokeWidth="3.0" />
+      <TextField layoutX="366.0" layoutY="184.0" prefHeight="26.0" prefWidth="274.0" />
+      <Label layoutX="367.0" layoutY="149.0" prefHeight="34.0" prefWidth="274.0" text="Provide Vehicle ID Track Maintanence:">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -96,12 +82,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="323.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#getVehicleStatusOnMouseClickedButton" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #46b000;" text="Get Vehicle Status" textFill="WHITE">
+      <Button layoutX="367.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#getVehicleStatusOnMouseClickedButton" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #46b000;" text="Get Vehicle Status" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="322.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#updateVehicleStatusOnMouseClickedButton" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #ffe600;" text="Update Vehicle Status">
+      <Button layoutX="366.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#updateVehicleStatusOnMouseClickedButton" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #ffe600;" text="Update Vehicle Status">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -122,7 +108,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Label layoutX="147.0" layoutY="274.0" prefHeight="34.0" prefWidth="86.0" text="Vehicle ID: ">
+      <Label layoutX="367.0" layoutY="274.0" prefHeight="34.0" prefWidth="86.0" text="Vehicle ID: ">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -143,7 +129,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="147.0" layoutY="308.0" prefHeight="34.0" prefWidth="99.0" text="Vehicle Type: ">
+      <Label layoutX="367.0" layoutY="308.0" prefHeight="34.0" prefWidth="99.0" text="Vehicle Type: ">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -164,7 +150,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="147.0" layoutY="342.0" prefHeight="34.0" prefWidth="170.0" text="Last Maintanance Date: ">
+      <Label layoutX="367.0" layoutY="342.0" prefHeight="34.0" prefWidth="170.0" text="Last Maintanance Date: ">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -185,7 +171,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="148.0" layoutY="376.0" prefHeight="34.0" prefWidth="210.0" text="Current Maintanance Status: ">
+      <Label layoutX="367.0" layoutY="376.0" prefHeight="34.0" prefWidth="210.0" text="Current Maintanance Status: ">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -206,7 +192,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="148.0" layoutY="410.0" prefHeight="34.0" prefWidth="178.0" text="Next Maintanance Date: ">
+      <Label layoutX="368.0" layoutY="410.0" prefHeight="34.0" prefWidth="178.0" text="Next Maintanance Date: ">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -227,12 +213,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="326.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="34.0" prefWidth="270.0" style="-fx-background-color: navy; -fx-border-color: navy;" text="Back" textFill="WHITE">
+      <Button layoutX="324.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="34.0" prefWidth="270.0" style="-fx-background-color: navy; -fx-border-color: navy;" text="Back" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Label fx:id="nextMaintananceDateLabel" layoutX="358.0" layoutY="410.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+      <Label fx:id="nextMaintananceDateLabel" layoutX="550.0" layoutY="410.0" prefHeight="34.0" prefWidth="230.0" text="NA">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -253,7 +239,7 @@
             <Font name="Bodoni MT Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="currentMaintananceStatusLabel" layoutX="379.0" layoutY="376.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+      <Label fx:id="currentMaintananceStatusLabel" layoutX="581.0" layoutY="376.0" prefHeight="34.0" prefWidth="230.0" text="NA">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -274,7 +260,7 @@
             <Font name="Bodoni MT Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="lastMaintananceDateLabel" layoutX="347.0" layoutY="342.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+      <Label fx:id="lastMaintananceDateLabel" layoutX="545.0" layoutY="342.0" prefHeight="34.0" prefWidth="230.0" text="NA">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -295,7 +281,7 @@
             <Font name="Bodoni MT Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="vehicleTypeLabel" layoutX="273.0" layoutY="308.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+      <Label fx:id="vehicleTypeLabel" layoutX="472.0" layoutY="308.0" prefHeight="34.0" prefWidth="230.0" text="NA">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -316,7 +302,7 @@
             <Font name="Bodoni MT Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="vehicleIdLabel" layoutX="253.0" layoutY="274.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+      <Label fx:id="vehicleIdLabel" layoutX="451.0" layoutY="274.0" prefHeight="34.0" prefWidth="230.0" text="NA">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -337,5 +323,32 @@
             <Font name="Bodoni MT Bold" size="15.0" />
          </font>
       </Label>
+      <Text layoutX="661.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="if vehicle status is selected then a  side panel will be loaded and that will take input and provide a button saving the new updating" wrappingWidth="196.18356323242188" />
+      <TableView fx:id="fleetVehicleListTableView" layoutX="90.0" layoutY="161.0" prefHeight="335.0" prefWidth="250.0" style="-fx-border-color: navy;">
+         <columns>
+            <TableColumn fx:id="fleetVehicleIdTableView" prefWidth="145.59996795654297" text="Vehicle IDs of The Fleet" />
+            <TableColumn fx:id="listVehicleTypeTableView" prefWidth="100.0" text="Vehicle Type" />
+         </columns>
+      </TableView>
+      <Line endX="-53.100006103515625" endY="335.29998779296875" layoutX="406.0" layoutY="158.0" startX="-53.199981689453125" startY="-9.599990844726562" stroke="#cf6565" strokeWidth="3.0" />
+      <Line endX="158.4000244140625" endY="0.4000091552734375" layoutX="460.0" layoutY="120.0" startX="-135.60000610351562" startY="0.4000091552734375" stroke="#d16666" strokeWidth="3.0" />
+      <Line endX="-61.600006103515625" endY="326.79998779296875" layoutX="415.0" layoutY="168.0" startX="225.60003662109375" startY="326.79998779296875" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8196078538894653" green="0.4000000059604645" blue="0.4000000059604645" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
    </children>
 </AnchorPane>

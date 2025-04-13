@@ -2,6 +2,8 @@ package com.example.cse213finalproject.sakib;
 
 import javafx.event.Event;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class FleetManagerTrackMaintenanceViewController
 {
@@ -15,6 +17,12 @@ public class FleetManagerTrackMaintenanceViewController
     private Label currentMaintananceStatusLabel;
     @javafx.fxml.FXML
     private Label lastMaintananceDateLabel;
+    @javafx.fxml.FXML
+    private TableColumn listVehicleTypeTableView;
+    @javafx.fxml.FXML
+    private TableView fleetVehicleListTableView;
+    @javafx.fxml.FXML
+    private TableColumn fleetVehicleIdTableView;
 
     @javafx.fxml.FXML
     public void initialize() {
