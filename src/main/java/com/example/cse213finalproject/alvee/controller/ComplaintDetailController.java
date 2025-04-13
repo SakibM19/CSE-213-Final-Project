@@ -1,5 +1,9 @@
 package com.example.cse213finalproject.alvee.controller;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
+
 public class ComplaintDetailController
 {
     @javafx.fxml.FXML
@@ -20,6 +24,6 @@ public class ComplaintDetailController
     }
 
     @javafx.fxml.FXML
-    public void handleResovedButtonOnAction(ActionEvent actionEvent) {
+    public void handleResolvedButtonOnAction(ActionEvent actionEvent) {
     }
 }

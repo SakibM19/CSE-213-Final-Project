@@ -52,7 +52,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button layoutX="381.0" layoutY="413.0" mnemonicParsing="false" onAction="#handleResovedButtonOnAction" prefHeight="36.0" prefWidth="118.0" style="-fx-background-color: #3e3e3e;" text="Resolved" textFill="WHITE" />
+      <Button layoutX="381.0" layoutY="413.0" mnemonicParsing="false" onAction="#handleResolvedButtonOnAction" prefHeight="36.0" prefWidth="118.0" style="-fx-background-color: #3e3e3e;" text="Resolved" textFill="WHITE" />
       <Text fx:id="customerNameText" layoutX="171.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="14.0" />
