@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.FleetManagerTrackMaintenanceViewController">
+   <children>
+      <Label layoutX="338.0" layoutY="55.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="330.0" layoutY="114.0" prefHeight="34.0" prefWidth="286.0" text="Track Maintenance Status">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.058400001376867294" green="0.7300000190734863" blue="0.14959436655044556" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05914229899644852" green="0.43157893419265747" blue="0.20811696350574493" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Line endX="241.20001220703125" layoutX="396.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <TextField layoutX="322.0" layoutY="189.0" prefHeight="26.0" prefWidth="274.0" />
+      <Label layoutX="323.0" layoutY="154.0" prefHeight="34.0" prefWidth="274.0" text="Provide Vehicle ID Track Maintanence:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="323.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#getVehicleStatusOnMouseClickedButton" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #46b000;" text="Get Vehicle Status" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="322.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#updateVehicleStatusOnMouseClickedButton" prefHeight="26.0" prefWidth="274.0" style="-fx-background-color: #ffe600;" text="Update Vehicle Status">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4399999976158142" blue="0.20604060590267181" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6105263233184814" green="0.009044834412634373" blue="0.009044834412634373" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Label layoutX="147.0" layoutY="274.0" prefHeight="34.0" prefWidth="86.0" text="Vehicle ID: ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="147.0" layoutY="308.0" prefHeight="34.0" prefWidth="99.0" text="Vehicle Type: ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="147.0" layoutY="342.0" prefHeight="34.0" prefWidth="170.0" text="Last Maintanance Date: ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="376.0" prefHeight="34.0" prefWidth="210.0" text="Current Maintanance Status: ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="410.0" prefHeight="34.0" prefWidth="178.0" text="Next Maintanance Date: ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7300000190734863" green="0.30641472339630127" blue="0.058400001376867294" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06019999831914902" green="0.1019667536020279" blue="0.4300000071525574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="326.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="34.0" prefWidth="270.0" style="-fx-background-color: navy; -fx-border-color: navy;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="nextMaintananceDateLabel" layoutX="358.0" layoutY="410.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4842105209827423" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.9894737005233765" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Bodoni MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentMaintananceStatusLabel" layoutX="379.0" layoutY="376.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4842105209827423" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.9894737005233765" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Bodoni MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lastMaintananceDateLabel" layoutX="347.0" layoutY="342.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4842105209827423" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.9894737005233765" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Bodoni MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="vehicleTypeLabel" layoutX="273.0" layoutY="308.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4842105209827423" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.9894737005233765" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Bodoni MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="vehicleIdLabel" layoutX="253.0" layoutY="274.0" prefHeight="34.0" prefWidth="230.0" text="NA">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4842105209827423" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.9894737005233765" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Bodoni MT Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
