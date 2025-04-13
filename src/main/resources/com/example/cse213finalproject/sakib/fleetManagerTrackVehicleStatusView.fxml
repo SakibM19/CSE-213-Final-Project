@@ -14,7 +14,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.FleetManagerTrackVehicleStatusViewController">
    <children>
       <Label layoutX="320.0" layoutY="35.0" text=" RENT A CAR">
@@ -194,7 +193,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Line endX="241.20001220703125" layoutX="390.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
+      <Line endX="241.20001220703125" layoutX="376.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
          <stroke>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
