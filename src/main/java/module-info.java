@@ -1,6 +1,7 @@
 module com.example.cse213finalproject {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jdk.jfr;
 
 
     opens com.example.cse213finalproject to javafx.fxml;

@@ -60,7 +60,7 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Line endX="131.4000244140625" endY="0.4000244140625" layoutX="617.0" layoutY="264.0" startX="-153.00003051757812" startY="0.4000091552734375" stroke="#e33232" strokeWidth="3.0" />
+      <Line endX="145.4000244140625" endY="0.4000244140625" layoutX="617.0" layoutY="264.0" startX="-153.00003051757812" startY="0.4000091552734375" stroke="#e33232" strokeWidth="3.0" />
       <TableView fx:id="fleetVehicleStatusListTableView" layoutX="112.0" layoutY="168.0" prefHeight="288.0" prefWidth="334.0" style="-fx-border-color: navy;">
          <columns>
             <TableColumn fx:id="fleetVehicleIdTableView" prefWidth="74.39995574951172" text="Vehicle ID" />
