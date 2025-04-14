@@ -1,6 +1,7 @@
 package com.example.cse213finalproject.sakibModelClass;
 
 public class Feedback {
+    public String feedbackId;
     public int vehicleCondition, cleanliness, comfort;
     public String additionalComment;
 
