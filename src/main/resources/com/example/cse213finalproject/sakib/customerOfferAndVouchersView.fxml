@@ -14,7 +14,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerOfferAndVouchersViewController">
    <children>
       <Label layoutX="323.0" layoutY="34.0" text=" RENT A CAR">
@@ -81,8 +80,8 @@
         <columns>
           <TableColumn fx:id="offerNameTableColumn" prefWidth="127.99993133544922" text="Offer Name" />
           <TableColumn fx:id="voucherTableColumn" prefWidth="127.2000732421875" text="Voucher Code" />
-            <TableColumn fx:id="offerDetailTableColumn" prefWidth="122.4000244140625" text="Offer Detail" />
-            <TableColumn fx:id="offerDeadlineTableColumn" prefWidth="186.40005493164062" text="Offer Deadline" />
+            <TableColumn fx:id="offerDetailTableColumn" prefWidth="189.60006713867188" text="Offer Detail" />
+            <TableColumn fx:id="offerDeadlineTableColumn" prefWidth="120.79998779296875" text="Offer Deadline" />
             <TableColumn fx:id="applicableBookingIdTableColumn" prefWidth="136.79995117187502" text="Applicable Booking ID" />
         </columns>
       </TableView>
