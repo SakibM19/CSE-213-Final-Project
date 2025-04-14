@@ -21,6 +21,8 @@ public class CustomerCurrentBookingStatusViewController
     private Label bookingIdLabel;
     @javafx.fxml.FXML
     private Label pickupTimeLabel;
+    @javafx.fxml.FXML
+    private Label vehicleIdLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
