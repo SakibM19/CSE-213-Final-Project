@@ -1,18 +1,29 @@
 package com.example.cse213finalproject.sakibModelClass;
 
 public class Feedback {
-    public String feedbackId;
-    public int vehicleCondition, cleanliness, comfort;
-    public String additionalComment;
 
-    public Feedback(int vehicleCondition, int cleanliness, int comfort, String additionalComment) {
+    public String feedbackId;
+    public int vehicleCondition;
+    public int cleanliness;
+    public int comfort;
+    public String additionalComment;
+    public String csrReply;
+
+    public Feedback(String feedbackId, int vehicleCondition, int cleanliness, int comfort, String additionalComment, String csrReply) {
+        this.feedbackId = feedbackId;
         this.vehicleCondition = vehicleCondition;
         this.cleanliness = cleanliness;
         this.comfort = comfort;
         this.additionalComment = additionalComment;
+        this.csrReply = csrReply;
     }
 
-    public Feedback() {
+    public String getFeedbackId() {
+        return feedbackId;
+    }
+
+    public void setFeedbackId(String feedbackId) {
+        this.feedbackId = feedbackId;
     }
 
     public int getVehicleCondition() {
@@ -47,13 +58,16 @@ public class Feedback {
         this.additionalComment = additionalComment;
     }
 
-    @Override
-    public String toString() {
-        return "Feedback{" +
-                "vehicleCondition=" + vehicleCondition +
-                ", cleanliness=" + cleanliness +
-                ", comfort=" + comfort +
-                ", additionalComment='" + additionalComment + '\'' +
-                '}';
+    public String getCsrReply() {
+        return csrReply;
+    }
+
+    public void setCsrReply(String csrReply) {
+        this.csrReply = csrReply;
+    }
+
+    public double getAverageRating() {
+        return (vehicleCondition + cleanliness + comfort) / 3.0;
     }
 }
+

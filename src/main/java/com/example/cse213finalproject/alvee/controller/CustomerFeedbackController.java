@@ -1,6 +1,6 @@
 package com.example.cse213finalproject.alvee.controller;
 
-import com.example.cse213finalproject.alvee.model.Feedback;
+import com.example.cse213finalproject.sakibModelClass.Feedback;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,7 +26,7 @@ public class CustomerFeedbackController {
     @FXML
     private TextField replyTextField;
 
-    private ObservableList<Feedback> feedbackList = FXCollections.observableArrayList();
+    private final ObservableList<Feedback> feedbackList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
