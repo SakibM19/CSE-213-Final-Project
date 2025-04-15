@@ -1,12 +1,19 @@
 package com.example.cse213finalproject.commonClass;
 
-public class Employee extends User {
+public abstract class  Employee extends User {
     protected String employeeID, role;
 
     public Employee(String name, String email, String password, int id, int phoneNumber, String employeeID, String role) {
         super(name, email, password, id, phoneNumber);
         this.employeeID = employeeID;
         this.role = role;
+    }
+
+    public Employee() {
+    }
+
+    public Employee(String name, String email, String password, int id, int phoneNumber) {
+        super(name, email, password, id, phoneNumber);
     }
 
     public Employee(String employeeID, String role) {
