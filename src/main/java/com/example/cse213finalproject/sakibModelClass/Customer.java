@@ -21,6 +21,13 @@ public class Customer extends User {
         this.myVehicle = myVehicle;
     }
 
+    public Customer(String name, String email, String password, int id, int phoneNumber, ArrayList<Order> orderList, ArrayList<Booking> bookingList, ArrayList<Vehicle> myVehicle) {
+        super(name, email, password, id, phoneNumber);
+        this.orderList = orderList = null;
+        this.bookingList = bookingList = null;
+        this.myVehicle = myVehicle = null;
+    }
+
     public Customer(String pickUpLocation, String dropOffLocation, ArrayList<Order> orderList, ArrayList<Booking> bookingList, ArrayList<Vehicle> myVehicle) {
         this.pickUpLocation = pickUpLocation;
         this.dropOffLocation = dropOffLocation;

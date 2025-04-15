@@ -7,7 +7,6 @@ public class Feedback {
     public int cleanliness;
     public int comfort;
     public String additionalComment;
-    public String csrReply;
 
     public Feedback(String feedbackId, int vehicleCondition, int cleanliness, int comfort, String additionalComment, String csrReply) {
         this.feedbackId = feedbackId;
@@ -15,7 +14,6 @@ public class Feedback {
         this.cleanliness = cleanliness;
         this.comfort = comfort;
         this.additionalComment = additionalComment;
-        this.csrReply = csrReply;
     }
 
     public String getFeedbackId() {
@@ -56,14 +54,6 @@ public class Feedback {
 
     public void setAdditionalComment(String additionalComment) {
         this.additionalComment = additionalComment;
-    }
-
-    public String getCsrReply() {
-        return csrReply;
-    }
-
-    public void setCsrReply(String csrReply) {
-        this.csrReply = csrReply;
     }
 
     public double getAverageRating() {
