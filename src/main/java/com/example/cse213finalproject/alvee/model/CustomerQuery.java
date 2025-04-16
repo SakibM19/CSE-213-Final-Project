@@ -1,50 +1,39 @@
 package com.example.cse213finalproject.alvee.model;
 
-public class CustomerQuery extends CustomerRequest{
-    private String querySub, queryDescription, respond, assignedCSR;
+import java.io.Serializable;
 
-    public CustomerQuery(String requestId, boolean status, String querySub, String queryDescription, String respond, String assignedCSR) {
-        super(requestId, status);
+public class CustomerQuery extends CustomerRequest implements Serializable {
+    private String querySub, queryDescription, respond;
+
+    public CustomerQuery(String requestId, String customerName, String querySub, String queryDescription) {
+        super(requestId, customerName);
         this.querySub = querySub;
         this.queryDescription = queryDescription;
-        this.respond = respond;
-        this.assignedCSR = assignedCSR;
-    }
-
-    public CustomerQuery(String requestId, boolean status) {
-        super(requestId, status);
+        this.respond = null;
     }
 
     public String getQuerySub() {
         return querySub;
     }
 
-    public String getQueryDescription() {
-        return queryDescription;
-    }
-
-    public String getRespond() {
-        return respond;
-    }
-
-    public String getAssignedCSR() {
-        return assignedCSR;
-    }
-
     public void setQuerySub(String querySub) {
         this.querySub = querySub;
+    }
+
+    public String getQueryDescription() {
+        return queryDescription;
     }
 
     public void setQueryDescription(String queryDescription) {
         this.queryDescription = queryDescription;
     }
 
-    public void setRespond(String respond) {
-        this.respond = respond;
+    public String getRespond() {
+        return respond;
     }
 
-    public void setAssignedCSR(String assignedCSR) {
-        this.assignedCSR = assignedCSR;
+    public void setRespond(String respond) {
+        this.respond = respond;
     }
 
     @Override
@@ -53,9 +42,9 @@ public class CustomerQuery extends CustomerRequest{
                 "querySub='" + querySub + '\'' +
                 ", queryDescription='" + queryDescription + '\'' +
                 ", respond='" + respond + '\'' +
-                ", assignedCSR='" + assignedCSR + '\'' +
                 ", requestId='" + requestId + '\'' +
-                ", status=" + status +
+                ", customerName='" + customerName + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
