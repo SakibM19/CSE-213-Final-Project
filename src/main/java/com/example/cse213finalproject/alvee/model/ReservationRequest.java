@@ -4,10 +4,9 @@ public class ReservationRequest extends CustomerIssueRequest{
     private String requestType;
     /*private Booking reservationDetails;*/
 
-    public ReservationRequest(String requestId, boolean status, String customerMessage, String requestType /*,Booking reservationDetails*/) {
-        super(requestId, status, customerMessage);
+    public ReservationRequest(String requestId, String customerName, String customerMessage, String requestType) {
+        super(requestId, customerName, customerMessage);
         this.requestType = requestType;
-        /*this.reservationDetails = reservationDetails;*/
     }
 
     public String getRequestType() {
