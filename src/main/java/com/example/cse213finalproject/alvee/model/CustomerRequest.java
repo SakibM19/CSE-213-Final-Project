@@ -2,24 +2,24 @@ package com.example.cse213finalproject.alvee.model;
 
 public class CustomerRequest {
     protected String requestId;
-    /*protected Customer customerDetails;*/
-    protected boolean status;
+    protected String customerName;
+    protected String status;
 
-    public CustomerRequest(String requestId, /*Customer customerDetails,*/ boolean status) {
+    public CustomerRequest(String requestId, String customerName) {
         this.requestId = requestId;
-        /*this.customerDetails = customerDetails;*/
-        this.status = status;
+        this.customerName = customerName;
+        this.status = "Pending";
     }
 
     public String getRequestId() {
         return requestId;
     }
 
-    /*public Customer getCustomerDetails() {
-        return customerDetails;
-    }*/
+    public String getCustomerName() {
+        return customerName;
+    }
 
-    public boolean isStatus() {
+    public String getStatus() {
         return status;
     }
 
@@ -27,11 +27,11 @@ public class CustomerRequest {
         this.requestId = requestId;
     }
 
-//    public void setCustomerDetails(Customer customerDetails) {
-//        this.customerDetails = customerDetails;
-//    }
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -39,8 +39,8 @@ public class CustomerRequest {
     public String toString() {
         return "CustomerRequest{" +
                 "requestId='" + requestId + '\'' +
-                /*", customerDetails=" + customerDetails +*/
-                ", status=" + status +
+                ", customerName='" + customerName + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
