@@ -21,8 +21,6 @@ import java.util.List;
 public class QueryRequestListController
 {
     @javafx.fxml.FXML
-    private TableView<CustomerQuery> reservationRequestTableView;
-    @javafx.fxml.FXML
     private TableColumn<CustomerQuery, String> querySubCol;
     @javafx.fxml.FXML
     private TableColumn<CustomerQuery, String> statusCol;
@@ -32,6 +30,9 @@ public class QueryRequestListController
     private TableColumn<CustomerQuery, String> customerNameCol;
     @javafx.fxml.FXML
     private ComboBox<String> statusComboBox;
+    @javafx.fxml.FXML
+    private TableView<CustomerQuery> queryRequestTableView;
+    private List<CustomerQuery> queries;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -42,16 +43,22 @@ public class QueryRequestListController
         querySubCol.setCellValueFactory(new PropertyValueFactory<>("querySub"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        File file = new File("data/alvee/customer-query.bin");
-        List<CustomerQuery> queries = BinaryFileHelper.readAllObjects(file);
+        File file = new File("data/alvee/customer-queries.bin");
+        this.queries = BinaryFileHelper.readAllObjects(file);
 
-        reservationRequestTableView.getItems().addAll(queries);
+        queryRequestTableView.getItems().addAll(queries);
 
     }
 
 
     @javafx.fxml.FXML
     public void handleFilterButtonOnClick(ActionEvent actionEvent) {
+        queryRequestTableView.getItems().clear();
+        for (CustomerQuery cq: queries) {
+            if (cq.getStatus().equals(statusComboBox.getValue())){
+                queryRequestTableView.getItems().add(cq);
+            }
+        }
     }
 
     @javafx.fxml.FXML

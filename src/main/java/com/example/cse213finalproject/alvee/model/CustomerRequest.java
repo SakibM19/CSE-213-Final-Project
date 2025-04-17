@@ -1,6 +1,8 @@
 package com.example.cse213finalproject.alvee.model;
 
-public class CustomerRequest {
+import java.io.Serializable;
+
+public class CustomerRequest implements Serializable {
     protected String requestId;
     protected String customerName;
     protected String status;
@@ -9,6 +11,9 @@ public class CustomerRequest {
         this.requestId = requestId;
         this.customerName = customerName;
         this.status = "Pending";
+    }
+
+    public CustomerRequest() {
     }
 
     public String getRequestId() {

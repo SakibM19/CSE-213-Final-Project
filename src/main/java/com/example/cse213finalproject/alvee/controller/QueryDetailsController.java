@@ -1,5 +1,7 @@
 package com.example.cse213finalproject.alvee.controller;
 
+import com.example.cse213finalproject.alvee.model.CustomerQuery;
+import com.example.cse213finalproject.util.BinaryFileHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,7 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class QueryDetailsController
 {
@@ -20,14 +24,36 @@ public class QueryDetailsController
     private TextField idTextField;
     @javafx.fxml.FXML
     private TextField responseTextField;
+    private CustomerQuery cq;
+
+
 
     @javafx.fxml.FXML
     public void initialize() {
+
+//        this.queries = queries;
     }
 
 
     @javafx.fxml.FXML
     public void handleSendButtonOnClick(ActionEvent actionEvent) {
+        if (cq == null) return;
+
+        cq.setRespond(responseTextField.getText());
+        cq.setStatus("Resolved");
+
+        File file = new File("data/alvee/customer-queries.bin");
+        List<CustomerQuery> queries = BinaryFileHelper.readAllObjects(file);
+
+        for (int i = 0; i < queries.size(); i++) {
+            if (queries.get(i).getRequestId().equals(cq.getRequestId())) {
+                queries.set(i, cq);
+                break;
+            }
+        }
+
+        // Save back to file
+        BinaryFileHelper.writeAllObjects(file, queries);
     }
 
     @javafx.fxml.FXML
@@ -45,5 +71,15 @@ public class QueryDetailsController
 
     @javafx.fxml.FXML
     public void handleSearchButtonOnClick(ActionEvent actionEvent) {
+        File file = new File("data/alvee/customer-queries.bin");
+        List<CustomerQuery> queries = BinaryFileHelper.readAllObjects(file);
+        for (CustomerQuery cq: queries) {
+            if (cq.getRequestId().equals(idTextField.getText())){
+                queryLabel.setText(cq.getQueryDescription());
+                responseTextField.setText(cq.getRespond());
+                this.cq = cq;
+                return;
+            }
+        }
     }
 }

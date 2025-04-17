@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.File;
+import java.util.List;
 
 public class SendQueryController
 {
@@ -35,7 +36,11 @@ public class SendQueryController
                 querySubTextField.getText(),
                 queryTextField.getText()
         );
-        File file = new File("data/alvee/customer-query.bin");
-        BinaryFileHelper.saveObject(file, newQuery);
+
+        File file = new File("data/alvee/customer-queries.bin");
+        List<CustomerQuery> queries = BinaryFileHelper.readAllObjects(file);
+        queries.add(newQuery);
+        BinaryFileHelper.writeAllObjects(file, queries);
+
     }
 }
