@@ -1,11 +1,27 @@
 package com.example.cse213finalproject.sakibModelClass;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Booking {
-    protected int bookingID, totalCost, vehicleID;
+public class Booking implements Serializable {
+    protected int bookingID, totalCost, vehicleID, customerId;
+    protected String customerName, vehicleName;
     protected LocalTime pickUpTime, dropOffTime;
+
+    public Booking(int bookingID, int totalCost, int vehicleID, int customerId, String customerName, String vehicleName, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
+        this.bookingID = bookingID;
+        this.totalCost = totalCost;
+        this.vehicleID = vehicleID;
+        this.customerId = customerId;
+        this.customerName = customerName;
+        this.vehicleName = vehicleName;
+        this.pickUpTime = pickUpTime;
+        this.dropOffTime = dropOffTime;
+        this.pickupDate = pickupDate;
+        this.dropOffDate = dropOffDate;
+    }
+
     protected LocalDate pickupDate, dropOffDate;
 
 
@@ -18,6 +34,20 @@ public class Booking {
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
     }
+
+    public Booking(int bookingID, int totalCost, int vehicleID, int customerId, String customerName, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
+        this.bookingID = bookingID;
+        this.totalCost = totalCost;
+        this.vehicleID = vehicleID;
+        this.customerId = customerId;
+        this.customerName = customerName;
+        this.pickUpTime = pickUpTime;
+        this.dropOffTime = dropOffTime;
+        this.pickupDate = pickupDate;
+        this.dropOffDate = dropOffDate;
+    }
+
+
 
     @Override
     public String toString() {
@@ -45,6 +75,14 @@ public class Booking {
 
     public int getTotalCost() {
         return totalCost;
+    }
+
+    public String getVehicleName() {
+        return vehicleName;
+    }
+
+    public void setVehicleName(String vehicleName) {
+        this.vehicleName = vehicleName;
     }
 
     public void setTotalCost(int totalCost) {
@@ -83,6 +121,21 @@ public class Booking {
         this.dropOffDate = dropOffDate;
     }
 
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
     public int getVehicleID() {
         return vehicleID;
