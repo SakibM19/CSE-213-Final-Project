@@ -12,6 +12,9 @@ public class CustomerQuery extends CustomerRequest implements Serializable {
         this.respond = null;
     }
 
+    public CustomerQuery() {
+    }
+
     public String getQuerySub() {
         return querySub;
     }

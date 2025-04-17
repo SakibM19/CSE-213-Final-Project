@@ -48,6 +48,16 @@ public class BinaryFileHelper {
         return objects;
     }
 
+    public static <T> void writeAllObjects(File file, List<T> objects) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
+            for (T obj : objects) {
+                oos.writeObject(obj);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     // Create parent directory if missing
     private static void createDirIfNotExists(File file) {
         File parent = file.getParentFile();

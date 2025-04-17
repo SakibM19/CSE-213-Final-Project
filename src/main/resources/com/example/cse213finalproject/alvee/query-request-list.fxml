@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.alvee.controller.QueryRequestListController">
    <children>
-      <TableView fx:id="reservationRequestTableView" layoutX="46.0" layoutY="133.0" prefHeight="317.0" prefWidth="806.0">
+      <TableView fx:id="queryRequestTableView" layoutX="46.0" layoutY="133.0" prefHeight="317.0" prefWidth="806.0">
         <columns>
           <TableColumn fx:id="requestIdCol" prefWidth="161.60002899169922" text="Request ID" />
           <TableColumn fx:id="customerNameCol" minWidth="0.0" prefWidth="191.19998168945312" text="Customer Name" />

@@ -13,17 +13,9 @@ public class ReservationRequest extends CustomerIssueRequest{
         return requestType;
     }
 
-    /*public Booking getReservationDetails() {
-        return reservationDetails;
-    }*/
-
     public void setRequestType(String requestType) {
         this.requestType = requestType;
     }
-
-    /*public void setReservationDetails(Booking reservationDetails) {
-        this.reservationDetails = reservationDetails;
-    }*/
 
     @Override
     public String toString() {
