@@ -73,4 +73,8 @@ public class CustomerDashboardViewController
     public void paymentOnMouseClickedButton(Event event) {
         switchScene("CustomerOrderListForPaymentView.fxml", event);
     }
+
+    @javafx.fxml.FXML
+    public void logOutOnMouseClickedButton(Event event) {
+    }
 }

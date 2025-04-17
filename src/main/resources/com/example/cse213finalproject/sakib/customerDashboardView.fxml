@@ -140,7 +140,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="648.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#emergencyAssistanceOnMouseClickedButton" prefHeight="94.0" prefWidth="190.0" style="-fx-background-color: RED; -fx-border-color: black;" text="Emergency Assistance" textFill="WHITE">
+      <Button layoutX="648.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#emergencyAssistanceOnMouseClickedButton" prefHeight="62.0" prefWidth="190.0" style="-fx-background-color: RED; -fx-border-color: black;" text="Emergency Assistance" textFill="WHITE">
          <font>
             <Font name="Impact" size="15.0" />
          </font>
@@ -213,7 +213,7 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <Line endX="412.70001220703125" endY="10.5" layoutX="147.0" layoutY="405.0" startX="-100.20000457763672" startY="10.5" strokeWidth="5.0" />
+      <Line endX="412.70001220703125" endY="10.5" layoutX="146.0" layoutY="405.0" startX="-100.20000457763672" startY="10.5" strokeWidth="5.0" />
       <Line endX="402.20001220703125" layoutX="157.0" layoutY="415.0" startX="402.20001220703125" startY="-362.6000061035156" strokeWidth="5.0" />
       <Button layoutX="157.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#myFavouritesOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Send Message">
          <textFill>
@@ -263,6 +263,11 @@
                </stops>
             </LinearGradient>
          </textFill>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="618.0" layoutY="528.0" mnemonicParsing="false" onMouseClicked="#logOutOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #ffbfbf; -fx-border-color: red;" text="Log Out" textFill="#940505">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
