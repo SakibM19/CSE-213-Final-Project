@@ -12,28 +12,18 @@ import java.net.URL;
 
 public interface SceneSwitch {
 
-    static void switchScene(String fxmlFile, Event event) {
-        if (fxmlFile == null || event == null) {
-            throw new IllegalArgumentException("FXML file or event cannot be null");
-        }
-
+     public static void switchScene(String fxmlFile, Event event) {
         try {
-            URL url = SceneSwitch.class.getResource(fxmlFile);
-            if (url == null) {
-                throw new IllegalArgumentException("FXML file not found: " + fxmlFile);
-            }
+            FXMLLoader Loader = new FXMLLoader(SceneSwitch.class.getResource(fxmlFile));
+            Parent root = Loader.load();
 
-            FXMLLoader loader = new FXMLLoader(url);
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
             stage.show();
 
-        } catch (IOException | ClassCastException | IllegalArgumentException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-            // Handle specific exceptions or log them appropriately
         }
     }
 }
