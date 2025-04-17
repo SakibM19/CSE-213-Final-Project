@@ -4,33 +4,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Booking {
-    protected int bookingID, totalCost, vehicleID;
+    protected int bookingID, totalCost, vehicleID ,customerID;
     protected LocalTime pickUpTime, dropOffTime;
     protected LocalDate pickupDate, dropOffDate;
 
 
-    public Booking(int bookingID, int totalCost, int vehicleID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
-        this.bookingID = bookingID;
-        this.totalCost = totalCost;
-        this.vehicleID = vehicleID;
-        this.pickUpTime = pickUpTime;
-        this.dropOffTime = dropOffTime;
-        this.pickupDate = pickupDate;
-        this.dropOffDate = dropOffDate;
-    }
-
-    @Override
-    public String toString() {
-        return "Booking{" +
-                "bookingID=" + bookingID +
-                ", totalCost=" + totalCost +
-                ", vehicleID=" + vehicleID +
-                ", pickUpTime=" + pickUpTime +
-                ", dropOffTime=" + dropOffTime +
-                ", pickupDate=" + pickupDate +
-                ", dropOffDate=" + dropOffDate +
-                '}';
-    }
 
     public Booking() {
     }
@@ -84,11 +62,44 @@ public class Booking {
     }
 
 
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+
     public int getVehicleID() {
         return vehicleID;
     }
 
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "bookingID=" + bookingID +
+                ", totalCost=" + totalCost +
+                ", vehicleID=" + vehicleID +
+                ", customerID=" + customerID +
+                ", pickUpTime=" + pickUpTime +
+                ", dropOffTime=" + dropOffTime +
+                ", pickupDate=" + pickupDate +
+                ", dropOffDate=" + dropOffDate +
+                '}';
+    }
+
     public void setVehicleID(int vehicleID) {
         this.vehicleID = vehicleID;
+    }
+
+    public Booking(int bookingID, int totalCost, int vehicleID, int customerID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
+        this.bookingID = bookingID;
+        this.totalCost = totalCost;
+        this.vehicleID = vehicleID;
+        this.customerID = customerID;
+        this.pickUpTime = pickUpTime;
+        this.dropOffTime = dropOffTime;
+        this.pickupDate = pickupDate;
+        this.dropOffDate = dropOffDate;
     }
 }

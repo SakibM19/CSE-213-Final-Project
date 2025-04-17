@@ -4,15 +4,16 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Order {
-    protected int orderID, totalCost, bookingID, vehicleID;
+    protected int orderID, totalCost, bookingID, vehicleID, customerID;
     protected LocalTime pickUpTime, dropOffTime;
     protected LocalDate pickupDate, dropOffDate;
 
-    public Order(int orderID, int totalCost, int bookingID, int vehicleID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
+    public Order(int orderID, int totalCost, int bookingID, int vehicleID, int customerID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
         this.orderID = orderID;
         this.totalCost = totalCost;
         this.bookingID = bookingID;
         this.vehicleID = vehicleID;
+        this.customerID = customerID;
         this.pickUpTime = pickUpTime;
         this.dropOffTime = dropOffTime;
         this.pickupDate = pickupDate;
@@ -86,6 +87,14 @@ public class Order {
         this.dropOffDate = dropOffDate;
     }
 
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -93,6 +102,7 @@ public class Order {
                 ", totalCost=" + totalCost +
                 ", bookingID=" + bookingID +
                 ", vehicleID=" + vehicleID +
+                ", customerID=" + customerID +
                 ", pickUpTime=" + pickUpTime +
                 ", dropOffTime=" + dropOffTime +
                 ", pickupDate=" + pickupDate +
