@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class QueryRequestListController
 {
@@ -41,11 +42,11 @@ public class QueryRequestListController
         querySubCol.setCellValueFactory(new PropertyValueFactory<>("querySub"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        File file = new File("data/alvee/example.bin");
-        BinaryFileHelper.saveObject(file, new CustomerQuery("skdfj", "alvee", "putki", "noting"));
-        BinaryFileHelper.saveObject(file, new CustomerQuery("itrje", "sakib", "putki", "noting"));
-        BinaryFileHelper.saveObject(file, new CustomerQuery("peksj", "mahi", "putki", "noting"));
-        BinaryFileHelper.saveObject(file, new CustomerQuery("hjwqk", "arman", "putki", "noting"));
+        File file = new File("data/alvee/customer-query.bin");
+        List<CustomerQuery> queries = BinaryFileHelper.readAllObjects(file);
+
+        reservationRequestTableView.getItems().addAll(queries);
+
     }
 
 
