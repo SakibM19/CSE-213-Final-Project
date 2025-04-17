@@ -1,5 +1,6 @@
 package com.example.cse213finalproject.alvee.controller;
 
+import com.example.cse213finalproject.util.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,5 +27,14 @@ public class CsrDashboardController
         } catch (IOException e) {
             e.printStackTrace(); // Optional: replace with proper alert or logging
         }
+    }
+
+    @javafx.fxml.FXML
+    public void handlereservationChangesButtonOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "reservation-request-list.fxml", "Reservation Changes");
+    }
+
+    @javafx.fxml.FXML
+    public void handleCancelReservationOnAction(ActionEvent actionEvent) {
     }
 }
