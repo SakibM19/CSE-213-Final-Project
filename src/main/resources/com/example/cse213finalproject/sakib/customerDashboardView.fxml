@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -241,11 +242,6 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <Label layoutX="188.0" layoutY="30.0" text=" RENT A CAR">
-         <font>
-            <Font name="System Bold" size="27.0" />
-         </font>
-      </Label>
       <Button layoutX="618.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#myFavouritesOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="My Favourites">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -272,5 +268,26 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
+      <Label layoutX="209.0" layoutY="14.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>
