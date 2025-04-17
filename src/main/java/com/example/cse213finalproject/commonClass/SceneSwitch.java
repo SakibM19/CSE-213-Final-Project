@@ -1,5 +1,6 @@
 package com.example.cse213finalproject.commonClass;
 
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,4 +27,19 @@ public interface SceneSwitch {
             e.printStackTrace();
         }
     }
+
+    public static void switchScene(String fxmlFile, ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(SceneSwitch.class.getResource(fxmlFile));
+            Parent root = loader.load();
+
+            // Retrieve the Stage from the ActionEvent
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

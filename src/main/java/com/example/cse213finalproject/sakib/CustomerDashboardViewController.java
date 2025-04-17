@@ -74,7 +74,7 @@ public class CustomerDashboardViewController
         switchScene("CustomerOrderListForPaymentView.fxml", event);
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void logOutOnMouseClickedButton(Event event) {
     }
 }

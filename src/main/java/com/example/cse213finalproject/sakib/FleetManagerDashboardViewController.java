@@ -1,15 +1,23 @@
 package com.example.cse213finalproject.sakib;
 
+import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.scene.control.Menu;
+import javafx.scene.layout.AnchorPane;
 
 public class FleetManagerDashboardViewController
 {
+    @javafx.fxml.FXML
+    private Menu logOutMenu;
+    @javafx.fxml.FXML
+    private AnchorPane fleetManagerDashboardAnchorPane;
+
     @javafx.fxml.FXML
     public void initialize() {
     }
 
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void logOutOnMouseClickedButton(Event event) {
     }
 
@@ -43,5 +51,10 @@ public class FleetManagerDashboardViewController
 
     @javafx.fxml.FXML
     public void scheduleMaintenanceOnMouseClickedButton(Event event) {
+    }
+
+    @javafx.fxml.FXML
+    public void logOutOnActionMenu(ActionEvent actionEvent) {
+
     }
 }
