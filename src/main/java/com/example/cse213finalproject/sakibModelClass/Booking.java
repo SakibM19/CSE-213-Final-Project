@@ -15,7 +15,6 @@ public class Booking implements Serializable {
         this.vehicleID = vehicleID;
         this.customerId = customerId;
         this.customerName = customerName;
-        this.vehicleName = vehicleName;
         this.pickUpTime = pickUpTime;
         this.dropOffTime = dropOffTime;
         this.pickupDate = pickupDate;
