@@ -1,6 +1,8 @@
 package com.example.cse213finalproject.sakibModelClass;
 
-public class Vehicle {
+import java.io.Serializable;
+
+public class Vehicle implements Serializable {
     protected String vehicleID, vehicleModel, vehicleType, brand;
     protected int seatCapacity;
     protected float perDayCost;

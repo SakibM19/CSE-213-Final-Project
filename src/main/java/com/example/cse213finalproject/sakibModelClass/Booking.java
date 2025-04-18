@@ -1,52 +1,32 @@
 package com.example.cse213finalproject.sakibModelClass;
 
+import com.example.cse213finalproject.util.BinaryFileHelper;
+
+import java.io.File;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.List;
 
 public class Booking implements Serializable {
-    protected int bookingID, totalCost, vehicleID, customerId;
-    protected String customerName, vehicleName;
+    protected int  totalCost;
+    protected String customerName, vehicleName, vehicleID, customerId, bookingID;
     protected LocalTime pickUpTime, dropOffTime;
-
-    public Booking(int bookingID, int totalCost, int vehicleID, int customerId, String customerName, String vehicleName, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
-        this.bookingID = bookingID;
-        this.totalCost = totalCost;
-        this.vehicleID = vehicleID;
-        this.customerId = customerId;
-        this.customerName = customerName;
-        this.pickUpTime = pickUpTime;
-        this.dropOffTime = dropOffTime;
-        this.pickupDate = pickupDate;
-        this.dropOffDate = dropOffDate;
-    }
-
     protected LocalDate pickupDate, dropOffDate;
 
-
-    public Booking(int bookingID, int totalCost, int vehicleID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
-        this.bookingID = bookingID;
+    public Booking(int totalCost, String customerName, String vehicleName, String vehicleID, String customerId, String bookingID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
         this.totalCost = totalCost;
-        this.vehicleID = vehicleID;
-        this.pickUpTime = pickUpTime;
-        this.dropOffTime = dropOffTime;
-        this.pickupDate = pickupDate;
-        this.dropOffDate = dropOffDate;
-    }
-
-    public Booking(int bookingID, int totalCost, int vehicleID, int customerId, String customerName, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
-        this.bookingID = bookingID;
-        this.totalCost = totalCost;
+        this.customerName = customerName;
+        this.vehicleName = vehicleName;
         this.vehicleID = vehicleID;
         this.customerId = customerId;
-        this.customerName = customerName;
+        this.bookingID = bookingID;
         this.pickUpTime = pickUpTime;
         this.dropOffTime = dropOffTime;
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
     }
-
-
 
     @Override
     public String toString() {
@@ -64,16 +44,20 @@ public class Booking implements Serializable {
     public Booking() {
     }
 
-    public int getBookingID() {
-        return bookingID;
-    }
-
-    public void setBookingID(int bookingID) {
-        this.bookingID = bookingID;
-    }
-
     public int getTotalCost() {
         return totalCost;
+    }
+
+    public void setTotalCost(int totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public String getVehicleName() {
@@ -84,8 +68,28 @@ public class Booking implements Serializable {
         this.vehicleName = vehicleName;
     }
 
-    public void setTotalCost(int totalCost) {
-        this.totalCost = totalCost;
+    public String getVehicleID() {
+        return vehicleID;
+    }
+
+    public void setVehicleID(String vehicleID) {
+        this.vehicleID = vehicleID;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getBookingID() {
+        return bookingID;
+    }
+
+    public void setBookingID(String bookingID) {
+        this.bookingID = bookingID;
     }
 
     public LocalTime getPickUpTime() {
@@ -120,27 +124,5 @@ public class Booking implements Serializable {
         this.dropOffDate = dropOffDate;
     }
 
-    public int getCustomerId() {
-        return customerId;
-    }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public int getVehicleID() {
-        return vehicleID;
-    }
-
-    public void setVehicleID(int vehicleID) {
-        this.vehicleID = vehicleID;
-    }
 }

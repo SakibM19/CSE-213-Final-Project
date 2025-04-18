@@ -42,7 +42,7 @@
       </Text>
       <DatePicker fx:id="startDatePicker" layoutX="588.0" layoutY="215.0" promptText="Start Date" />
       <DatePicker fx:id="endDatePicker" layoutX="588.0" layoutY="258.0" promptText="End Date" />
-      <ComboBox fx:id="AvailableCarComboBox" layoutX="587.0" layoutY="300.0" prefHeight="26.0" prefWidth="175.0" promptText="Available Car" />
+      <ComboBox fx:id="availableCarComboBox" layoutX="587.0" layoutY="300.0" prefHeight="26.0" prefWidth="175.0" promptText="Available Car" />
       <Button layoutX="587.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleUpdateButtonOnClick" prefHeight="36.0" prefWidth="108.0" style="-fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #3e3e3e;" text="Update" textFill="WHITE" />
       <Line endX="5.800018310546875" endY="251.79998779296875" layoutX="449.0" layoutY="191.0" startX="5.800018310546875" startY="-20.199996948242188" />
       <Button layoutX="129.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleBackButtonOnClick" prefHeight="36.0" prefWidth="108.0" style="-fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #3e3e3e;" text="Back" textFill="WHITE" />
