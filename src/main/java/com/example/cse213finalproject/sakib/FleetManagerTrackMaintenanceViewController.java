@@ -1,5 +1,7 @@
 package com.example.cse213finalproject.sakib;
 
+import com.example.cse213finalproject.sakibModelClass.Vehicle;
+import com.example.cse213finalproject.util.BinaryFileHelper;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,9 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class FleetManagerTrackMaintenanceViewController
 {
@@ -25,14 +30,24 @@ public class FleetManagerTrackMaintenanceViewController
     @javafx.fxml.FXML
     private Label lastMaintananceDateLabel;
     @javafx.fxml.FXML
-    private TableColumn listVehicleTypeTableView;
+    private TableColumn<Vehicle, String> listVehicleTypeTableView;
     @javafx.fxml.FXML
-    private TableView fleetVehicleListTableView;
+    private TableView<Vehicle> fleetVehicleListTableView;
     @javafx.fxml.FXML
-    private TableColumn fleetVehicleIdTableView;
+    private TableColumn<Vehicle,String> fleetVehicleIdTableView;
+    private final File vehicleFile = new File("data/sakib/fleet.bin");
+    private void loadVehicleData() {
+        List<Vehicle> vehicles = BinaryFileHelper.readAllObjects(vehicleFile);
+        fleetVehicleListTableView.getItems().clear();
+        fleetVehicleListTableView.getItems().addAll(vehicles);
+    }
 
     @javafx.fxml.FXML
     public void initialize() {
+        fleetVehicleIdTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleID"));
+        listVehicleTypeTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleType"));
+
+        loadVehicleData();
     }
 
     @javafx.fxml.FXML

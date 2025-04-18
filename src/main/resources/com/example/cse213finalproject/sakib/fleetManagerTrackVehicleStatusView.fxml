@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.FleetManagerTrackVehicleStatusViewController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: #23990e;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.FleetManagerTrackVehicleStatusViewController">
    <children>
       <Label layoutX="315.0" layoutY="35.0" text=" RENT A CAR">
          <font>
@@ -36,7 +36,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Line endX="106.0" layoutX="562.0" layoutY="289.0" startX="-100.0" strokeWidth="3.0">
+      <Line endX="106.0" layoutX="562.0" layoutY="314.0" startX="-100.0" strokeWidth="3.0">
          <stroke>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -54,7 +54,7 @@
             </RadialGradient>
          </stroke>
       </Line>
-      <Label layoutX="301.0" layoutY="103.0" prefHeight="34.0" prefWidth="299.0" text="Track Vehicle Rental Status ">
+      <Label layoutX="333.0" layoutY="103.0" prefHeight="34.0" prefWidth="299.0" text="Track Vehicle Status ">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -81,8 +81,8 @@
             <TableColumn fx:id="listVehicleTypeTableView" prefWidth="117.5999755859375" text="Vehicle Type" />
         </columns>
       </TableView>
-      <TextField fx:id="vehicleIdForTrackingTableView" layoutX="472.0" layoutY="191.0" prefHeight="26.0" prefWidth="195.0" />
-      <Label layoutX="472.0" layoutY="157.0" prefHeight="34.0" prefWidth="226.0" text="Enter Vehicle ID for tracking">
+      <TextField fx:id="vehicleIdForTrackingTableView" layoutX="472.0" layoutY="205.0" prefHeight="26.0" prefWidth="195.0" />
+      <Label layoutX="472.0" layoutY="171.0" prefHeight="34.0" prefWidth="226.0" text="Enter Vehicle ID for tracking">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -103,7 +103,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="472.0" layoutY="302.0" prefHeight="34.0" prefWidth="84.0" text="Vehicle ID:">
+      <Label layoutX="472.0" layoutY="352.0" prefHeight="34.0" prefWidth="84.0" text="Vehicle ID:">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -124,49 +124,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="472.0" layoutY="336.0" prefHeight="34.0" prefWidth="109.0" text="Vehicle Status:">
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.2877193093299866" green="0.378947377204895" blue="0.29988303780555725" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </textFill>
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="472.0" layoutY="370.0" prefHeight="34.0" prefWidth="84.0" text="Renter ID: ">
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.2877193093299866" green="0.378947377204895" blue="0.29988303780555725" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </textFill>
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="473.0" layoutY="404.0" prefHeight="34.0" prefWidth="156.0" text="Will be available on:  ">
+      <Label layoutX="472.0" layoutY="416.0" prefHeight="34.0" prefWidth="109.0" text="Vehicle Status:">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -245,12 +203,12 @@
             </RadialGradient>
          </stroke>
       </Line>
-      <Label fx:id="vehicleIDLabel" layoutX="565.0" layoutY="309.0" prefHeight="19.0" prefWidth="147.0" text="NA">
+      <Label fx:id="vehicleIDLabel" layoutX="565.0" layoutY="359.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+            <LinearGradient endX="1.0" endY="1.0">
                <stops>
                   <Stop>
                      <color>
@@ -259,19 +217,66 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                        <Color red="1.0" green="0.06666667014360428" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="statusLabel" layoutX="593.0" layoutY="423.0" prefHeight="19.0" prefWidth="147.0" text="NA">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.06666667014360428" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="475.0" layoutY="253.0" mnemonicParsing="false" onMouseClicked="#trackOnMouseClickedButton" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #23990e; -fx-border-color: black;" text="Track" textFill="#fff600">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="472.0" layoutY="321.0" prefHeight="34.0" prefWidth="110.0" text="Vehicle Brand:">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2877193093299866" green="0.378947377204895" blue="0.29988303780555725" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
                      </color>
                   </Stop>
                </stops>
             </RadialGradient>
          </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Label>
-      <Label fx:id="statusLabel" layoutX="593.0" layoutY="343.0" prefHeight="19.0" prefWidth="147.0" text="NA">
+      <Label fx:id="brandLabel" layoutX="589.0" layoutY="328.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+            <LinearGradient endX="1.0" endY="1.0">
                <stops>
                   <Stop>
                      <color>
@@ -280,19 +285,40 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                        <Color red="1.0" green="0.06666667014360428" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="473.0" layoutY="384.0" prefHeight="34.0" prefWidth="110.0" text="Vehicle Type:">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2877193093299866" green="0.378947377204895" blue="0.29988303780555725" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
                      </color>
                   </Stop>
                </stops>
             </RadialGradient>
          </textFill>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Label>
-      <Label fx:id="renterIDLabel" layoutX="565.0" layoutY="377.0" prefHeight="19.0" prefWidth="147.0" text="NA">
+      <Label fx:id="typeILabel" layoutX="592.0" layoutY="391.0" prefHeight="19.0" prefWidth="147.0" text="NA">
          <font>
             <Font name="Ebrima Bold" size="15.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+            <LinearGradient endX="1.0" endY="1.0">
                <stops>
                   <Stop>
                      <color>
@@ -301,32 +327,11 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
+                        <Color red="1.0" green="0.06666667014360428" />
                      </color>
                   </Stop>
                </stops>
-            </RadialGradient>
-         </textFill>
-      </Label>
-      <Label fx:id="availableDateLabel" layoutX="638.0" layoutY="411.0" prefHeight="19.0" prefWidth="147.0" text="NA">
-         <font>
-            <Font name="Ebrima Bold" size="15.0" />
-         </font>
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color green="0.4000000059604645" blue="0.20000000298023224" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
+            </LinearGradient>
          </textFill>
       </Label>
    </children>
