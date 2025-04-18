@@ -43,7 +43,7 @@ public class QueryRequestListController
         querySubCol.setCellValueFactory(new PropertyValueFactory<>("querySub"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        File file = new File("data/alvee/customer-queries.bin");
+        File file = new File("data/alvee/customer-query.bin");
         this.queries = BinaryFileHelper.readAllObjects(file);
 
         queryRequestTableView.getItems().addAll(queries);

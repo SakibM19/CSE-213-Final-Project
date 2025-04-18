@@ -13,8 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.File;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 public class ConfirmationDetailController
@@ -62,8 +60,6 @@ public class ConfirmationDetailController
                 b.getBookingID(),
                 b.getVehicleID(),
                 b.getCustomerId(),
-                b.getPickUpTime(),
-                b.getDropOffTime(),
                 b.getPickupDate(),
                 b.getDropOffDate(),
                 perDayCoast
