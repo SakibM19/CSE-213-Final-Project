@@ -3,7 +3,7 @@ package com.example.cse213finalproject.commonClass;
 public abstract class  Employee extends User {
     protected String employeeID;
 
-    public Employee(String name, String email, String password, int id, int phoneNumber, String employeeID, String role) {
+    public Employee(String name, String email, String password, String id, int phoneNumber, String employeeID, String role) {
         super(name, email, password, id, phoneNumber);
         this.employeeID = employeeID;
     }
@@ -11,7 +11,7 @@ public abstract class  Employee extends User {
     public Employee() {
     }
 
-    public Employee(String name, String email, String password, int id, int phoneNumber) {
+    public Employee(String name, String email, String password, String id, int phoneNumber) {
         super(name, email, password, id, phoneNumber);
     }
 

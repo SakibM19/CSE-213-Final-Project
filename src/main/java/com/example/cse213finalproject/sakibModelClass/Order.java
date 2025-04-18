@@ -2,6 +2,7 @@ package com.example.cse213finalproject.sakibModelClass;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Random;
 
 public class Order {
     protected int orderID, totalCost, bookingID, vehicleID, customerID;
@@ -109,4 +110,13 @@ public class Order {
                 ", dropOffDate=" + dropOffDate +
                 '}';
     }
+
+
+
+    public static String generateOrderID() {
+        Random random = new Random();
+        int number = 100 + random.nextInt(900); // generates 100–999
+        return "o" + number;
+    }
+
 }

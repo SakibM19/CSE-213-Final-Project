@@ -8,11 +8,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class Booking implements Serializable {
     protected int  totalCost;
     protected String customerName, vehicleName, vehicleID, customerId, bookingID;
-    protected LocalTime pickUpTime, dropOffTime;
     protected LocalDate pickupDate, dropOffDate;
 
     public Booking(int totalCost, String customerName, String vehicleName, String vehicleID, String customerId, String bookingID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
@@ -22,8 +22,7 @@ public class Booking implements Serializable {
         this.vehicleID = vehicleID;
         this.customerId = customerId;
         this.bookingID = bookingID;
-        this.pickUpTime = pickUpTime;
-        this.dropOffTime = dropOffTime;
+
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
     }
@@ -34,8 +33,7 @@ public class Booking implements Serializable {
                 "bookingID=" + bookingID +
                 ", totalCost=" + totalCost +
                 ", vehicleID=" + vehicleID +
-                ", pickUpTime=" + pickUpTime +
-                ", dropOffTime=" + dropOffTime +
+
                 ", pickupDate=" + pickupDate +
                 ", dropOffDate=" + dropOffDate +
                 '}';
@@ -92,22 +90,6 @@ public class Booking implements Serializable {
         this.bookingID = bookingID;
     }
 
-    public LocalTime getPickUpTime() {
-        return pickUpTime;
-    }
-
-    public void setPickUpTime(LocalTime pickUpTime) {
-        this.pickUpTime = pickUpTime;
-    }
-
-    public LocalTime getDropOffTime() {
-        return dropOffTime;
-    }
-
-    public void setDropOffTime(LocalTime dropOffTime) {
-        this.dropOffTime = dropOffTime;
-    }
-
     public LocalDate getPickupDate() {
         return pickupDate;
     }
@@ -122,6 +104,16 @@ public class Booking implements Serializable {
 
     public void setDropOffDate(LocalDate dropOffDate) {
         this.dropOffDate = dropOffDate;
+    }
+
+    /// //////////
+
+
+
+    public static String generateBookingID() {
+        Random random = new Random();
+        int number = 100 + random.nextInt(900); // generates a number between 100 and 999
+        return "b" + number;
     }
 
 

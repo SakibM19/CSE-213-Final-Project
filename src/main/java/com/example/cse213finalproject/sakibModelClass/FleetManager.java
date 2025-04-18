@@ -13,7 +13,7 @@ public class FleetManager extends Employee {
         this.role = role;
     }
 
-    public FleetManager(String name, String email, String password, int id, int phoneNumber, String employeeID, String role, String role1) {
+    public FleetManager(String name, String email, String password, String id, int phoneNumber, String employeeID, String role, String role1) {
         super(name, email, password, id, phoneNumber, employeeID, role);
         this.role = role1;
     }
@@ -22,7 +22,7 @@ public class FleetManager extends Employee {
         this.role = role;
     }
 
-    public FleetManager(String name, String email, String password, int id, int phoneNumber, String role) {
+    public FleetManager(String name, String email, String password, String id, int phoneNumber, String role) {
         super(name, email, password, id, phoneNumber);
         this.role = role;
     }
@@ -45,14 +45,14 @@ public class FleetManager extends Employee {
                 '}';
     }
 
-    public FleetManager(String name, String email, String password, int id, int phoneNumber, String employeeID, String role) {
+    public FleetManager(String name, String email, String password, String id, int phoneNumber, String employeeID, String role) {
         super(name, email, password, id, phoneNumber, employeeID, role);
     }
 
     public FleetManager() {
     }
 
-    public FleetManager(String name, String email, String password, int id, int phoneNumber) {
+    public FleetManager(String name, String email, String password, String id, int phoneNumber) {
         super(name, email, password, id, phoneNumber);
     }
 }

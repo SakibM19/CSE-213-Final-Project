@@ -21,33 +21,28 @@ import java.io.IOException;
 public class CustomerPlaceOrderInformationViewController
 {
     @javafx.fxml.FXML
-    private ComboBox seatsWantedComboBox;
+    private ComboBox<Integer> seatsWantedComboBox;
     @javafx.fxml.FXML
     private DatePicker dropoffDatePicker;
     @javafx.fxml.FXML
     private DatePicker pickupDatePicker;
     @javafx.fxml.FXML
-    private TextField pickupTimeTextField;
-    @javafx.fxml.FXML
     private TextField dropoffLocationTextField;
     @javafx.fxml.FXML
-    private ComboBox vehicleTypeWantedComboBox;
-    @javafx.fxml.FXML
-    private TextField dropoffTimeTextField;
+    private ComboBox<String> vehicleTypeWantedComboBox;
     @javafx.fxml.FXML
     private TextField pickupLocationTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        seatsWantedComboBox.getItems().addAll(2, 5, 7);
+        vehicleTypeWantedComboBox.getItems().addAll("Sedan","SUV");
     }
 
     @javafx.fxml.FXML
     public void backOnMouseClickedButton(Event event) {
         switchScene("/com/example/cse213finalproject/sakib/CustomerDashboardView.fxml", event);
-    }
-
-    @javafx.fxml.FXML
-    public void nextOnMouseClickedButton(Event event) {
     }
 
     private void switchScene(String fxmlFile, Event event) {
@@ -61,5 +56,18 @@ public class CustomerPlaceOrderInformationViewController
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @javafx.fxml.FXML
+    public void placeOrderOnMouseClickedButton(Event event) {
+
+    }
+
+    @javafx.fxml.FXML
+    public void createBookingOnMouseClickedButton(Event event) {
+    }
+
+    @javafx.fxml.FXML
+    public void defaultLocationOnMouseClickedButton(Event event) {
     }
 }

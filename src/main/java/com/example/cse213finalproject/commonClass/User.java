@@ -1,11 +1,11 @@
 package com.example.cse213finalproject.commonClass;
 
 public abstract class User {
-    protected String name, email, password;
-    protected int id,phoneNumber;
+    protected String name, email, password, id ;
+    protected int phoneNumber;
 
 
-    public User(String name, String email, String password, int id, int phoneNumber) {
+    public User(String name, String email, String password, String id, int phoneNumber) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -41,11 +41,11 @@ public abstract class User {
         this.password = password;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

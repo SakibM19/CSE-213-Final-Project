@@ -2,45 +2,48 @@ package com.example.cse213finalproject.sakibModelClass;
 
 import com.example.cse213finalproject.commonClass.User;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Customer extends User {
+public class Customer extends User implements Serializable {
     private String pickUpLocation, dropOffLocation;
-    private ArrayList<Order> orderList;
-    private ArrayList<Booking> bookingList;
-    private ArrayList<Vehicle> myVehicle;
 
-    public Customer(String name, String email, String password, int id, int phoneNumber, String pickUpLocation, String dropOffLocation, ArrayList<Order> orderList, ArrayList<Booking> bookingList, ArrayList<Vehicle> myVehicle) {
+    public Customer(String name, String email, String password, String id, int phoneNumber, String pickUpLocation) {
+        super(name, email, password, id, phoneNumber);
+        this.pickUpLocation = pickUpLocation;
+    }
+
+    public Customer(String name, String email, String password, String id, int phoneNumber, String pickUpLocation, String dropOffLocation) {
         super(name, email, password, id, phoneNumber);
         this.pickUpLocation = pickUpLocation;
         this.dropOffLocation = dropOffLocation;
-        this.orderList = orderList;
-        this.bookingList = bookingList;
-        this.myVehicle = myVehicle;
     }
 
-    public Customer(String name, String email, String password, int id, int phoneNumber, ArrayList<Order> orderList, ArrayList<Booking> bookingList, ArrayList<Vehicle> myVehicle) {
-        super(name, email, password, id, phoneNumber);
-        this.orderList = orderList = null;
-        this.bookingList = bookingList = null;
-        this.myVehicle = myVehicle = null;
-    }
-
-    public Customer(String pickUpLocation, String dropOffLocation, ArrayList<Order> orderList, ArrayList<Booking> bookingList, ArrayList<Vehicle> myVehicle) {
+    public Customer(String pickUpLocation, String dropOffLocation) {
         this.pickUpLocation = pickUpLocation;
         this.dropOffLocation = dropOffLocation;
-        this.orderList = orderList;
-        this.bookingList = bookingList;
-        this.myVehicle = myVehicle;
     }
 
-    public Customer(String name, String email, String password, int id, int phoneNumber) {
-        super(name, email, password, id, phoneNumber);
+    public Customer(String pickUpLocation) {
+        this.pickUpLocation = pickUpLocation;
     }
+
 
     public Customer() {
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "pickUpLocation='" + pickUpLocation + '\'' +
+                ", dropOffLocation='" + dropOffLocation + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", id=" + id +
+                ", phoneNumber=" + phoneNumber +
+                '}';
     }
 
     public String getPickUpLocation() {
@@ -57,45 +60,5 @@ public class Customer extends User {
 
     public void setDropOffLocation(String dropOffLocation) {
         this.dropOffLocation = dropOffLocation;
-    }
-
-    public ArrayList<Order> getOrderList() {
-        return orderList;
-    }
-
-    public void setOrderList(ArrayList<Order> orderList) {
-        this.orderList = orderList;
-    }
-
-    public ArrayList<Booking> getBookingList() {
-        return bookingList;
-    }
-
-    public void setBookingList(ArrayList<Booking> bookingList) {
-        this.bookingList = bookingList;
-    }
-
-    public ArrayList<Vehicle> getMyVehicle() {
-        return myVehicle;
-    }
-
-    public void setMyVehicle(ArrayList<Vehicle> myVehicle) {
-        this.myVehicle = myVehicle;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "pickUpLocation='" + pickUpLocation + '\'' +
-                ", dropOffLocation='" + dropOffLocation + '\'' +
-                ", orderList=" + orderList +
-                ", bookingList=" + bookingList +
-                ", myVehicle=" + myVehicle +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", id=" + id +
-                ", phoneNumber=" + phoneNumber +
-                '}';
     }
 }
