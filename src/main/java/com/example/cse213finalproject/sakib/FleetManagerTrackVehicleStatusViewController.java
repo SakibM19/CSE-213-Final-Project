@@ -32,29 +32,26 @@ public class FleetManagerTrackVehicleStatusViewController {
     @javafx.fxml.FXML
     private Label vehicleIDLabel;
     @javafx.fxml.FXML
-    private Label availableDateLabel;
-    @javafx.fxml.FXML
     private Label statusLabel;
-    @javafx.fxml.FXML
-    private Label renterIDLabel;
 
     private final File vehicleFile = new File("data/sakib/fleet.bin");
+    @FXML
+    private Label typeILabel;
+    @FXML
+    private Label brandLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Set up the TableView columns
         fleetVehicleIdTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleID"));
         listVehicleTypeTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleType"));
 
-        // Load all vehicles into the TableView
         loadVehicleData();
     }
 
-    // Method to load vehicle data from the fleet file
     private void loadVehicleData() {
         List<Vehicle> vehicles = BinaryFileHelper.readAllObjects(vehicleFile);
-        fleetVehicleListTableView.getItems().clear();  // Clear any existing items
-        fleetVehicleListTableView.getItems().addAll(vehicles);  // Add all vehicles to the TableView
+        fleetVehicleListTableView.getItems().clear();
+        fleetVehicleListTableView.getItems().addAll(vehicles);
     }
 
     @javafx.fxml.FXML
@@ -62,10 +59,6 @@ public class FleetManagerTrackVehicleStatusViewController {
         switchScene("/com/example/cse213finalproject/sakib/fleetManagerDashboardView.fxml", event);
     }
 
-    @javafx.fxml.FXML
-    public void trackVehicleStatusOnMouseClickedButton(Event event) {
-        // Logic for tracking vehicle status can be added here
-    }
 
     private void switchScene(String fxmlFile, Event event) {
         try {
@@ -79,4 +72,32 @@ public class FleetManagerTrackVehicleStatusViewController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void trackOnMouseClickedButton(Event event) {
+        String enteredVehicleId = vehicleIdForTrackingTableView.getText().trim();
+
+        if (enteredVehicleId.isEmpty()) {
+            vehicleIDLabel.setText("Enter a Vehicle ID");
+            statusLabel.setText("NA");
+            return;
+        }
+
+        List<Vehicle> vehicles = BinaryFileHelper.readAllObjects(vehicleFile);
+
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getVehicleID().equalsIgnoreCase(enteredVehicleId)) {
+                vehicleIDLabel.setText(vehicle.getVehicleID());
+                statusLabel.setText(vehicle.getStatus());
+                brandLabel.setText(vehicle.getBrand());
+                typeILabel.setText(vehicle.getVehicleType());
+                return;
+            }
+        }
+
+        // If not found
+        vehicleIDLabel.setText("Vehicle not found");
+        statusLabel.setText("NA");
+    }
+
 }
