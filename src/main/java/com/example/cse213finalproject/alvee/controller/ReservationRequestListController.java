@@ -75,7 +75,7 @@ public class ReservationRequestListController
 
 
         for (int i = 0; i < bookingList.size(); i++) {
-            if (bookingList.get(i).getBookingID() == b.getBookingID()) {
+            if (bookingList.get(i).getBookingID().equals(b.getBookingID())) {
                 bookingList.set(i, b);
                 break;
             }
