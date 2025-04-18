@@ -1,13 +1,7 @@
 package com.example.cse213finalproject.sakibModelClass;
 
-import com.example.cse213finalproject.util.BinaryFileHelper;
-
-import java.io.File;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class Booking implements Serializable {
@@ -15,14 +9,13 @@ public class Booking implements Serializable {
     protected String customerName, vehicleName, vehicleID, customerId, bookingID;
     protected LocalDate pickupDate, dropOffDate;
 
-    public Booking(int totalCost, String customerName, String vehicleName, String vehicleID, String customerId, String bookingID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
+    public Booking(int totalCost, String customerName, String vehicleName, String vehicleID, String customerId, String bookingID, LocalDate pickupDate, LocalDate dropOffDate) {
         this.totalCost = totalCost;
         this.customerName = customerName;
         this.vehicleName = vehicleName;
         this.vehicleID = vehicleID;
         this.customerId = customerId;
         this.bookingID = bookingID;
-
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
     }
@@ -106,7 +99,6 @@ public class Booking implements Serializable {
         this.dropOffDate = dropOffDate;
     }
 
-    /// //////////
 
 
 
@@ -115,6 +107,5 @@ public class Booking implements Serializable {
         int number = 100 + random.nextInt(900); // generates a number between 100 and 999
         return "b" + number;
     }
-
 
 }

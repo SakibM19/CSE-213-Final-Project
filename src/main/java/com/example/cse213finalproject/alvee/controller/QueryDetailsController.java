@@ -42,7 +42,7 @@ public class QueryDetailsController
         cq.setRespond(responseTextField.getText());
         cq.setStatus("Resolved");
 
-        File file = new File("data/alvee/customer-queries.bin");
+        File file = new File("data/alvee/customer-query.bin");
         List<CustomerQuery> queries = BinaryFileHelper.readAllObjects(file);
 
         for (int i = 0; i < queries.size(); i++) {
@@ -71,7 +71,7 @@ public class QueryDetailsController
 
     @javafx.fxml.FXML
     public void handleSearchButtonOnClick(ActionEvent actionEvent) {
-        File file = new File("data/alvee/customer-queries.bin");
+        File file = new File("data/alvee/customer-query.bin");
         List<CustomerQuery> queries = BinaryFileHelper.readAllObjects(file);
         for (CustomerQuery cq: queries) {
             if (cq.getRequestId().equals(idTextField.getText())){

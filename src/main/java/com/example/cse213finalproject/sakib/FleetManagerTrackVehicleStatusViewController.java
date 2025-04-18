@@ -1,30 +1,82 @@
 package com.example.cse213finalproject.sakib;
 
+import com.example.cse213finalproject.sakibModelClass.Vehicle;
+import com.example.cse213finalproject.util.BinaryFileHelper;
 import javafx.event.Event;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
-public class FleetManagerTrackVehicleStatusViewController
-{
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+public class FleetManagerTrackVehicleStatusViewController {
+
     @javafx.fxml.FXML
-    private TableColumn listVehicleTypeTableView;
+    private TableColumn<Vehicle, String> listVehicleTypeTableView;
     @javafx.fxml.FXML
-    private TableView fleetVehicleListTableView;
+    private TableView<Vehicle> fleetVehicleListTableView;
     @javafx.fxml.FXML
-    private TableColumn fleetVehicleIdTableView;
+    private TableColumn<Vehicle, String> fleetVehicleIdTableView;
     @javafx.fxml.FXML
     private TextField vehicleIdForTrackingTableView;
+    @javafx.fxml.FXML
+    private Label vehicleIDLabel;
+    @javafx.fxml.FXML
+    private Label availableDateLabel;
+    @javafx.fxml.FXML
+    private Label statusLabel;
+    @javafx.fxml.FXML
+    private Label renterIDLabel;
+
+    private final File vehicleFile = new File("data/sakib/fleet.bin");
 
     @javafx.fxml.FXML
     public void initialize() {
+        // Set up the TableView columns
+        fleetVehicleIdTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleID"));
+        listVehicleTypeTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleType"));
+
+        // Load all vehicles into the TableView
+        loadVehicleData();
+    }
+
+    // Method to load vehicle data from the fleet file
+    private void loadVehicleData() {
+        List<Vehicle> vehicles = BinaryFileHelper.readAllObjects(vehicleFile);
+        fleetVehicleListTableView.getItems().clear();  // Clear any existing items
+        fleetVehicleListTableView.getItems().addAll(vehicles);  // Add all vehicles to the TableView
     }
 
     @javafx.fxml.FXML
     public void backOnMouseClickedButton(Event event) {
+        switchScene("/com/example/cse213finalproject/sakib/fleetManagerDashboardView.fxml", event);
     }
 
     @javafx.fxml.FXML
     public void trackVehicleStatusOnMouseClickedButton(Event event) {
+        // Logic for tracking vehicle status can be added here
+    }
+
+    private void switchScene(String fxmlFile, Event event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

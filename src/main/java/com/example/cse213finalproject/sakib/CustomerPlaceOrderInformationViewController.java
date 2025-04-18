@@ -118,7 +118,20 @@ public class CustomerPlaceOrderInformationViewController
         }
 
         // Use first customer for demo purposes
-        Customer customer = customers.get(0);
+       // Customer customer = customers.get(0);
+        // Create a customer object for placing an order
+        Customer customer = new Customer(
+                "John Doe",           // Customer Name
+                "johndoe@example.com", // Customer Email
+                "password123",         // Customer Password
+                "C12345",              // Customer ID
+                1234567890,            // Customer Phone Number
+                "New York"             // Pickup Location
+        );
+
+// Optionally, set a drop-off location if applicable
+        customer.setDropOffLocation("Los Angeles"); // Drop-off Location
+
 
         // Calculate rental days
        // long days = java.time.temporal.ChronoUnit.DAYS.between(pickupDate, dropoffDate);

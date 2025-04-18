@@ -4,11 +4,13 @@ import java.time.LocalDate;
 
 public class Maintenance {
 
-    protected String maintenanceStatus, maintenanceType;
+    protected String maintenanceStatus, maintenanceType, vehicleID, status;
     protected LocalDate nextDate, lastDate;
+
 
     public Maintenance() {
     }
+
 
     public Maintenance(String maintenanceStatus, String maintenanceType, LocalDate nextDate, LocalDate lastDate) {
         this.maintenanceStatus = maintenanceStatus;
@@ -17,11 +19,38 @@ public class Maintenance {
         this.lastDate = lastDate;
     }
 
+    public String getVehicleID() {
+        return vehicleID;
+    }
+
+    public Maintenance(String maintenanceStatus, String maintenanceType, String vehicleID, String status, LocalDate nextDate, LocalDate lastDate) {
+        this.maintenanceStatus = maintenanceStatus;
+        this.maintenanceType = maintenanceType;
+        this.vehicleID = vehicleID;
+        this.status = status;
+        this.nextDate = nextDate;
+        this.lastDate = lastDate;
+    }
+
+    public void setVehicleID(String vehicleID) {
+        this.vehicleID = vehicleID;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Maintenance{" +
                 "maintenanceStatus='" + maintenanceStatus + '\'' +
                 ", maintenanceType='" + maintenanceType + '\'' +
+                ", vehicleID='" + vehicleID + '\'' +
+                ", status='" + status + '\'' +
                 ", nextDate=" + nextDate +
                 ", lastDate=" + lastDate +
                 '}';
