@@ -29,12 +29,17 @@ public class CsrDashboardController
         }
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handlereservationChangesButtonOnAction(ActionEvent actionEvent) {
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "reservation-request-list.fxml", "Reservation Changes");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleCancelReservationOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleCancelBookingButtonOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "reservation-cancelation.fxml", "Cancel Reservation");
     }
 }
