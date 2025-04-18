@@ -122,7 +122,6 @@ public class Order implements Serializable {
                 '}';
     }
 
-<<<<<<< HEAD
 
 
     public static String generateOrderID() {
@@ -131,11 +130,11 @@ public class Order implements Serializable {
         return "o" + number;
     }
 
-=======
+
     public int calculateTotalCost(float dailyRate) {
         long daysBetween = java.time.temporal.ChronoUnit.DAYS.between(pickupDate, dropOffDate);
         totalCost = dailyRate * (daysBetween + 1);
         return (int) totalCost;
     }
->>>>>>> 110d8b600c2c7adee8cad08ca271636895e0d034
+
 }

@@ -1,5 +1,9 @@
 package com.example.cse213finalproject.sakib;
 
+import com.example.cse213finalproject.sakibModelClass.Booking;
+import com.example.cse213finalproject.sakibModelClass.Customer;
+import com.example.cse213finalproject.sakibModelClass.Vehicle;
+import com.example.cse213finalproject.util.BinaryFileHelper;
 import javafx.event.Event;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -15,7 +19,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.List;
 
 
 public class CustomerPlaceOrderInformationViewController
@@ -65,6 +72,75 @@ public class CustomerPlaceOrderInformationViewController
 
     @javafx.fxml.FXML
     public void createBookingOnMouseClickedButton(Event event) {
+        File customerFile = new File("data/user/customer.bin");
+        File bookingFile = new File("data/sakib/booking.bin");
+        File vehicleFile = new File("data/sakib/vehicle.bin");
+
+        // Get pickup and dropoff locations from input
+        String pickupLocation = pickupLocationTextField.getText();
+        String dropoffLocation = dropoffLocationTextField.getText();
+
+        // Get selected dates
+        LocalDate pickupDate = pickupDatePicker.getValue();
+        LocalDate dropoffDate = dropoffDatePicker.getValue();
+
+        // Get vehicle type and seats
+        String vehicleType = vehicleTypeWantedComboBox.getValue();
+        Integer seats = seatsWantedComboBox.getValue();
+
+
+        // Read customers
+        List<Customer> customers = BinaryFileHelper.readAllObjects(customerFile);
+        if (customers.isEmpty()) {
+            System.out.println("No customers found.");
+            return;
+        }
+
+        // Read vehicles
+        List<Vehicle> vehicles = BinaryFileHelper.readAllObjects(vehicleFile);
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles found.");
+            return;
+        }
+
+        // Find matching vehicle (by type and seat)
+        Vehicle selectedVehicle = null;
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType) && vehicle.getSeatCapacity() == seats) {
+                selectedVehicle = vehicle;
+                break;
+            }
+        }
+
+        if (selectedVehicle == null) {
+            System.out.println("No matching vehicle found.");
+            return;
+        }
+
+        // Use first customer for demo purposes
+        Customer customer = customers.get(0);
+
+        // Calculate rental days
+       // long days = java.time.temporal.ChronoUnit.DAYS.between(pickupDate, dropoffDate);
+        // if (days <= 0) days = 1; // minimum 1 day
+
+        // Calculate cost
+        //int totalCost = (int) (selectedVehicle.getPerDayCost() * days);
+        int totalCost = 123;
+
+        // Create and save booking
+        Booking booking = new Booking();
+        booking.setBookingID(Booking.generateBookingID());
+        booking.setCustomerId(customer.getId());
+        booking.setCustomerName(customer.getName());
+        booking.setVehicleID(selectedVehicle.getVehicleID());
+        booking.setVehicleName(selectedVehicle.getVehicleModel());
+        booking.setPickupDate(pickupDate);
+        booking.setDropOffDate(dropoffDate);
+        booking.setTotalCost(totalCost);
+
+        BinaryFileHelper.saveObject(bookingFile, booking);
+        System.out.println("Booking created and saved: " + booking);
     }
 
     @javafx.fxml.FXML

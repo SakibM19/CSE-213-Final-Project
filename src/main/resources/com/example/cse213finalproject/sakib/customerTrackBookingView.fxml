@@ -111,5 +111,11 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
+      <TextField fx:id="customerIDTextfield" layoutX="73.0" layoutY="34.0" />
+      <Button layoutX="36.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#loadOnMouseClickedButton" prefHeight="31.0" prefWidth="222.0" style="-fx-background-color: navy;" text="load" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
