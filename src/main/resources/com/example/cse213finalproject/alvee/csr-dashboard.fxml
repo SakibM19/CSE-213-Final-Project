@@ -17,7 +17,7 @@
             <Image url="@../../../../../../../../../Downloads/profile.png" />
          </image>
       </ImageView>
-      <Text layoutX="67.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CSR Name" />
+      <Text fx:id="csrName" layoutX="67.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CSR Name" />
       <Line endX="750.5999755859375" layoutX="123.0" layoutY="69.0" startX="-100.0" strokeWidth="0.5" />
       <Button layoutX="60.0" layoutY="96.0" mnemonicParsing="false" onAction="#handleCustomerQueriesOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Customer Queries" textAlignment="CENTER" textFill="WHITE">
          <font>

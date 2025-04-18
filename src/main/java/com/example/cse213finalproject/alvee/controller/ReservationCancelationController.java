@@ -52,7 +52,7 @@ public class ReservationCancelationController
 
     @javafx.fxml.FXML
     public void handleBackButtonOnClick(ActionEvent actionEvent) {
-        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "csr-dashboard.fxml", "Dashboard");
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "CSR-dashboard.fxml", "Dashboard");
     }
 
     @javafx.fxml.FXML

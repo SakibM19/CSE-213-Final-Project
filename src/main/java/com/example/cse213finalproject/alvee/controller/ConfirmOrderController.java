@@ -49,6 +49,6 @@ public class ConfirmOrderController
 
     @javafx.fxml.FXML
     public void handleBackButtonOnAction(ActionEvent actionEvent) {
-        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "csr-dashboard.fxml", "Dashboard");
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "CSR-dashboard.fxml", "Dashboard");
     }
 }

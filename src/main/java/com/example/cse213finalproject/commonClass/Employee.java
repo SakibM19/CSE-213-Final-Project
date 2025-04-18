@@ -1,6 +1,8 @@
 package com.example.cse213finalproject.commonClass;
 
-public abstract class  Employee extends User {
+import java.io.Serializable;
+
+public abstract class  Employee extends User implements Serializable {
     protected String employeeID;
 
     public Employee(String name, String email, String password, String id, int phoneNumber, String employeeID, String role) {

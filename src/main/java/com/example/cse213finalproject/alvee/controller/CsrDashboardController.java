@@ -1,11 +1,14 @@
 package com.example.cse213finalproject.alvee.controller;
 
+import com.example.cse213finalproject.alvee.model.CSR;
 import com.example.cse213finalproject.util.SceneSwitcher;
+import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,7 +16,12 @@ import java.io.IOException;
 public class CsrDashboardController
 {
     @javafx.fxml.FXML
+    private Text csrName;
+
+    @javafx.fxml.FXML
     public void initialize() {
+        CSR csr = SessionManager.getLoggedInCSR();
+        csrName.setText(csr.getName());
     }
 
     @javafx.fxml.FXML
@@ -51,5 +59,9 @@ public class CsrDashboardController
     @javafx.fxml.FXML
     public void handleOrderListButtonOnAction(ActionEvent actionEvent) {
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "order-list.fxml", "Order Lst");
+    }
+
+    public void setLoggedInCSR(CSR csr) {
+
     }
 }

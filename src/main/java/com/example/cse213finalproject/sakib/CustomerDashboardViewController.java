@@ -1,5 +1,7 @@
 package com.example.cse213finalproject.sakib;
 
+import com.example.cse213finalproject.sakibModelClass.Customer;
+import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.Event;
 import javafx.scene.control.TextField;
 
@@ -7,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,9 +18,29 @@ public class CustomerDashboardViewController
 {
     @javafx.fxml.FXML
     private TextField sendMessageToCustomerServiceTextField;
+    @javafx.fxml.FXML
+    private Text difaultPickupText;
+    @javafx.fxml.FXML
+    private Text userIdText;
+    @javafx.fxml.FXML
+    private Text addressText;
+    @javafx.fxml.FXML
+    private Text emailText;
+    @javafx.fxml.FXML
+    private Text nameText;
+    @javafx.fxml.FXML
+    private Text phoneNumberText;
 
     @javafx.fxml.FXML
     public void initialize() {
+        Customer customer = SessionManager.getLoggedInCustomer();
+
+        emailText.setText(customer.getEmail());
+//        addressText.setText(customer.get);
+        nameText.setText(customer.getName());
+        userIdText.setText(customer.getId());
+        phoneNumberText.setText(Integer.toString(customer.getPhoneNumber()));
+        difaultPickupText.setText(customer.getPickUpLocation());
     }
 
     private void switchScene(String fxmlFile, Event event) {
@@ -76,5 +99,9 @@ public class CustomerDashboardViewController
 
     @Deprecated
     public void logOutOnMouseClickedButton(Event event) {
+    }
+
+    public void setLoggedInCustomer(Customer customer) {
+
     }
 }

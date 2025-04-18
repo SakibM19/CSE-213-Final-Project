@@ -301,5 +301,11 @@
             </Menu>
          </menus>
       </MenuBar>
+      <Text fx:id="nameText" layoutX="120.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text fx:id="userIdText" layoutX="130.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text fx:id="phoneNumberText" layoutX="193.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text fx:id="emailText" layoutX="120.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text fx:id="addressText" layoutX="130.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text fx:id="difaultPickupText" layoutX="267.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
    </children>
 </AnchorPane>

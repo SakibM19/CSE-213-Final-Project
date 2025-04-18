@@ -1,5 +1,6 @@
 package com.example.cse213finalproject.sakibModelClass;
 
+import com.example.cse213finalproject.alvee.model.CSR;
 import com.example.cse213finalproject.alvee.model.CustomerQuery;
 import com.example.cse213finalproject.util.BinaryFileHelper;
 
@@ -78,6 +79,59 @@ public class ObjectCreator {
             ));
         }
 
+        List<CSR> CSRList = new ArrayList<>();
+
+        // Create and add 5 CSR instances to the list
+        CSRList.add(new CSR(
+                "Sarah Johnson",
+                "s.johnson@carrental.com",
+                "secure123",
+                "EMP1001",
+                5550101,
+                "CSR1001",
+                "Senior CSR"
+        ));
+
+        CSRList.add(new CSR(
+                "Michael Chen",
+                "m.chen@carrental.com",
+                "mikey456",
+                "EMP1002",
+                5550102,
+                "CSR1002",
+                "Rental Specialist"
+        ));
+
+        CSRList.add(new CSR(
+                "Emily Rodriguez",
+                "e.rodriguez@carrental.com",
+                "emilyR789",
+                "EMP1003",
+                5550103,
+                "CSR1003",
+                "Customer Support Lead"
+        ));
+
+        CSRList.add(new CSR(
+                "David Wilson",
+                "d.wilson@carrental.com",
+                "dwilson!2023",
+                "EMP1004",
+                5550104,
+                "CSR1004",
+                "VIP Relations"
+        ));
+
+        CSRList.add(new CSR(
+                "Jessica Kim",
+                "j.kim@carrental.com",
+                "jessK!m42",
+                "EMP1005",
+                5550105,
+                "CSR1005",
+                "New Accounts"
+        ));
+
         List<Vehicle> vehicles = new ArrayList<>();
 
         // Create 10 Vehicle objects with realistic data
@@ -102,6 +156,7 @@ public class ObjectCreator {
         BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookings);
         BinaryFileHelper.writeAllObjects(new File("data/user/customer.bin"), customers);
         BinaryFileHelper.writeAllObjects(new File("data/sakib/vehicle.bin"), vehicles);
+        BinaryFileHelper.writeAllObjects(new File("data/user/csr.bin"), CSRList);
 
         // You can now use these lists as needed
         // For example: processCustomers(customers), saveOrders(orders), etc.

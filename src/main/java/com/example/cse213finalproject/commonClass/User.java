@@ -1,6 +1,8 @@
 package com.example.cse213finalproject.commonClass;
 
-public abstract class User {
+import java.io.Serializable;
+
+public abstract class User implements Serializable {
     protected String name, email, password, id ;
     protected int phoneNumber;
 
