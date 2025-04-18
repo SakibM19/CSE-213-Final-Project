@@ -39,12 +39,14 @@ public class ReservationRequestListController
 
     @javafx.fxml.FXML
     public void initialize() {
-        File vehicleFile = new File("data/sakib/vehicle.bin");
+        File vehicleFile = new File("data/sakib/fleet.bin");
 
         this.vehicleList = BinaryFileHelper.readAllObjects(vehicleFile);
 
         for (Vehicle v : vehicleList) {
-            availableCarComboBox.getItems().add(v.getVehicleModel());
+            if (v.getStatus().equals("Available")){
+                availableCarComboBox.getItems().add(v.getVehicleModel());
+            }
         }
 
         File file = new File("data/sakib/booking.bin");

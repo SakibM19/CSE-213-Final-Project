@@ -37,7 +37,7 @@ public class ConfirmationDetailController
         File bookingFile = new File("data/sakib/booking.bin");
         this.bookingList = BinaryFileHelper.readAllObjects(bookingFile);
 
-        File vehicleFile = new File("data/sakib/vehicle.bin");
+        File vehicleFile = new File("data/sakib/fleet.bin");
         this.vehicleList = BinaryFileHelper.readAllObjects(vehicleFile);
 
         File file = new File("data/sakib/order.bin");
@@ -46,10 +46,10 @@ public class ConfirmationDetailController
 
     @FXML
     public void handleConfirmButtonOnAction(ActionEvent actionEvent) {
-        float perDayCoast = 0;
+        float perDayCost = 0;
         for (Vehicle v: vehicleList) {
             if (v.getVehicleID().equals(b.getVehicleID())){
-                perDayCoast = v.getPerDayCost();
+                perDayCost = v.getPerDayCost();
                 break;
             }
         }
@@ -62,7 +62,7 @@ public class ConfirmationDetailController
                 b.getCustomerId(),
                 b.getPickupDate(),
                 b.getDropOffDate(),
-                perDayCoast
+                perDayCost
         );
         orderList.add(o);
 

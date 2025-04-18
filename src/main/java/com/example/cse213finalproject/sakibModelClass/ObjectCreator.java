@@ -59,7 +59,7 @@ public class ObjectCreator {
                     500 + random.nextInt(1000), // Random total cost
                     "Customer " + i,
                     "Vehicle Model " + i,
-                    "VEH00" + i,
+                    "VH00" + i,
                     "CUST00" + i,
                     Booking.generateBookingID(),
                     pickupDate,
@@ -155,7 +155,7 @@ public class ObjectCreator {
         BinaryFileHelper.writeAllObjects(new File("data/alvee/customer-query.bin"), customerQueries);
         BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookings);
         BinaryFileHelper.writeAllObjects(new File("data/user/customer.bin"), customers);
-        BinaryFileHelper.writeAllObjects(new File("data/sakib/vehicle.bin"), vehicles);
+        BinaryFileHelper.writeAllObjects(new File("data/sakib/fleet.bin"), vehicles);
         BinaryFileHelper.writeAllObjects(new File("data/user/csr.bin"), CSRList);
 
         // You can now use these lists as needed

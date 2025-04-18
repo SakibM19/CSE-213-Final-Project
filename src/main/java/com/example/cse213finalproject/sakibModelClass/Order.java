@@ -9,7 +9,7 @@ public class Order implements Serializable {
     protected String customerName, orderID, bookingID, vehicleID, customerID;
     protected LocalDate pickupDate, dropOffDate;
 
-    public Order(String customerName, String orderID, String bookingID, String vehicleID, String customerID, LocalDate pickupDate, LocalDate dropOffDate, float dailyCoast) {
+    public Order(String customerName, String orderID, String bookingID, String vehicleID, String customerID, LocalDate pickupDate, LocalDate dropOffDate, float dailyCost) {
         this.customerName = customerName;
         this.orderID = orderID;
         this.bookingID = bookingID;
@@ -17,7 +17,7 @@ public class Order implements Serializable {
         this.customerID = customerID;
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
-        this.totalCost = calculateTotalCost(dailyCoast);
+        calculateTotalCost(dailyCost);
     }
 
     public Order() {
@@ -107,9 +107,11 @@ public class Order implements Serializable {
         return "o" + number;
     }
 
-    public int calculateTotalCost(float dailyRate) {
+    public void calculateTotalCost(float dailyRate) {
         long daysBetween = java.time.temporal.ChronoUnit.DAYS.between(pickupDate, dropOffDate);
-        totalCost = dailyRate * (daysBetween + 1);
-        return (int) totalCost;
+        if (daysBetween < 0) {
+            this.totalCost = 0;
+        }
+        this.totalCost = (int) (dailyRate * (daysBetween + 1));
     }
 }

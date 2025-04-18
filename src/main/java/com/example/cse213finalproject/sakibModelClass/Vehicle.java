@@ -90,4 +90,5 @@ public class Vehicle implements Serializable {
         this.perDayCost = perDayCost;
     }
 
+
 }
