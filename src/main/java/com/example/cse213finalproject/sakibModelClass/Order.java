@@ -1,16 +1,18 @@
 package com.example.cse213finalproject.sakibModelClass;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Order {
-    protected int orderID, totalCost, bookingID, vehicleID, customerID;
+public class Order implements Serializable {
+    protected float totalCost;
+    protected String customerName, orderID, bookingID, vehicleID, customerID;
     protected LocalTime pickUpTime, dropOffTime;
     protected LocalDate pickupDate, dropOffDate;
 
-    public Order(int orderID, int totalCost, int bookingID, int vehicleID, int customerID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate) {
+    public Order(String customerName, String orderID, String bookingID, String vehicleID, String customerID, LocalTime pickUpTime, LocalTime dropOffTime, LocalDate pickupDate, LocalDate dropOffDate, float dailyCoast) {
+        this.customerName = customerName;
         this.orderID = orderID;
-        this.totalCost = totalCost;
         this.bookingID = bookingID;
         this.vehicleID = vehicleID;
         this.customerID = customerID;
@@ -18,41 +20,58 @@ public class Order {
         this.dropOffTime = dropOffTime;
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
+        this.totalCost = calculateTotalCost(dailyCoast);
     }
 
     public Order() {
     }
 
-    public int getOrderID() {
-        return orderID;
-    }
-
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
-    }
-
-    public int getTotalCost() {
+    public float getTotalCost() {
         return totalCost;
     }
 
-    public void setTotalCost(int totalCost) {
+    public void setTotalCost(float totalCost) {
         this.totalCost = totalCost;
     }
 
-    public int getBookingID() {
+    public String getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getBookingID() {
         return bookingID;
     }
 
-    public void setBookingID(int bookingID) {
+    public void setBookingID(String bookingID) {
         this.bookingID = bookingID;
     }
 
-    public int getVehicleID() {
+    public String getVehicleID() {
         return vehicleID;
     }
 
-    public void setVehicleID(int vehicleID) {
+    public void setVehicleID(String vehicleID) {
         this.vehicleID = vehicleID;
+    }
+
+    public String getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
     }
 
     public LocalTime getPickUpTime() {
@@ -87,26 +106,24 @@ public class Order {
         this.dropOffDate = dropOffDate;
     }
 
-    public int getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
-
     @Override
     public String toString() {
         return "Order{" +
-                "orderID=" + orderID +
-                ", totalCost=" + totalCost +
-                ", bookingID=" + bookingID +
-                ", vehicleID=" + vehicleID +
-                ", customerID=" + customerID +
+                "totalCost=" + totalCost +
+                ", orderID='" + orderID + '\'' +
+                ", bookingID='" + bookingID + '\'' +
+                ", vehicleID='" + vehicleID + '\'' +
+                ", customerID='" + customerID + '\'' +
                 ", pickUpTime=" + pickUpTime +
                 ", dropOffTime=" + dropOffTime +
                 ", pickupDate=" + pickupDate +
                 ", dropOffDate=" + dropOffDate +
                 '}';
+    }
+
+    public int calculateTotalCost(float dailyRate) {
+        long daysBetween = java.time.temporal.ChronoUnit.DAYS.between(pickupDate, dropOffDate);
+        totalCost = dailyRate * (daysBetween + 1);
+        return (int) totalCost;
     }
 }

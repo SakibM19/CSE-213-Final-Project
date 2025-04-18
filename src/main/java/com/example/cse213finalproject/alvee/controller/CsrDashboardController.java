@@ -42,4 +42,14 @@ public class CsrDashboardController
     public void handleReservationChangeOnAction(ActionEvent actionEvent) {
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "reservation-request-list.fxml", "Reservation Changes");
     }
+
+    @javafx.fxml.FXML
+    public void handleConfirmBookingOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "confirm-order.fxml", "Confirm Booking");
+    }
+
+    @javafx.fxml.FXML
+    public void handleOrderListButtonOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "order-list.fxml", "Order Lst");
+    }
 }
