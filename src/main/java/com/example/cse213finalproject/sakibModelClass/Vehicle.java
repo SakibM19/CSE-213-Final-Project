@@ -3,17 +3,40 @@ package com.example.cse213finalproject.sakibModelClass;
 import java.io.Serializable;
 
 public class Vehicle implements Serializable {
-    protected String vehicleID, vehicleModel, vehicleType, brand;
+    protected String vehicleID, vehicleModel, vehicleType, brand, status;
     protected int seatCapacity;
     protected float perDayCost;
+
 
     public Vehicle(String vehicleID, String vehicleModel, String vehicleType, String brand, int seatCapacity, float perDayCost) {
         this.vehicleID = vehicleID;
         this.vehicleModel = vehicleModel;
         this.vehicleType = vehicleType;
         this.brand = brand;
+        this.status = "Available";
         this.seatCapacity = seatCapacity;
         this.perDayCost = perDayCost;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "vehicleID='" + vehicleID + '\'' +
+                ", vehicleModel='" + vehicleModel + '\'' +
+                ", vehicleType='" + vehicleType + '\'' +
+                ", brand='" + brand + '\'' +
+                ", status='" + status + '\'' +
+                ", seatCapacity=" + seatCapacity +
+                ", perDayCost=" + perDayCost +
+                '}';
     }
 
     public Vehicle() {
@@ -67,15 +90,4 @@ public class Vehicle implements Serializable {
         this.perDayCost = perDayCost;
     }
 
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "vehicleID='" + vehicleID + '\'' +
-                ", vehicleModel='" + vehicleModel + '\'' +
-                ", vehicleType='" + vehicleType + '\'' +
-                ", brand='" + brand + '\'' +
-                ", seatCapacity=" + seatCapacity +
-                ", perDayCost=" + perDayCost +
-                '}';
-    }
 }
