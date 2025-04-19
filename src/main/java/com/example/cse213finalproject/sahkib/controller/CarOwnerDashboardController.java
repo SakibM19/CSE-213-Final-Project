@@ -28,10 +28,12 @@ public class CarOwnerDashboardController
 
     @javafx.fxml.FXML
     public void updateCarAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerUpdateCarView.fxml", event);
     }
 
     @javafx.fxml.FXML
     public void removeCatAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerRemoveCarView.fxml", event);
     }
 
     @javafx.fxml.FXML
