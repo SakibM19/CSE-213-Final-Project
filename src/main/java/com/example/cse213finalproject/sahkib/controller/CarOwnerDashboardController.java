@@ -18,7 +18,10 @@ public class CarOwnerDashboardController
 
     @Deprecated
     public void rentListAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerCarListView.fxml", event);
     }
+
+    @Deprecated
     public void addCarAction(Event event) {
         switchScene("/com/example/cse213finalproject/sahkib/CarOwnerAddCarView.fxml", event);
     }

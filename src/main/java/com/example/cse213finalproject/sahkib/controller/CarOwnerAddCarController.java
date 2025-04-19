@@ -3,6 +3,7 @@ package com.example.cse213finalproject.sahkib.controller;
 import java.io.IOException;
 
 import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -14,7 +15,7 @@ public class CarOwnerAddCarController {
     public void initialize() {
     }
 
-    @Deprecated
+    @FXML
     public void backAction(Event event) {
         switchScene("/com/example/cse213finalproject/sahkib/CarOwnerDashboardView.fxml", event);
     }

@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sahkib.controller.CarOwnerAddCarController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sahkib.controller.CarOwnerCarListController">
    <children>
       <Text layoutX="360.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Information">
          <font>
@@ -25,6 +25,6 @@
       <ComboBox fx:id="chooseVehicleComboBox1" layoutX="331.0" layoutY="300.0" prefHeight="36.0" prefWidth="239.0" promptText="Seat Capacity" />
       <TextField layoutX="331.0" layoutY="345.0" prefHeight="36.0" prefWidth="239.0" text="Vehicle Model" />
       <TextField layoutX="330.0" layoutY="392.0" prefHeight="36.0" prefWidth="239.0" text="Cost Per Day" />
-      <Button layoutX="14.0" layoutY="550.0" onAction="#backAction" mnemonicParsing="false" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #3e3e3e;" text="Back" textFill="WHITE" />
+      <Button layoutX="57.0" layoutY="509.0" onAction="#backAction" mnemonicParsing="false" prefHeight="36.0" prefWidth="92.0" style="-fx-background-color: #3e3e3e;" text="Back" textFill="WHITE" />
    </children>
 </AnchorPane>
