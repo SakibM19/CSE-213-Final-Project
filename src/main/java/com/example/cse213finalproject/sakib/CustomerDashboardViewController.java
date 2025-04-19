@@ -17,8 +17,6 @@ import java.io.IOException;
 public class CustomerDashboardViewController
 {
     @javafx.fxml.FXML
-    private TextField sendMessageToCustomerServiceTextField;
-    @javafx.fxml.FXML
     private Text difaultPickupText;
     @javafx.fxml.FXML
     private Text userIdText;
@@ -95,8 +93,10 @@ public class CustomerDashboardViewController
         switchScene("CustomerOrderListForPaymentView.fxml", event);
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void logOutOnMouseClickedButton(Event event) {
+        switchScene("logInView.fxml", event);
+
     }
 
     public void setLoggedInCustomer(Customer customer) {

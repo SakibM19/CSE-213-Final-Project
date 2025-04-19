@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -170,28 +169,6 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="123.0" layoutY="453.0" text="Send your message to Customer Service">
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.6399999856948853" green="0.006399999838322401" blue="0.21808257699012756" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" green="0.18654820322990417" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="sendMessageToCustomerServiceTextField" layoutX="121.0" layoutY="480.0" prefHeight="26.0" prefWidth="319.0" />
       <Text layoutX="53.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: ">
          <font>
             <Font size="19.0" />
@@ -219,27 +196,6 @@
       </Text>
       <Line endX="412.70001220703125" endY="10.5" layoutX="146.0" layoutY="405.0" startX="-100.20000457763672" startY="10.5" strokeWidth="5.0" />
       <Line endX="402.20001220703125" layoutX="157.0" layoutY="415.0" startX="402.20001220703125" startY="-362.6000061035156" strokeWidth="5.0" />
-      <Button layoutX="157.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#myFavouritesOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Send Message">
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.8259259462356567" green="1.0" blue="0.8636419773101807" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.6333333253860474" green="0.8533333539962769" blue="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-         <font>
-            <Font name="System Bold Italic" size="15.0" />
-         </font>
-      </Button>
       <Button layoutX="618.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#myFavouritesOnMouseClickedButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="My Favourites">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -261,7 +217,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="209.0" layoutY="43.0" text=" RENT A CAR">
+      <Label layoutX="184.0" layoutY="43.0" text=" RENT A CAR">
          <font>
             <Font name="System Bold" size="41.0" />
          </font>
@@ -289,17 +245,32 @@
                   <MenuItem mnemonicParsing="false" text="Contact Customer Service" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="LogOut">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Log Out From This Account" />
-               </items>
-            </Menu>
          </menus>
       </MenuBar>
-      <Text fx:id="nameText" layoutX="120.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text fx:id="userIdText" layoutX="130.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text fx:id="phoneNumberText" layoutX="193.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text fx:id="emailText" layoutX="120.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text fx:id="difaultPickupText" layoutX="267.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text fx:id="nameText" layoutX="120.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Text>
+      <Text fx:id="userIdText" layoutX="130.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Text>
+      <Text fx:id="phoneNumberText" layoutX="193.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Text>
+      <Text fx:id="emailText" layoutX="120.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Text>
+      <Text fx:id="difaultPickupText" layoutX="267.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Text>
+      <Button layoutX="131.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#logOutOnMouseClickedButton" prefHeight="34.0" prefWidth="335.0" style="-fx-background-color: #ffa3a3; -fx-border-color: black;" text="Log Out" textFill="#890000">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
