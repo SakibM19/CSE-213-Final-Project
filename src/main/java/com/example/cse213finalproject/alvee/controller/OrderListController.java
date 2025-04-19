@@ -3,6 +3,9 @@ package com.example.cse213finalproject.alvee.controller;
 import com.example.cse213finalproject.sakibModelClass.Booking;
 import com.example.cse213finalproject.sakibModelClass.Order;
 import com.example.cse213finalproject.util.BinaryFileHelper;
+import com.example.cse213finalproject.util.SceneSwitcher;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -41,4 +44,15 @@ public class OrderListController
         List<Order> orderList = BinaryFileHelper.readAllObjects(file);
 
         orderTableView.getItems().addAll(orderList);
-    }}
+    }
+
+    @javafx.fxml.FXML
+    public void handleBackButtonOnClick(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "CSR-dashboard.fxml", "Dashboard");
+    }
+
+    @javafx.fxml.FXML
+    public void handleRemoveOrderButtonOnClick(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "delete-order.fxml", "Remove Order");
+    }
+}

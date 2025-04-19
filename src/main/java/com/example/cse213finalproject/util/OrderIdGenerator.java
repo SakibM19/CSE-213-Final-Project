@@ -3,8 +3,9 @@ package com.example.cse213finalproject.util;
 import java.io.*;
 
 public class OrderIdGenerator {
-    private static final String ORDER_ID_FILE = "data/sakib/orders.bin";
-    private static final String INSPECTION_ID_FILE = "data/sakib/inspections.bin";
+    private static final String ORDER_ID_FILE = "data/sakib/ordersId.bin";
+    private static final String INSPECTION_ID_FILE = "data/alvee/inspectionsId.bin";
+    private static final String INSPECTION_HISTORY_ID_FILE = "data/alvee/inspectionsHistoryId.bin";
 
 
     public static String generateOrderId() {
@@ -19,6 +20,13 @@ public class OrderIdGenerator {
         lastOrderNumberIns++;
         writeLastOrderNumber(INSPECTION_ID_FILE, lastOrderNumberIns);
         return String.format("in%03d", lastOrderNumberIns);
+    }
+
+    public static String generateInspectionHistoryId() {
+        int lastOrderNumberIns = readLastOrderNumber(INSPECTION_HISTORY_ID_FILE);
+        lastOrderNumberIns++;
+        writeLastOrderNumber(INSPECTION_HISTORY_ID_FILE, lastOrderNumberIns);
+        return String.format("his%03d", lastOrderNumberIns);
     }
 
     private static int readLastOrderNumber(String path) {

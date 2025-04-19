@@ -1,7 +1,10 @@
 package com.example.cse213finalproject.alvee.controller;
 
+import com.example.cse213finalproject.alvee.model.CsrInteractionHistory;
 import com.example.cse213finalproject.alvee.model.CustomerQuery;
 import com.example.cse213finalproject.util.BinaryFileHelper;
+import com.example.cse213finalproject.util.OrderIdGenerator;
+import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,6 +17,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class QueryDetailsController
@@ -25,12 +29,14 @@ public class QueryDetailsController
     @javafx.fxml.FXML
     private TextField responseTextField;
     private CustomerQuery cq;
+    private List<CsrInteractionHistory> csrInteractionHistoryList;
 
 
 
     @javafx.fxml.FXML
     public void initialize() {
-
+        File csrHistoryFile = new File("data/alvee/csr-interaction-history.bin");
+        this.csrInteractionHistoryList = BinaryFileHelper.readAllObjects(csrHistoryFile);
 //        this.queries = queries;
     }
 
@@ -52,6 +58,16 @@ public class QueryDetailsController
             }
         }
 
+        CsrInteractionHistory csrInteractionHistory = new CsrInteractionHistory(
+                OrderIdGenerator.generateInspectionHistoryId(),
+                "Reply Query",
+                LocalDate.now(),
+                SessionManager.getLoggedInCSR().getEmployeeID()
+        );
+
+        csrInteractionHistoryList.add(csrInteractionHistory);
+        File csrHistoryFile = new File("data/alvee/csr-interaction-history.bin");
+        BinaryFileHelper.writeAllObjects(csrHistoryFile, csrInteractionHistoryList);
         // Save back to file
         BinaryFileHelper.writeAllObjects(file, queries);
     }

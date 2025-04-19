@@ -61,4 +61,14 @@ public class InspectorDashboardController
     public void handleModifyInspectionOnAction(ActionEvent actionEvent) {
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "modify-inspection.fxml", "Modify Inspection");
     }
+
+    @javafx.fxml.FXML
+    public void handleDeleteInspectionOnClick(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "delete-inspection.fxml", "Delete Inspection");
+    }
+
+    @javafx.fxml.FXML
+    public void handleInteractionHistoryButton(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "inspection-history.fxml", "Interaction History");
+    }
 }
