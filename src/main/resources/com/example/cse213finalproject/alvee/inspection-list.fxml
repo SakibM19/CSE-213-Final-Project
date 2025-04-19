@@ -7,21 +7,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.alvee.controller.InspectionListController">
    <children>
-      <Text layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car For Inspection">
+      <Text layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection List">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
       <TableView fx:id="inspectionTableView" layoutX="47.0" layoutY="138.0" prefHeight="334.0" prefWidth="806.0">
          <columns>
-            <TableColumn fx:id="carIdCol" prefWidth="128.0" text="Car ID" />
-            <TableColumn fx:id="fuelLevelCol" prefWidth="121.59994506835938" text="Fuel Level" />
-            <TableColumn fx:id="damagesCol" minWidth="0.0" prefWidth="170.40008544921875" text="Damages" />
-            <TableColumn fx:id="cleaningStatusCol" minWidth="0.0" prefWidth="185.60000610351562" text="Cleanling Status" />
-            <TableColumn fx:id="statusCol" minWidth="0.0" prefWidth="201.5999755859375" text="Status" />
+            <TableColumn fx:id="inspectionIdCol" prefWidth="128.0" text="Inspection ID" />
+            <TableColumn fx:id="vehicleIdCol" prefWidth="121.59994506835938" text="Vehicle ID" />
+            <TableColumn fx:id="fuelLevelCol" minWidth="0.0" prefWidth="121.60003662109375" text="Fuel Level" />
+            <TableColumn fx:id="cleaningStatusCol" minWidth="0.0" prefWidth="156.80001831054688" text="Cleaning Status" />
+            <TableColumn fx:id="vehicleStatusCol" minWidth="0.0" prefWidth="118.40008544921875" text="Vehicle Status" />
+            <TableColumn fx:id="inspectionStatusCol" minWidth="0.0" prefWidth="156.79996337890623" text="Inspection Status" />
          </columns>
       </TableView>
       <Button layoutX="47.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleBackButtonOnClick" prefHeight="36.0" prefWidth="92.0" style="-fx-background-color: #3e3e3e;" text="Back" textFill="WHITE" />

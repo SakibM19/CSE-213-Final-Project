@@ -26,7 +26,7 @@ public class InspectorDashboardController
     public void handleCancelBookingButtonOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleConfirmBookingOnAction(ActionEvent actionEvent) {
     }
 
@@ -35,7 +35,7 @@ public class InspectorDashboardController
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "inspection-list.fxml", "Inspections");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleOrderListButtonOnAction(ActionEvent actionEvent) {
     }
 
@@ -50,5 +50,15 @@ public class InspectorDashboardController
     @javafx.fxml.FXML
     public void handleChangeVehicleStatusOnAction(ActionEvent actionEvent) {
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "car-list.fxml", "Vehicles");
+    }
+
+    @javafx.fxml.FXML
+    public void handleMakeInspectionDoneOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "inspection-status-change.fxml", "Change Inspection Status");
+    }
+
+    @javafx.fxml.FXML
+    public void handleModifyInspectionOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "modify-inspection.fxml", "Modify Inspection");
     }
 }

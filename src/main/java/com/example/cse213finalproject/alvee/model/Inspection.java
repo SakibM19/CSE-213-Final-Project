@@ -1,9 +1,12 @@
 package com.example.cse213finalproject.alvee.model;
 
+import com.example.cse213finalproject.util.OrderIdGenerator;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Inspection implements Serializable {
+    private String inspectionId;
     private String carId;
     private LocalDate inspectionDate;
     private String damages;
@@ -11,9 +14,11 @@ public class Inspection implements Serializable {
     private double fuelLevel;
     private String isAvailableAfterInspection;
     private String extraNote;
+    private String status;
 
 
     public Inspection(String carId, LocalDate inspectionDate, String damages, String isClean, double fuelLevel, String isAvailableAfterInspection, String extraNote) {
+        this.inspectionId = OrderIdGenerator.generateInspectionId();
         this.carId = carId;
         this.inspectionDate = inspectionDate;
         this.damages = damages;
@@ -21,9 +26,26 @@ public class Inspection implements Serializable {
         this.fuelLevel = fuelLevel;
         this.isAvailableAfterInspection = isAvailableAfterInspection;
         this.extraNote = extraNote;
+        this.status = "Incomplete";
     }
 
     public Inspection() {
+    }
+
+    public String getInspectionId() {
+        return inspectionId;
+    }
+
+    public void setInspectionId(String inspectionId) {
+        this.inspectionId = inspectionId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getExtraNote() {
@@ -89,12 +111,15 @@ public class Inspection implements Serializable {
     @Override
     public String toString() {
         return "Inspection{" +
-                "carId='" + carId + '\'' +
+                "inspectionId='" + inspectionId + '\'' +
+                ", carId='" + carId + '\'' +
                 ", inspectionDate=" + inspectionDate +
                 ", damages='" + damages + '\'' +
-                ", isClean=" + isClean +
+                ", isClean='" + isClean + '\'' +
                 ", fuelLevel=" + fuelLevel +
-                ", isAvailableAfterInspection=" + isAvailableAfterInspection +
+                ", isAvailableAfterInspection='" + isAvailableAfterInspection + '\'' +
+                ", extraNote='" + extraNote + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

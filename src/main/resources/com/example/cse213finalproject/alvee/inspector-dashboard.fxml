@@ -32,12 +32,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="663.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleConfirmBookingOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Confirm Booking" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="663.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleMakeInspectionDoneOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Mark Inspaction Complete" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="61.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleOrderListButtonOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Order List" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="61.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleModifyInspectionOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Modify Inspection" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
