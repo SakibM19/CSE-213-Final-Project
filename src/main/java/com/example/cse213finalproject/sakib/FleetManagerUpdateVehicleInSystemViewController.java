@@ -62,7 +62,13 @@ public class FleetManagerUpdateVehicleInSystemViewController{
         String idToRemove = enterVehicleIDTextField.getText();
 
         List<Vehicle> vehicles = BinaryFileHelper.readAllObjects(vehicleFile);
-        vehicles.removeIf(v -> v.getVehicleID().equals(idToRemove));
+
+        for (int i = 0; i < vehicles.size(); i++) {
+            if (vehicles.get(i).getVehicleID().equals(idToRemove)) {
+                vehicles.remove(i);
+                break;
+            }
+        }
 
         BinaryFileHelper.writeAllObjects(vehicleFile, vehicles);
 

@@ -17,6 +17,7 @@ public class ObjectCreator {
         List<Order> orders = new ArrayList<>();
         List<Booking> bookings = new ArrayList<>();
         List<CustomerQuery> customerQueries = new ArrayList<>();
+        List<Maintenance> maintenanceList = new ArrayList<>();
 
         // Create 10 Customer objects
         for (int i = 1; i <= 10; i++) {
