@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -11,7 +12,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerMedicalAssistanceViewController">
    <children>
@@ -95,6 +95,9 @@
                </stops>
             </LinearGradient>
          </textFill>
+         <toggleGroup>
+            <ToggleGroup fx:id="emergencyType" />
+         </toggleGroup>
       </RadioButton>
       <Label layoutX="119.0" layoutY="197.0" prefHeight="34.0" prefWidth="185.0" text="Type of emergency : ">
          <textFill>
@@ -117,7 +120,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <RadioButton fx:id="medicalConditonRadioButton" layoutX="334.0" layoutY="235.0" mnemonicParsing="false" text="Medical Condition">
+      <RadioButton fx:id="medicalConditonRadioButton" layoutX="334.0" layoutY="235.0" mnemonicParsing="false" text="Medical Condition" toggleGroup="$emergencyType">
          <font>
             <Font size="14.0" />
          </font>
@@ -138,7 +141,7 @@
             </LinearGradient>
          </textFill>
       </RadioButton>
-      <RadioButton fx:id="otherIssueRadioButton" layoutX="334.0" layoutY="265.0" mnemonicParsing="false" text="Other Issues">
+      <RadioButton fx:id="otherIssueRadioButton" layoutX="334.0" layoutY="265.0" mnemonicParsing="false" text="Other Issues" toggleGroup="$emergencyType">
          <font>
             <Font size="14.0" />
          </font>

@@ -77,15 +77,14 @@
       </Line>
       <TableView fx:id="feedbackTableView" layoutX="106.0" layoutY="133.0" prefHeight="175.0" prefWidth="687.0" style="-fx-border-color: navy;">
         <columns>
-          <TableColumn fx:id="bookingIdTableColumn" prefWidth="124.800048828125" text="Booking ID" />
-            <TableColumn fx:id="vehicleNumberTableColumn" prefWidth="106.39996337890625" text="Vehicle Number" />
+            <TableColumn fx:id="vehicleNumberTableColumn" prefWidth="106.39996337890625" text="Vehicle ID" />
             <TableColumn fx:id="vehicleConditionTableColumn" prefWidth="120.0" text="Vehicle Condition" />
             <TableColumn fx:id="cleanlinessTableColumn" prefWidth="85.60006713867188" text="Cleanliness " />
             <TableColumn fx:id="comfortTableColumn" prefWidth="85.60006713867188" text="Comfort" />
-            <TableColumn fx:id="additionalCommentTableColumn" prefWidth="159.9999877929688" text="Additional Comments" />
+            <TableColumn fx:id="additionalCommentTableColumn" prefWidth="285.5999938964844" text="Additional Comments" />
         </columns>
       </TableView>
-      <TextField fx:id="bookingIdInputTextField" layoutX="284.0" layoutY="359.0" prefHeight="26.0" prefWidth="295.0" />
+      <TextField fx:id="vehicleIdInputTextField" layoutX="284.0" layoutY="359.0" prefHeight="26.0" prefWidth="295.0" />
       <Label layoutX="326.0" layoutY="312.0" prefHeight="34.0" prefWidth="224.0" text="Submit another feedback">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
@@ -107,7 +106,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="106.0" layoutY="354.0" prefHeight="34.0" prefWidth="224.0" text="Provide the Booking ID:">
+      <Label layoutX="106.0" layoutY="354.0" prefHeight="34.0" prefWidth="164.0" text="Provide the vehicle ID:">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>

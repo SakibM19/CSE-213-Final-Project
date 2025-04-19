@@ -1,10 +1,9 @@
 package com.example.cse213finalproject.sakib;
 
+import com.example.cse213finalproject.sakibModelClass.Customer;
+import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.Event;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 
 import javafx.event.Event;
@@ -12,8 +11,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -24,29 +21,58 @@ public class CustomerLocationSetAndEditViewController
     @javafx.fxml.FXML
     private RadioButton dropoffLocationRadioButton;
     @javafx.fxml.FXML
-    private TextField additionalCommentTextField;
-    @javafx.fxml.FXML
     private RadioButton pickupLocationRadioButton;
-    @javafx.fxml.FXML
-    private ComboBox regionComboBox;
     @javafx.fxml.FXML
     private Label dropoffLocationLabel;
     @javafx.fxml.FXML
-    private ComboBox divisionComboBox;
+    private ComboBox<String> divisionComboBox;
     @javafx.fxml.FXML
     private Label pickupLocationLabel;
+    @javafx.fxml.FXML
+    private TextField regionTextfield;
+    @javafx.fxml.FXML
+    private ToggleGroup locationSet;
 
     @javafx.fxml.FXML
     public void initialize() {
+        divisionComboBox.getItems().addAll("Barishal", "Chattogram", "Dhaka", "Khulna", "Rajshahi", "Rangpur", "Mymensingh", "Sylhet");
+        Customer current = SessionManager.getLoggedInCustomer();
+        pickupLocationLabel.setText(current.getPickUpLocation());
+        dropoffLocationLabel.setText(current.getDropOffLocation());
     }
 
     @javafx.fxml.FXML
     public void setNewLocationOnMouseClickedButton(Event event) {
+        Customer current = SessionManager.getLoggedInCustomer();
+
+        RadioButton selectedLocation = (RadioButton) locationSet.getSelectedToggle();
+        String division = divisionComboBox.getValue();
+        String region = "";
+
+        region = regionTextfield.getText();
+
+        String fullLocation = division + ", " + region;
+
+        if (selectedLocation.equals(pickupLocationRadioButton)) {
+            current.setPickUpLocation(fullLocation);
+            pickupLocationLabel.setText(fullLocation);
+
+
+        } else if (selectedLocation.equals(dropoffLocationRadioButton)) {
+            current.setDropOffLocation(fullLocation);
+            dropoffLocationLabel.setText(fullLocation);
+
+        }
+
+
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Location Updated.");
+        a.showAndWait();
     }
 
     @javafx.fxml.FXML
     public void backOnMouseClickedButton(Event event) {
-        switchScene("/com/example/cse213finalproject/sakib/CustomerDashboardView.fxml", event);
+        switchScene("/com/example/cse213finalproject/sakib/customerDashboardView.fxml", event);
     }
 
     private void switchScene(String fxmlFile, Event event) {

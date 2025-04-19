@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -13,10 +14,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy; -fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerLocationSetAndEditViewController">
    <children>
-      <Label layoutX="345.0" layoutY="34.0" text=" RENT A CAR">
+      <Label layoutX="326.0" layoutY="34.0" text=" RENT A CAR">
          <font>
             <Font name="System Bold" size="41.0" />
          </font>
@@ -37,7 +37,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label layoutX="398.0" layoutY="113.0" prefHeight="34.0" prefWidth="156.0" text="Your Location">
+      <Label layoutX="379.0" layoutY="113.0" prefHeight="34.0" prefWidth="156.0" text="Your Location">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -58,7 +58,7 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Line endX="241.20001220703125" layoutX="405.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
+      <Line endX="241.20001220703125" layoutX="386.0" layoutY="148.0" startX="-100.0" strokeWidth="3.0">
          <stroke>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -148,6 +148,9 @@
                </stops>
             </LinearGradient>
          </textFill>
+         <toggleGroup>
+            <ToggleGroup fx:id="locationSet" />
+         </toggleGroup>
       </RadioButton>
       <Label layoutX="99.0" layoutY="311.0" prefHeight="22.0" prefWidth="146.0" text="Edit location for: ">
          <font>
@@ -170,7 +173,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <RadioButton fx:id="dropoffLocationRadioButton" layoutX="470.0" layoutY="313.0" mnemonicParsing="false" text="Dropoff Location">
+      <RadioButton fx:id="dropoffLocationRadioButton" layoutX="470.0" layoutY="313.0" mnemonicParsing="false" text="Dropoff Location" toggleGroup="$locationSet">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -213,7 +216,6 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ComboBox fx:id="regionComboBox" layoutX="595.0" layoutY="381.0" prefHeight="26.0" prefWidth="174.0" />
       <Label layoutX="482.0" layoutY="383.0" prefHeight="22.0" prefWidth="87.0" text="Set Region:">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -235,37 +237,16 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <TextField fx:id="additionalCommentTextField" layoutX="310.0" layoutY="449.0" prefHeight="26.0" prefWidth="461.0" />
-      <Label layoutX="100.0" layoutY="450.0" prefHeight="22.0" prefWidth="202.0" text="Add Additional Comment: ">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color green="0.6000000238418579" blue="0.25999999046325684" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
-      <Button layoutX="100.0" layoutY="527.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="31.0" prefWidth="174.0" style="-fx-background-color: navy;" text="Back" textFill="#fafafa">
+      <Button layoutX="100.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="31.0" prefWidth="264.0" style="-fx-background-color: navy;" text="Back" textFill="#fafafa">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="595.0" layoutY="527.0" mnemonicParsing="false" onMouseClicked="#setNewLocationOnMouseClickedButton" prefHeight="31.0" prefWidth="174.0" style="-fx-background-color: navy;" text="Set new Location" textFill="WHITE">
+      <Button layoutX="505.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#setNewLocationOnMouseClickedButton" prefHeight="31.0" prefWidth="264.0" style="-fx-background-color: navy;" text="Set new Location" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
+      <TextField fx:id="regionTextfield" layoutX="569.0" layoutY="382.0" prefHeight="26.0" prefWidth="218.0" />
    </children>
 </AnchorPane>

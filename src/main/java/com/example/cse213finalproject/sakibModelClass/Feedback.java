@@ -1,27 +1,40 @@
 package com.example.cse213finalproject.sakibModelClass;
 
-public class Feedback {
+import java.io.Serializable;
 
-    public String feedbackId;
-    public int vehicleCondition;
-    public int cleanliness;
-    public int comfort;
-    public String additionalComment;
+public class Feedback implements Serializable {
+    private String CustomerID;
+    private String vehicleID;
+    private int vehicleCondition;
+    private int cleanliness;
+    private int comfort;
+    private String additionalComment;
 
-    public Feedback(String feedbackId, int vehicleCondition, int cleanliness, int comfort, String additionalComment, String csrReply) {
-        this.feedbackId = feedbackId;
+    public Feedback(String customerID, String vehicleID, int vehicleCondition, int cleanliness, int comfort, String additionalComment) {
+        this.CustomerID = customerID;
+        this.vehicleID = vehicleID;
         this.vehicleCondition = vehicleCondition;
         this.cleanliness = cleanliness;
         this.comfort = comfort;
         this.additionalComment = additionalComment;
     }
 
-    public String getFeedbackId() {
-        return feedbackId;
+    public Feedback() {}
+
+    public String getCustomerID() {
+        return CustomerID;
     }
 
-    public void setFeedbackId(String feedbackId) {
-        this.feedbackId = feedbackId;
+    public void setCustomerID(String customerID) {
+        CustomerID = customerID;
+    }
+
+    public String getVehicleID() {
+        return vehicleID;
+    }
+
+    public void setVehicleID(String vehicleID) {
+        this.vehicleID = vehicleID;
     }
 
     public int getVehicleCondition() {
@@ -56,8 +69,15 @@ public class Feedback {
         this.additionalComment = additionalComment;
     }
 
-    public double getAverageRating() {
-        return (vehicleCondition + cleanliness + comfort) / 3.0;
+    @Override
+    public String toString() {
+        return "Feedback{" +
+                "CustomerID='" + CustomerID + '\'' +
+                ", vehicleID='" + vehicleID + '\'' +
+                ", vehicleCondition=" + vehicleCondition +
+                ", cleanliness=" + cleanliness +
+                ", comfort=" + comfort +
+                ", additionalComment='" + additionalComment + '\'' +
+                '}';
     }
 }
-

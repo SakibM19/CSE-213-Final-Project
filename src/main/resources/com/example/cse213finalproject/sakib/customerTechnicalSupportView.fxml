@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -94,6 +95,9 @@
                </stops>
             </LinearGradient>
          </textFill>
+         <toggleGroup>
+            <ToggleGroup fx:id="isssueType" />
+         </toggleGroup>
       </RadioButton>
       <Label layoutX="109.0" layoutY="187.0" prefHeight="34.0" prefWidth="287.0" text="Please select the issue you are facing: ">
          <textFill>
@@ -116,7 +120,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <RadioButton fx:id="flatTireRadioButton" layoutX="396.0" layoutY="224.0" mnemonicParsing="false" text="Flat Tire">
+      <RadioButton fx:id="flatTireRadioButton" layoutX="396.0" layoutY="224.0" mnemonicParsing="false" text="Flat Tire" toggleGroup="$isssueType">
          <font>
             <Font size="14.0" />
          </font>
@@ -137,7 +141,7 @@
             </LinearGradient>
          </textFill>
       </RadioButton>
-      <RadioButton fx:id="batteryIssueRadioButton" layoutX="396.0" layoutY="254.0" mnemonicParsing="false" text="Battery Issue">
+      <RadioButton fx:id="batteryIssueRadioButton" layoutX="396.0" layoutY="254.0" mnemonicParsing="false" text="Battery Issue" toggleGroup="$isssueType">
          <font>
             <Font size="14.0" />
          </font>
@@ -158,7 +162,7 @@
             </LinearGradient>
          </textFill>
       </RadioButton>
-      <RadioButton fx:id="accidentOrCollisionRadioButton" layoutX="396.0" layoutY="282.0" mnemonicParsing="false" text="Accident Or Collision">
+      <RadioButton fx:id="accidentOrCollisionRadioButton" layoutX="396.0" layoutY="282.0" mnemonicParsing="false" text="Accident Or Collision" toggleGroup="$isssueType">
          <font>
             <Font size="14.0" />
          </font>
@@ -179,7 +183,7 @@
             </LinearGradient>
          </textFill>
       </RadioButton>
-      <RadioButton fx:id="otherIssuesRadioButton" layoutX="396.0" layoutY="312.0" mnemonicParsing="false" text="Other Issues">
+      <RadioButton fx:id="otherIssuesRadioButton" layoutX="396.0" layoutY="312.0" mnemonicParsing="false" text="Other Issues" toggleGroup="$isssueType">
          <font>
             <Font size="14.0" />
          </font>

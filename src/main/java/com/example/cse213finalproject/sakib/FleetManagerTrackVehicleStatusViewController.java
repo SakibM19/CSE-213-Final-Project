@@ -75,7 +75,7 @@ public class FleetManagerTrackVehicleStatusViewController {
 
     @FXML
     public void trackOnMouseClickedButton(Event event) {
-        String enteredVehicleId = vehicleIdForTrackingTableView.getText().trim();
+        String enteredVehicleId = vehicleIdForTrackingTableView.getText();
 
         if (enteredVehicleId.isEmpty()) {
             vehicleIDLabel.setText("Enter a Vehicle ID");

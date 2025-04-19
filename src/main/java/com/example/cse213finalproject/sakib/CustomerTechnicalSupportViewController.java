@@ -1,24 +1,19 @@
 package com.example.cse213finalproject.sakib;
 
-import javafx.event.Event;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-
+import com.example.cse213finalproject.sakibModelClass.EmergencyAssistance;
+import com.example.cse213finalproject.util.BinaryFileHelper;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
-
-public class CustomerTechnicalSupportViewController
-{
+public class CustomerTechnicalSupportViewController {
     @javafx.fxml.FXML
     private RadioButton otherIssuesRadioButton;
     @javafx.fxml.FXML
@@ -33,19 +28,37 @@ public class CustomerTechnicalSupportViewController
     private RadioButton flatTireRadioButton;
     @javafx.fxml.FXML
     private RadioButton batteryIssueRadioButton;
+    @javafx.fxml.FXML
+    private ToggleGroup isssueType;
+
+    private File assistanceFile = new File("data/sakib/emergency.bin");
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-
     @javafx.fxml.FXML
-    public void backOnMouseClickedButton(Event event) {
-        switchScene("/com/example/cse213finalproject/sakib/CustomerDashboardView.fxml", event);
+    public void submitAssistanceRequestOnMouseClickedButton(Event event) {
+        String location = immediatelocationTextField.getText();
+        String customerMessage = additionalInformationTextField.getText();
+
+        // Get the selected radio button from the ToggleGroup
+        RadioButton selectedRadioButton = (RadioButton) isssueType.getSelectedToggle();
+        String assistanceType = selectedRadioButton != null ? selectedRadioButton.getText() : "Other";
+
+        // Create an EmergencyAssistance object and save it
+        EmergencyAssistance assistance = new EmergencyAssistance(assistanceType, location, customerMessage);
+        BinaryFileHelper.saveObject(assistanceFile, assistance);
+
+        // Show confirmation message
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Emergency Assistance Request Sent.");
+        a.showAndWait();
     }
 
     @javafx.fxml.FXML
-    public void submitAssistanceRequestOnMouseClickedButton(Event event) {
+    public void backOnMouseClickedButton(Event event) {
+        switchScene("/com/example/cse213finalproject/sakib/customerEmergencyAssistanceView.fxml", event);
     }
 
     private void switchScene(String fxmlFile, Event event) {

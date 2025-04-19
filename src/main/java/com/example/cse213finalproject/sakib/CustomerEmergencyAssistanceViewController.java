@@ -7,9 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,10 +24,12 @@ public class CustomerEmergencyAssistanceViewController
 
     @javafx.fxml.FXML
     public void medicalAssistanceOnMouseClickedButton(Event event) {
+        switchScene("/com/example/cse213finalproject/sakib/CustomerMedicalAssistanceView.fxml", event);
     }
 
     @javafx.fxml.FXML
     public void technicalSupportOnMouseClickedButton(Event event) {
+        switchScene("/com/example/cse213finalproject/sakib/CustomerTechnicalSupportView.fxml", event);
     }
 
     private void switchScene(String fxmlFile, Event event) {
