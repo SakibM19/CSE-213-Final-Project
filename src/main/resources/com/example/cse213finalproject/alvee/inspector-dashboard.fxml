@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.alvee.controller.InspectorDashboardController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="32.0" layoutX="25.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/profile.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="csrName" layoutX="68.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CSR Name" />
+      <Line endX="750.5999755859375" layoutX="124.0" layoutY="81.0" startX="-100.0" strokeWidth="0.5" />
+      <Button layoutX="61.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleLogInspectionOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Log Inspection" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="263.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleViewInspectionOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="View Inspections" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="464.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleChangeVehicleStatusOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Change Vehicle Status" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="663.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleConfirmBookingOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Confirm Booking" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="61.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleOrderListButtonOnAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Order List" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="263.0" layoutY="228.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Customer Queries" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="464.0" layoutY="228.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Customer Queries" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="663.0" layoutY="228.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Resolved Queries" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
