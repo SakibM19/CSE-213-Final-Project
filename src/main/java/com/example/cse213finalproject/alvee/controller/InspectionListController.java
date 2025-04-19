@@ -15,25 +15,28 @@ import java.util.List;
 public class InspectionListController
 {
     @javafx.fxml.FXML
-    private TableColumn<Inspection, Boolean> fuelLevelCol;
-    @javafx.fxml.FXML
-    private TableColumn<Inspection, String> statusCol;
+    private TableColumn<Inspection, Double> fuelLevelCol;
     @javafx.fxml.FXML
     private TableView<Inspection> inspectionTableView;
     @javafx.fxml.FXML
     private TableColumn<Inspection, String> cleaningStatusCol;
     @javafx.fxml.FXML
-    private TableColumn<Inspection, String> carIdCol;
+    private TableColumn<Inspection, String> inspectionIdCol;
     @javafx.fxml.FXML
-    private TableColumn<Inspection, String> damagesCol;
+    private TableColumn<Inspection, String> vehicleStatusCol;
+    @javafx.fxml.FXML
+    private TableColumn<Inspection, String> vehicleIdCol;
+    @javafx.fxml.FXML
+    private TableColumn<Inspection, String> inspectionStatusCol;
 
     @javafx.fxml.FXML
     public void initialize() {
-        carIdCol.setCellValueFactory(new PropertyValueFactory<>("carId"));
+        vehicleIdCol.setCellValueFactory(new PropertyValueFactory<>("carId"));
         cleaningStatusCol.setCellValueFactory(new PropertyValueFactory<>("isClean"));
-        damagesCol.setCellValueFactory(new PropertyValueFactory<>("damages"));
+        inspectionIdCol.setCellValueFactory(new PropertyValueFactory<>("inspectionId"));
         fuelLevelCol.setCellValueFactory(new PropertyValueFactory<>("fuelLevel"));
-        statusCol.setCellValueFactory(new PropertyValueFactory<>("isAvailableAfterInspection"));
+        vehicleStatusCol.setCellValueFactory(new PropertyValueFactory<>("isAvailableAfterInspection"));
+        inspectionStatusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         File file = new File("data/alvee/inspection.bin");
         List<Inspection> inspectionList = BinaryFileHelper.readAllObjects(file);
