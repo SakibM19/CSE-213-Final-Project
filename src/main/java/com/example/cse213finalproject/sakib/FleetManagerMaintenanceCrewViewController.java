@@ -1,5 +1,7 @@
 package com.example.cse213finalproject.sakib;
 
+import com.example.cse213finalproject.sakibModelClass.Maintenance;
+import com.example.cse213finalproject.util.BinaryFileHelper;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -7,37 +9,47 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.List;
 
 public class FleetManagerMaintenanceCrewViewController
 {
     @javafx.fxml.FXML
-    private TableView blockedVehicleListTableView;
+    private TableView<Maintenance> blockedVehicleListTableView;
     @javafx.fxml.FXML
-    private TableColumn maintenanceTypeTableView;
+    private TableColumn<Maintenance, String> maintenanceTypeTableView;
     @javafx.fxml.FXML
-    private TableColumn vehicleTypeTableView11;
+    private TableColumn<Maintenance,String> crewNameTableView;
     @javafx.fxml.FXML
-    private TableColumn crewNameTableView;
+    private TableColumn<Maintenance,String> assignedVehicleIdTableView;
     @javafx.fxml.FXML
-    private TableColumn assignedVehicleIdTableView;
-    @javafx.fxml.FXML
-    private TableColumn expCompletionDateTableView;
+    private TableColumn<Maintenance, LocalDate> expCompletionDateTableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+        // Bind columns to Maintenance class fields
+        assignedVehicleIdTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleID"));
+        crewNameTableView.setCellValueFactory(new PropertyValueFactory<>("crewNo"));
+        maintenanceTypeTableView.setCellValueFactory(new PropertyValueFactory<>("maintenanceType"));
+        expCompletionDateTableView.setCellValueFactory(new PropertyValueFactory<>("expCompleteDate"));
+
+        // Load data from maintenance.bin
+        File maintenanceFile = new File("data/sakib/maintenance.bin");
+        List<Maintenance> maintenanceList = BinaryFileHelper.readAllObjects(maintenanceFile);
+
+        blockedVehicleListTableView.getItems().addAll(maintenanceList);
     }
 
     @javafx.fxml.FXML
     public void backOnMouseClickedButton(Event event) {
-        switchScene("/com/example/cse213finalproject/sakib/fleetManagerDashboardView.fxml", event);
+        switchScene("/com/example/cse213finalproject/sakib/fleetManagerScheduleMaintenanceView.fxml", event);
     }
 
-    @javafx.fxml.FXML
-    public void refreshOnMouseClickedButton(Event event) {
-    }
     private void switchScene(String fxmlFile, Event event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
