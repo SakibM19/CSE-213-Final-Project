@@ -23,8 +23,6 @@ public class CustomerDashboardViewController
     @javafx.fxml.FXML
     private Text userIdText;
     @javafx.fxml.FXML
-    private Text addressText;
-    @javafx.fxml.FXML
     private Text emailText;
     @javafx.fxml.FXML
     private Text nameText;

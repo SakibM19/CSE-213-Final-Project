@@ -65,7 +65,6 @@ public class CustomerLocationSetAndEditViewController
         }
 
 
-
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setContentText("Location Updated.");
         a.showAndWait();
