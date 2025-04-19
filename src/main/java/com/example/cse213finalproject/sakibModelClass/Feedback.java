@@ -1,23 +1,25 @@
 package com.example.cse213finalproject.sakibModelClass;
 
-public class Feedback {
+import java.io.Serializable;
 
-    private String CustomerID, vehicleID;
+public class Feedback implements Serializable {
+    private String CustomerID;
+    private String vehicleID;
     private int vehicleCondition;
     private int cleanliness;
     private int comfort;
+    private String additionalComment;
 
-    public Feedback(String customerID, String vehicleID, int vehicleCondition, int cleanliness, int comfort) {
-        CustomerID = customerID;
+    public Feedback(String customerID, String vehicleID, int vehicleCondition, int cleanliness, int comfort, String additionalComment) {
+        this.CustomerID = customerID;
         this.vehicleID = vehicleID;
         this.vehicleCondition = vehicleCondition;
         this.cleanliness = cleanliness;
         this.comfort = comfort;
+        this.additionalComment = additionalComment;
     }
 
-    public Feedback() {
-    }
-
+    public Feedback() {}
 
     public String getCustomerID() {
         return CustomerID;
@@ -59,6 +61,14 @@ public class Feedback {
         this.comfort = comfort;
     }
 
+    public String getAdditionalComment() {
+        return additionalComment;
+    }
+
+    public void setAdditionalComment(String additionalComment) {
+        this.additionalComment = additionalComment;
+    }
+
     @Override
     public String toString() {
         return "Feedback{" +
@@ -67,6 +77,7 @@ public class Feedback {
                 ", vehicleCondition=" + vehicleCondition +
                 ", cleanliness=" + cleanliness +
                 ", comfort=" + comfort +
+                ", additionalComment='" + additionalComment + '\'' +
                 '}';
     }
 }
