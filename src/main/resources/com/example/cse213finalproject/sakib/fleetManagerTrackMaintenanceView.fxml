@@ -185,7 +185,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.9894737005233765" />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -206,7 +206,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.9894737005233765" />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -227,7 +227,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.9894737005233765" />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -248,7 +248,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.9894737005233765" />
+                        <Color red="0.9800000190734863" />
                      </color>
                   </Stop>
                </stops>

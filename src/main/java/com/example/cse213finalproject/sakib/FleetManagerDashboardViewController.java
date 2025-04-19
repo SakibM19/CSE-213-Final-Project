@@ -17,8 +17,6 @@ import java.io.IOException;
 public class FleetManagerDashboardViewController
 {
     @javafx.fxml.FXML
-    private Menu logOutMenu;
-    @javafx.fxml.FXML
     private AnchorPane fleetManagerDashboardAnchorPane;
     @javafx.fxml.FXML
     private Text userIdText;
@@ -83,11 +81,7 @@ public class FleetManagerDashboardViewController
         switchScene("/com/example/cse213finalproject/sakib/fleetManagerScheduleMaintenanceView.fxml", event);
     }
 
-    @javafx.fxml.FXML
-    public void logOutOnActionMenu(ActionEvent actionEvent) {
 
-
-    }
 
     private void switchScene(String fxmlFile, Event event) {
         try {
@@ -102,4 +96,8 @@ public class FleetManagerDashboardViewController
         }
     }
 
+    @javafx.fxml.FXML
+    public void logoutOnMouseClickedButton(Event event) {
+        switchScene("/com/example/cse213finalproject/sakib/logInView.fxml", event);
+    }
 }

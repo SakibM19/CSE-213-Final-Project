@@ -43,8 +43,8 @@ public class LogInViewController implements SceneSwitch
             return;
         }
         FleetManager fleetManager = new FleetManager(
-                "John Doe",                 // name
-                "johndoe@example.com",      // email
+                "Sakib Mahmood",                 // name
+                "2310532@iub.edu.bd",      // email
                 "1234567",                  // password
                 "123456789",                // id
                 1234567890,                 // phoneNumber
