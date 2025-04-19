@@ -1,7 +1,9 @@
 package com.example.cse213finalproject.sakib;
 
 import com.example.cse213finalproject.alvee.controller.CsrDashboardController;
+import com.example.cse213finalproject.alvee.controller.InspectorDashboardController;
 import com.example.cse213finalproject.alvee.model.CSR;
+import com.example.cse213finalproject.alvee.model.Inspector;
 import com.example.cse213finalproject.commonClass.SceneSwitch;
 import com.example.cse213finalproject.sakibModelClass.Customer;
 import com.example.cse213finalproject.util.BinaryFileHelper;
@@ -40,7 +42,7 @@ public class LogInViewController implements SceneSwitch
             return;
         }
 
-        if (enteredId.startsWith("CSR")) {
+        if (enteredId.startsWith("csr")) {
             // Load CSR from file
             List<CSR> csrList = BinaryFileHelper.readAllObjects(new File("data/user/csr.bin"));
             for (CSR csr : csrList) {
@@ -82,6 +84,29 @@ public class LogInViewController implements SceneSwitch
                         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         stage.setScene(new Scene(root));
                         stage.setTitle("Customer Dashboard");
+                        stage.show();
+                        return;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        } else if (enteredId.startsWith("ins")) {
+            List<Inspector> inspectorList = BinaryFileHelper.readAllObjects(new File("data/user/inspector.bin"));
+            for (Inspector ins : inspectorList) {
+                if (enteredId.equals(ins.getEmployeeID()) && enteredPassword.equals(ins.getPassword())) {
+                    try {
+                        SessionManager.setLoggedInInspector(ins);
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cse213finalproject/alvee/inspector-dashboard.fxml"));
+                        Parent root = loader.load();
+
+                        // Pass the logged-in CSR to dashboard
+                        InspectorDashboardController controller = loader.getController();
+                        controller.setLoggedInCSR(ins);
+
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(new Scene(root));
+                        stage.setTitle("Inspector Dashboard");
                         stage.show();
                         return;
                     } catch (IOException e) {

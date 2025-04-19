@@ -13,7 +13,7 @@ public class Vehicle implements Serializable {
         this.vehicleModel = vehicleModel;
         this.vehicleType = vehicleType;
         this.brand = brand;
-        this.status = "Available";
+        this.status = "Under Inspection";
         this.seatCapacity = seatCapacity;
         this.perDayCost = perDayCost;
     }
