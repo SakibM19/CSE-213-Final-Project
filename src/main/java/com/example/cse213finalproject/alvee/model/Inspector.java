@@ -36,7 +36,7 @@ public class Inspector extends Employee implements Serializable {
         );
     }
 
-    public <T> List<Inspection> modifyInspection(String inspectionId, String cleaningStatus, String damages, String status, double fuelLevel, String extraNote, List<Inspection> objects ){
+    public List<Inspection> modifyInspection(String inspectionId, String cleaningStatus, String damages, String status, double fuelLevel, String extraNote, List<Inspection> objects ){
         for (Inspection ins: objects){
             if (ins.getInspectionId().equals(inspectionId)){
                 ins.setIsClean(cleaningStatus);
@@ -45,6 +45,16 @@ public class Inspector extends Employee implements Serializable {
                 ins.setDamages(damages);
                 ins.setExtraNote(extraNote);
                 ins.setFuelLevel(fuelLevel);
+                break;
+            }
+        }
+        return objects;
+    }
+
+    public List<Inspection> deleteInspection(String inspectionId, List<Inspection> objects){
+        for (Inspection ins: objects){
+            if (ins.getInspectionId().equals(inspectionId)){
+                objects.remove(ins);
                 break;
             }
         }

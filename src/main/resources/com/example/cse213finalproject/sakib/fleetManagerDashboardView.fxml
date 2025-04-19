@@ -241,5 +241,25 @@
           </Menu>
         </menus>
       </MenuBar>
+      <Text fx:id="nameText" layoutX="93.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="userIdText" layoutX="104.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="userId">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="phoneNumText" layoutX="170.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="emailText" layoutX="94.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

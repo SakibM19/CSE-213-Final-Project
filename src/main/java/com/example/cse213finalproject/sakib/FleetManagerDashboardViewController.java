@@ -1,5 +1,6 @@
 package com.example.cse213finalproject.sakib;
 
+import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,9 +20,21 @@ public class FleetManagerDashboardViewController
     private Menu logOutMenu;
     @javafx.fxml.FXML
     private AnchorPane fleetManagerDashboardAnchorPane;
+    @javafx.fxml.FXML
+    private Text userIdText;
+    @javafx.fxml.FXML
+    private Text phoneNumText;
+    @javafx.fxml.FXML
+    private Text emailText;
+    @javafx.fxml.FXML
+    private Text nameText;
 
     @javafx.fxml.FXML
     public void initialize() {
+        emailText.setText(SessionManager.getLoggedInFleetManager().getEmail());
+        nameText.setText(SessionManager.getLoggedInFleetManager().getName());
+        phoneNumText.setText(Integer.toString(SessionManager.getLoggedInFleetManager().getPhoneNumber()));
+        userIdText.setText(SessionManager.getLoggedInFleetManager().getId());
     }
 
 

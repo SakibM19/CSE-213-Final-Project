@@ -64,4 +64,13 @@ public class CsrDashboardController
     public void setLoggedInCSR(CSR csr) {
 
     }
+
+    @javafx.fxml.FXML
+    public void csrInteractionOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "csr-interaction-history.fxml", "Interaction History");
+    }
+
+    @javafx.fxml.FXML
+    public void handleFeedbackOnAction(ActionEvent actionEvent) {
+    }
 }

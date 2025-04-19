@@ -6,6 +6,7 @@ import com.example.cse213finalproject.alvee.model.CSR;
 import com.example.cse213finalproject.alvee.model.Inspector;
 import com.example.cse213finalproject.commonClass.SceneSwitch;
 import com.example.cse213finalproject.sakibModelClass.Customer;
+import com.example.cse213finalproject.sakibModelClass.FleetManager;
 import com.example.cse213finalproject.util.BinaryFileHelper;
 import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.Event;
@@ -41,8 +42,37 @@ public class LogInViewController implements SceneSwitch
             // Optional alert
             return;
         }
+        FleetManager fleetManager = new FleetManager(
+                "John Doe",                 // name
+                "johndoe@example.com",      // email
+                "1234567",                  // password
+                "123456789",                // id
+                1234567890,                 // phoneNumber
+                "fm123",                    // employeeID
+                "Fleet Manager"             // role
+        );
 
-        if (enteredId.startsWith("csr")) {
+        if (enteredId.equals(fleetManager.getEmployeeID()) && enteredPassword.equals(fleetManager.getPassword())){
+            try {
+                SessionManager.setLoggedInFleetManager(fleetManager);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cse213finalproject/sakib/fleetManagerDashboardView.fxml"));
+                Parent root = loader.load();
+
+                // Pass the logged-in CSR to dashboard
+//                FleetManagerDashboardViewController controller = loader.getController();
+//                controller.setLoggedInFleetManager(fleetManager);
+
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.setTitle("Fleet Manager Dahboard");
+                stage.show();
+                return;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        else if (enteredId.startsWith("csr")) {
             // Load CSR from file
             List<CSR> csrList = BinaryFileHelper.readAllObjects(new File("data/user/csr.bin"));
             for (CSR csr : csrList) {
@@ -73,10 +103,10 @@ public class LogInViewController implements SceneSwitch
                 if (customer.getEmail().equalsIgnoreCase(enteredId) && customer.getPassword().equals(enteredPassword)) {
                     try {
 //                        CSR loggedInCSR = SessionManager.getLoggedInCSR();
+                        System.out.println("hello");
                         SessionManager.setLoggedInCustomer(customer);
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cse213finalproject/sakib/CustomerDashboardView.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cse213finalproject/sakib/customerDashboardView.fxml"));
                         Parent root = loader.load();
-
                         // Pass the logged-in Customer to dashboard
                         CustomerDashboardViewController controller = loader.getController();
                         controller.setLoggedInCustomer(customer);

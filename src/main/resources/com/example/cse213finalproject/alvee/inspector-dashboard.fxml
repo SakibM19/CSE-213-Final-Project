@@ -42,12 +42,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="263.0" layoutY="228.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Customer Queries" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="263.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleDeleteInspectionOnClick" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Delete Inspection" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="464.0" layoutY="228.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Customer Queries" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="464.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleInteractionHistoryButton" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Inspector Interation History" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
