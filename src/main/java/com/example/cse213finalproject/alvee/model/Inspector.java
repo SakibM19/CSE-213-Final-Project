@@ -4,6 +4,7 @@ import com.example.cse213finalproject.commonClass.Employee;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Inspector extends Employee implements Serializable {
     public Inspector(String name, String email, String password, String id, int phoneNumber, String employeeID, String role) {
@@ -33,6 +34,21 @@ public class Inspector extends Employee implements Serializable {
                 isAvailable,
                 extraNote
         );
+    }
+
+    public <T> List<Inspection> modifyInspection(String inspectionId, String cleaningStatus, String damages, String status, double fuelLevel, String extraNote, List<Inspection> objects ){
+        for (Inspection ins: objects){
+            if (ins.getInspectionId().equals(inspectionId)){
+                ins.setIsClean(cleaningStatus);
+                ins.setIsAvailableAfterInspection(status);
+                ins.setStatus("Modified");
+                ins.setDamages(damages);
+                ins.setExtraNote(extraNote);
+                ins.setFuelLevel(fuelLevel);
+                break;
+            }
+        }
+        return objects;
     }
 
     @Override
