@@ -239,26 +239,5 @@
       </Line>
       <ComboBox fx:id="seatCapacityComboBox" layoutX="665.0" layoutY="213.0" prefWidth="150.0" />
       <ComboBox fx:id="vehicleTypeComboBox" layoutX="665.0" layoutY="254.0" prefWidth="150.0" />
-      <Label layoutX="22.0" layoutY="543.0" prefHeight="22.0" prefWidth="393.0" text="Each oporation should give alart">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color green="0.6000000238418579" blue="0.25999999046325684" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
    </children>
 </AnchorPane>

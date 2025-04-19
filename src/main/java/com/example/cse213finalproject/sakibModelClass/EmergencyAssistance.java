@@ -1,17 +1,16 @@
 package com.example.cse213finalproject.sakibModelClass;
 
-import java.util.List;
 
-public class EmergencyAssistance {
-    public String assistanceType;
-    public String customerMessage;
-    public List<String> typeOfEmergency;
+import java.io.Serializable;
 
+public class EmergencyAssistance  implements Serializable {
+    private String assistanceType, location;
+    private String customerMessage;
 
-    public EmergencyAssistance(String assistanceType, String customerMessage, List<String> typeOfEmergency) {
+    public EmergencyAssistance(String assistanceType, String location, String customerMessage) {
         this.assistanceType = assistanceType;
+        this.location = location;
         this.customerMessage = customerMessage;
-        this.typeOfEmergency = typeOfEmergency;
     }
 
     public EmergencyAssistance() {
@@ -25,6 +24,14 @@ public class EmergencyAssistance {
         this.assistanceType = assistanceType;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public String getCustomerMessage() {
         return customerMessage;
     }
@@ -33,20 +40,13 @@ public class EmergencyAssistance {
         this.customerMessage = customerMessage;
     }
 
-    public List<String> getTypeOfEmergency() {
-        return typeOfEmergency;
-    }
-
-    public void setTypeOfEmergency(List<String> typeOfEmergency) {
-        this.typeOfEmergency = typeOfEmergency;
-    }
-
     @Override
     public String toString() {
         return "EmergencyAssistance{" +
                 "assistanceType='" + assistanceType + '\'' +
+                ", location='" + location + '\'' +
                 ", customerMessage='" + customerMessage + '\'' +
-                ", typeOfEmergency=" + typeOfEmergency +
                 '}';
     }
 }
+

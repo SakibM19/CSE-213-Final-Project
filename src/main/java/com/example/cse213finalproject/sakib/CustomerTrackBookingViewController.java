@@ -22,8 +22,6 @@ public class CustomerTrackBookingViewController implements SceneSwitch
     private TableColumn<Booking, String> activeBookingIdTableColumn;
     @javafx.fxml.FXML
     private TextField idForTrackingTextField;
-    @javafx.fxml.FXML
-    private TextField customerIDTextfield;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -40,26 +38,5 @@ public class CustomerTrackBookingViewController implements SceneSwitch
         SceneSwitch.switchScene("/com/example/cse213finalproject/sakib/CustomerCurrentBookingStatusView.fxml", event);
     }
 
-
-    @javafx.fxml.FXML
-    public void loadOnMouseClickedButton(Event event) {
-        String enteredCustomerId = customerIDTextfield.getText(); // Get the entered customer ID
-        File bookingFile = new File("data/sakib/booking.bin");
-
-        // Read all bookings from the binary file
-        List<Booking> allBookings = BinaryFileHelper.readAllObjects(bookingFile);
-
-        List<Booking> customerBookings = new ArrayList<>(); // Create a list to hold the filtered bookings
-
-        // Loop through each booking and check if the customer ID matches
-        for (Booking booking : allBookings) {
-            if (booking.getCustomerId().equals(enteredCustomerId)) {
-                customerBookings.add(booking); // Add the booking to the list if the IDs match
-            }
-        }
-
-        // Set the filtered bookings in the TableView
-        trackBookingTableView.setItems(FXCollections.observableArrayList(customerBookings));
-    }
 
 }

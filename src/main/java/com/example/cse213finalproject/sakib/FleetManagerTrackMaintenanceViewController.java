@@ -1,15 +1,14 @@
 package com.example.cse213finalproject.sakib;
 
-import com.example.cse213finalproject.sakibModelClass.Vehicle;
+import com.example.cse213finalproject.sakibModelClass.Maintenance;
 import com.example.cse213finalproject.util.BinaryFileHelper;
 import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -17,52 +16,79 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class FleetManagerTrackMaintenanceViewController
-{
-    @javafx.fxml.FXML
-    private Label vehicleTypeLabel;
-    @javafx.fxml.FXML
-    private Label nextMaintananceDateLabel;
-    @javafx.fxml.FXML
+public class FleetManagerTrackMaintenanceViewController {
+
+    @FXML
     private Label vehicleIdLabel;
-    @javafx.fxml.FXML
+    @FXML
     private Label currentMaintananceStatusLabel;
-    @javafx.fxml.FXML
-    private Label lastMaintananceDateLabel;
-    @javafx.fxml.FXML
-    private TableColumn<Vehicle, String> listVehicleTypeTableView;
-    @javafx.fxml.FXML
-    private TableView<Vehicle> fleetVehicleListTableView;
-    @javafx.fxml.FXML
-    private TableColumn<Vehicle,String> fleetVehicleIdTableView;
-    private final File vehicleFile = new File("data/sakib/fleet.bin");
-    private void loadVehicleData() {
-        List<Vehicle> vehicles = BinaryFileHelper.readAllObjects(vehicleFile);
-        fleetVehicleListTableView.getItems().clear();
-        fleetVehicleListTableView.getItems().addAll(vehicles);
+    @FXML
+    private TableView<Maintenance> fleetVehicleListTableView;
+    @FXML
+    private TableColumn<Maintenance, String> fleetVehicleIdTableView;
+    @FXML
+    private Label maintenanceFinishDateLabel;
+    @FXML
+    private Label crewLabel;
+    @FXML
+    private TextField vehicleIDTextField;
+
+    private final File maintenanceFile = new File("data/sakib/maintenance.bin");
+
+    private void loadMaintenanceData() {
+        List<Maintenance> maintenanceList = BinaryFileHelper.readAllObjects(maintenanceFile);
+        if (maintenanceList != null) {
+            fleetVehicleListTableView.getItems().clear();
+            fleetVehicleListTableView.getItems().addAll(maintenanceList);
+        }
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void initialize() {
         fleetVehicleIdTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleID"));
-        listVehicleTypeTableView.setCellValueFactory(new PropertyValueFactory<>("vehicleType"));
-
-        loadVehicleData();
+        loadMaintenanceData();
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void getVehicleStatusOnMouseClickedButton(Event event) {
+        String vehicleID = vehicleIDTextField.getText().trim();
 
+        if (vehicleID.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Error", "Please enter a vehicle ID.");
+            return;
+        }
+
+        // Load the maintenance list and find the vehicle matching the ID
+        List<Maintenance> maintenanceList = BinaryFileHelper.readAllObjects(maintenanceFile);
+        Maintenance selectedMaintenance = null;
+
+        if (maintenanceList != null) {
+            for (Maintenance maintenance : maintenanceList) {
+                if (maintenance.getVehicleID().equals(vehicleID)) {
+                    selectedMaintenance = maintenance;
+                    break;
+                }
+            }
+        }
+
+        // If the selected maintenance is found, display the details
+        if (selectedMaintenance != null) {
+            vehicleIdLabel.setText(selectedMaintenance.getVehicleID());
+            currentMaintananceStatusLabel.setText(selectedMaintenance.getMaintenanceType());
+            maintenanceFinishDateLabel.setText(selectedMaintenance.getExpCompleteDate().toString());
+            crewLabel.setText(selectedMaintenance.getCrewNo());
+        } else {
+            // If no maintenance record is found, clear the labels
+            clearLabels();
+            showAlert(Alert.AlertType.ERROR, "Error", "No maintenance record found for the given vehicle ID.");
+        }
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void backOnMouseClickedButton(Event event) {
         switchScene("/com/example/cse213finalproject/sakib/fleetManagerDashboardView.fxml", event);
     }
 
-    @javafx.fxml.FXML
-    public void updateVehicleStatusOnMouseClickedButton(Event event) {
-    }
     private void switchScene(String fxmlFile, Event event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -74,5 +100,22 @@ public class FleetManagerTrackMaintenanceViewController
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    // Method to clear the labels if no maintenance record is found
+    private void clearLabels() {
+        vehicleIdLabel.setText("No vehicle selected");
+        currentMaintananceStatusLabel.setText("N/A");
+        maintenanceFinishDateLabel.setText("N/A");
+        crewLabel.setText("N/A");
+        vehicleIDTextField.clear();
+    }
+
+    // Method to show an alert message
+    private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 }
