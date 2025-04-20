@@ -6,13 +6,21 @@ public class OrderIdGenerator {
     private static final String ORDER_ID_FILE = "data/sakib/ordersId.bin";
     private static final String INSPECTION_ID_FILE = "data/alvee/inspectionsId.bin";
     private static final String INSPECTION_HISTORY_ID_FILE = "data/alvee/inspectionsHistoryId.bin";
+    private static final String BOOKING_ID_FILE = "data/sakib/bookingId.bin";
 
 
     public static String generateOrderId() {
         int lastOrderNumber = readLastOrderNumber(ORDER_ID_FILE);
         lastOrderNumber++;
         writeLastOrderNumber(ORDER_ID_FILE, lastOrderNumber);
-        return String.format("O%03d", lastOrderNumber);
+        return String.format("o%03d", lastOrderNumber);
+    }
+
+    public static String generateBookingId() {
+        int lastOrderNumber = readLastOrderNumber(BOOKING_ID_FILE);
+        lastOrderNumber++;
+        writeLastOrderNumber(BOOKING_ID_FILE, lastOrderNumber);
+        return String.format("b%03d", lastOrderNumber);
     }
 
     public static String generateInspectionId() {

@@ -6,16 +6,31 @@ import java.util.Random;
 
 public class Order implements Serializable {
     protected float totalCost;
-    protected String customerName, orderID, bookingID, customerID;
+    protected String customerName, orderID, customerID, bookingID, vehicleId, vehicleModel;
     protected LocalDate pickupDate, dropOffDate;
 
-    public Order(String customerName, String orderID, String bookingID, String customerID, LocalDate pickupDate, LocalDate dropOffDate, float dailyCost) {
+    public Order(String customerName, String orderID, String customerID, LocalDate pickupDate, LocalDate dropOffDate, float dailyCost, String vehicleId, String vehicleModel) {
         this.customerName = customerName;
         this.orderID = orderID;
         this.bookingID = null;
         this.customerID = customerID;
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
+        this.vehicleId = vehicleId;
+        this.vehicleModel = vehicleModel;
+        calculateTotalCost(dailyCost);
+
+    }
+
+    public Order(String customerName, String orderID, String bookingID, String customerID, LocalDate pickupDate, LocalDate dropOffDate,String vehicleId, String vehicleModel,  float dailyCost) {
+        this.customerName = customerName;
+        this.orderID = orderID;
+        this.bookingID = bookingID;
+        this.customerID = customerID;
+        this.pickupDate = pickupDate;
+        this.dropOffDate = dropOffDate;
+        this.vehicleId = vehicleId;
+        this.vehicleModel = vehicleModel;
         calculateTotalCost(dailyCost);
     }
 
@@ -76,6 +91,22 @@ public class Order implements Serializable {
 
     public void setDropOffDate(LocalDate dropOffDate) {
         this.dropOffDate = dropOffDate;
+    }
+
+    public String getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(String vehicleId) {
+        this.vehicleId = vehicleId;
+    }
+
+    public String getVehicleModel() {
+        return vehicleModel;
+    }
+
+    public void setVehicleModel(String vehicleModel) {
+        this.vehicleModel = vehicleModel;
     }
 
     @Override
