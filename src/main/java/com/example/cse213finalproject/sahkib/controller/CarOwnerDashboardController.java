@@ -38,18 +38,22 @@ public class CarOwnerDashboardController
 
     @javafx.fxml.FXML
     public void rentalStatusAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerRentalStatusView.fxml", event);
     }
 
     @javafx.fxml.FXML
     public void earningAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerEarningsView.fxml", event);
     }
 
     @javafx.fxml.FXML
     public void requestMaintainenceAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerRequestMaintainanceView.fxml", event);
     }
 
     @javafx.fxml.FXML
     public void maintainenceHistoryAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerMaintainanceHistoryView.fxml", event);
     }
 
     private void switchScene(String fxmlFile, Event event) {

@@ -38,7 +38,7 @@ public class OrderListController
         idCol.setCellValueFactory(new PropertyValueFactory<>("orderID"));
         pickUpDateCol.setCellValueFactory(new PropertyValueFactory<>("pickupDate"));
         totalCoastCol.setCellValueFactory(new PropertyValueFactory<>("totalCost"));
-        vehicleIdCol.setCellValueFactory(new PropertyValueFactory<>("vehicleID"));
+        vehicleIdCol.setCellValueFactory(new PropertyValueFactory<>("vehicleId"));
 
         File file = new File("data/sakib/order.bin");
         List<Order> orderList = BinaryFileHelper.readAllObjects(file);

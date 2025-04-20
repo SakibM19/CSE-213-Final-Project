@@ -34,7 +34,7 @@ public class ConfirmOrderController
         customerNameCol.setCellValueFactory(new PropertyValueFactory<>("customerName"));
         dropOffDateCol.setCellValueFactory(new PropertyValueFactory<>("dropOffDate"));
         pickUpDateCol.setCellValueFactory(new PropertyValueFactory<>("pickupDate"));
-        vehicleModelCol.setCellValueFactory(new PropertyValueFactory<>("vehicleName"));
+        vehicleModelCol.setCellValueFactory(new PropertyValueFactory<>("vehicleModel"));
 
         File file = new File("data/sakib/booking.bin");
         List<Booking> bookingList = BinaryFileHelper.readAllObjects(file);

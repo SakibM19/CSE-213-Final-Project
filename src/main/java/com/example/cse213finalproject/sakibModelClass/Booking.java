@@ -6,16 +6,18 @@ import java.util.Random;
 
 public class Booking implements Serializable {
     protected int  totalCost;
-    protected String customerName,customerId, bookingID;
+    protected String customerName, customerID, bookingID, vehicleId, vehicleModel;
     protected LocalDate pickupDate, dropOffDate;
 
-    public Booking(int totalCost, String customerName, String customerId, String bookingID, LocalDate pickupDate, LocalDate dropOffDate) {
-        this.totalCost = Integer.parseInt("10000");
+    public Booking(int totalCost, String customerName, String customerId, String bookingID, LocalDate pickupDate, LocalDate dropOffDate, String vehicleId, String vehicleModel) {
+        this.totalCost = totalCost;
         this.customerName = customerName;;
-        this.customerId = customerId;
+        this.customerID = customerId;
         this.bookingID = bookingID;
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
+        this.vehicleId = vehicleId;
+        this.vehicleModel = vehicleModel;
     }
 
     @Override
@@ -48,12 +50,12 @@ public class Booking implements Serializable {
         this.customerName = customerName;
     }
 
-    public String getCustomerId() {
-        return customerId;
+    public String getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(String customerId) {
+        this.customerID = customerId;
     }
 
     public String getBookingID() {
@@ -80,8 +82,21 @@ public class Booking implements Serializable {
         this.dropOffDate = dropOffDate;
     }
 
+    public String getVehicleId() {
+        return vehicleId;
+    }
 
+    public void setVehicleId(String vehicleId) {
+        this.vehicleId = vehicleId;
+    }
 
+    public String getVehicleModel() {
+        return vehicleModel;
+    }
+
+    public void setVehicleModel(String vehicleModel) {
+        this.vehicleModel = vehicleModel;
+    }
 
     public static String generateBookingID() {
         Random random = new Random();

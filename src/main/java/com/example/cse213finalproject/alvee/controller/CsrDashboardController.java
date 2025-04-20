@@ -70,7 +70,9 @@ public class CsrDashboardController
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "csr-interaction-history.fxml", "Interaction History");
     }
 
+
     @javafx.fxml.FXML
     public void handleFeedbackOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "customer-feedback.fxml", "Customer Feedback");
     }
 }
