@@ -76,8 +76,8 @@
          </font>
       </Text>
       <Line endX="412.70001220703125" endY="10.5" layoutX="156.0" layoutY="335.0" startX="-120.40000915527344" startY="10.5" strokeWidth="5.0" />
-      <Line endX="404.20001220703125" endY="-109.5" layoutX="167.0" layoutY="455.0" startX="402.20001220703125" startY="-347.3999938964844" strokeWidth="5.0" />
-      <Button layoutX="610.0" layoutY="441.0" mnemonicParsing="false" onMouseClicked="#scheduleMaintenanceOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Schedule Maintenance">
+      <Line endX="404.20001220703125" endY="-109.5" layoutX="167.0" layoutY="455.0" startX="402.20001220703125" startY="-384.6000061035156" strokeWidth="5.0" />
+      <Button layoutX="610.0" layoutY="403.0" mnemonicParsing="false" onMouseClicked="#scheduleMaintenanceOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Schedule Maintenance">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -140,7 +140,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="610.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#manageVehicleOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Manage Vehicle">
+      <Button layoutX="610.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#manageVehicleOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Manage Vehicle">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -161,7 +161,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button layoutX="610.0" layoutY="274.0" mnemonicParsing="false" onMouseClicked="#assignInspectionOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Assign Vehicle For Inspection">
+      <Button layoutX="610.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#assignInspectionOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Assign Vehicle For Inspection">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -182,7 +182,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button layoutX="610.0" layoutY="357.0" mnemonicParsing="false" onMouseClicked="#manageFeedbackOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Manage Compalints and Feedback">
+      <Button layoutX="610.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#manageFeedbackOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Manage Compalints and Feedback">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
@@ -203,7 +203,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button layoutX="610.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#trackVehicleOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Track Vehicle">
+      <Button layoutX="610.0" layoutY="67.0" mnemonicParsing="false" onMouseClicked="#trackVehicleOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Track Vehicle">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -224,7 +224,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button layoutX="107.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#handelViolationOnMouseClickedButton" prefHeight="46.0" prefWidth="394.0" style="-fx-background-color: #e5824c; -fx-border-color: red;" text="Handel Customer Violation" textFill="#8e0000">
+      <Button layoutX="177.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#handelViolationOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: navy;" text="Handel Customer Violation" textFill="#aceff2">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -249,7 +249,7 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <Button layoutX="609.0" layoutY="522.0" mnemonicParsing="false" onMouseClicked="#logoutOnMouseClickedButton" prefHeight="46.0" prefWidth="250.0" style="-fx-background-color: #a40000; -fx-border-color: red;" text="logOut" textFill="WHITE">
+      <Button layoutX="610.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#logoutOnMouseClickedButton" prefHeight="46.0" prefWidth="250.0" style="-fx-background-color: #a40000; -fx-border-color: red;" text="logOut" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
