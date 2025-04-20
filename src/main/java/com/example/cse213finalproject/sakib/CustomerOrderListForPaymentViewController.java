@@ -63,6 +63,8 @@ public class CustomerOrderListForPaymentViewController
 
     @javafx.fxml.FXML
     public void makePaymentOnMouseClickedButton(Event event) {
+        switchScene("/com/example/cse213finalproject/sakib/customerPaymentMethodSelectView.fxml", event);
+
     }
 
     private void switchScene(String fxmlFile, Event event) {

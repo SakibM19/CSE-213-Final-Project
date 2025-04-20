@@ -1,5 +1,6 @@
 package com.example.cse213finalproject.sakib;
 
+import com.example.cse213finalproject.commonClass.SceneSwitch;
 import com.example.cse213finalproject.sakibModelClass.Maintenance;
 import com.example.cse213finalproject.util.BinaryFileHelper;
 import javafx.event.Event;
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
-public class FleetManagerMaintenanceCrewViewController
+public class FleetManagerMaintenanceCrewViewController implements SceneSwitch
 {
     @javafx.fxml.FXML
     private TableView<Maintenance> blockedVehicleListTableView;

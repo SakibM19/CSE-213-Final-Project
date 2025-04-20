@@ -55,7 +55,7 @@ public class CustomerDashboardViewController
 
     @javafx.fxml.FXML
     public void couponsAndVouchersOnMouseClickedButton(Event event) {
-        switchScene("CustomerOfferAndVouchersView.fxml", event);
+        switchScene("customerVouchers.fxml", event);
     }
 
     @javafx.fxml.FXML
