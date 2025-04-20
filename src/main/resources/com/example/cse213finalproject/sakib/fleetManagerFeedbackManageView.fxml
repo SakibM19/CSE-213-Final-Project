@@ -181,7 +181,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="541.0" layoutY="333.0" prefHeight="26.0" prefWidth="138.0" text="Vehicle Reating">
+      <Label layoutX="511.0" layoutY="329.0" prefHeight="26.0" prefWidth="223.0" text="Vehicle Reating Out of 5">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -268,7 +268,7 @@
          </textFill>
       </Label>
       <Line endX="-159.0" endY="103.4000244140625" layoutX="690.0" layoutY="256.0" startX="-11.5999755859375" startY="103.4000244140625" stroke="#b74c4c" strokeWidth="3.0" />
-      <Label fx:id="cleanlinessLable" layoutX="614.0" layoutY="370.0" prefHeight="22.0" prefWidth="223.0" text="NA">
+      <Label fx:id="cleanlinessLable" layoutX="614.0" layoutY="370.0" prefHeight="22.0" prefWidth="29.0" text="NA">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -289,7 +289,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label fx:id="vehicleConditionLable" layoutX="662.0" layoutY="406.0" prefHeight="22.0" prefWidth="223.0" text="NA">
+      <Label fx:id="vehicleConditionLable" layoutX="662.0" layoutY="406.0" prefHeight="22.0" prefWidth="30.0" text="NA">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -310,7 +310,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label fx:id="comfortLable" layoutX="596.0" layoutY="439.0" prefHeight="22.0" prefWidth="223.0" text="NA">
+      <Label fx:id="comfortLable" layoutX="596.0" layoutY="439.0" prefHeight="22.0" prefWidth="30.0" text="NA">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -345,7 +345,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.6000000238418579" blue="0.25999999046325684" />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -366,7 +366,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.6000000238418579" blue="0.25999999046325684" />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -387,7 +387,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.6000000238418579" blue="0.25999999046325684" />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
                </stops>
