@@ -163,7 +163,7 @@
          </font>
       </Label>
       <TextField fx:id="dropoffLocationTextField" layoutX="228.0" layoutY="341.0" prefHeight="26.0" prefWidth="312.0" />
-      <ComboBox fx:id="brandComboBox" layoutX="177.0" layoutY="396.0" prefWidth="150.0" promptText="Select Brand" />
+      <ComboBox fx:id="brandComboBox" layoutX="183.0" layoutY="396.0" prefWidth="150.0" promptText="Select Brand" />
       <Label layoutX="71.0" layoutY="398.0" text="Vehicle Brand:">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -243,7 +243,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </CheckBox>
-      <Button layoutX="358.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleGetModelOnAction" style="-fx-background-color: navy;" text="Get Model" textFill="WHITE">
+      <Button layoutX="358.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleGetModelOnAction" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: navy;" text="Load Model" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>

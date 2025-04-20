@@ -161,7 +161,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button layoutX="610.0" layoutY="274.0" mnemonicParsing="false" onMouseClicked="#manageRefundOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Manage Refund Claims">
+      <Button layoutX="610.0" layoutY="274.0" mnemonicParsing="false" onMouseClicked="#assignInspectionOnMouseClickedButton" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: navy; -fx-border-color: black;" text="Assign Vehicle For Inspection">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>

@@ -51,10 +51,6 @@ public class FleetManagerDashboardViewController
         switchScene("/com/example/cse213finalproject/sakib/fleetManagerFeedbackManageView.fxml", event);
     }
 
-    @javafx.fxml.FXML
-    public void manageRefundOnMouseClickedButton(Event event) {
-        switchScene("/com/example/cse213finalproject/sakib/fleetManagerRefundClaimsView.fxml", event);
-    }
 
     @javafx.fxml.FXML
     public void blockVehicleOnMouseClickedButton(Event event) {
@@ -99,5 +95,10 @@ public class FleetManagerDashboardViewController
     @javafx.fxml.FXML
     public void logoutOnMouseClickedButton(Event event) {
         switchScene("/com/example/cse213finalproject/sakib/logInView.fxml", event);
+    }
+
+    @javafx.fxml.FXML
+    public void assignInspectionOnMouseClickedButton(Event event) {
+        switchScene("/com/example/cse213finalproject/sakib/fleetManagerCheckVehicle.fxml", event);
     }
 }
