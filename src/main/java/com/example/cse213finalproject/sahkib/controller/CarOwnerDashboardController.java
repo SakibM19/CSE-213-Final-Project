@@ -38,6 +38,7 @@ public class CarOwnerDashboardController
 
     @javafx.fxml.FXML
     public void rentalStatusAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerRentalStatusView.fxml", event);
     }
 
     @javafx.fxml.FXML
