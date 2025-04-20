@@ -7,17 +7,13 @@ import com.example.cse213finalproject.sakibModelClass.Vehicle;
 import com.example.cse213finalproject.util.BinaryFileHelper;
 import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.Event;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -46,6 +42,8 @@ public class CustomerPlaceOrderInformationViewController
     private File bookFile = new File("data/sakib/booking.bin");
     private File orderFile = new File("data/sakib/order.bin");
     Customer current = SessionManager.getLoggedInCustomer();
+    @javafx.fxml.FXML
+    private CheckBox locationCheckBox;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -73,20 +71,32 @@ public class CustomerPlaceOrderInformationViewController
         }
     }
 
+    private String generate4DigitRandomNumber() {
+        int randomNum = (int)(Math.random() * 9000) + 1000;
+        return String.valueOf(randomNum);
+    }
+
     @javafx.fxml.FXML
     public void placeOrderOnMouseClickedButton(Event event) {
 
-        String dl = dropoffLocationTextField.getText();
-        String pl = pickupLocationTextField.getText();
+        if (locationCheckBox.isSelected()){
+            String dl = current.getDropOffLocation();
+            String pl = current.getPickUpLocation();
+
+        }else{
+
+            String dl = dropoffLocationTextField.getText();
+            String pl = pickupLocationTextField.getText();
+        }
 
         LocalDate dd = dropoffDatePicker.getValue();
         LocalDate pd = pickupDatePicker.getValue();
 
         String customerId = current.getId();
-        String bookingId = "b "+ customerId;
-        String orderId = "o "+ customerId;
+        String bookingId = "b" + customerId + generate4DigitRandomNumber();
+        String orderId = "o" + customerId + generate4DigitRandomNumber();
         String customerName = current.getName();
-        Integer cost = 10000;  // no database so I am considering a fixed amount.
+        Float cost = 10000f;  // no database so I am considering a fixed amount.
 
         Order currentorder = new Order(
                 customerName,
@@ -103,6 +113,11 @@ public class CustomerPlaceOrderInformationViewController
         orderList.add(currentorder);
         BinaryFileHelper.writeAllObjects(orderFile,orderList);
 
+
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Order Confirmed");
+        a.showAndWait();
+
     }
 
     @javafx.fxml.FXML
@@ -114,8 +129,8 @@ public class CustomerPlaceOrderInformationViewController
         LocalDate pd = pickupDatePicker.getValue();
 
         String customerId = current.getId();
-        String bookingId = "b " + customerId;
-        String orderId = "o " + customerId;
+        String bookingId = "b" + customerId + generate4DigitRandomNumber();
+        String orderId = "o" + customerId + generate4DigitRandomNumber();
         String customerName = current.getName();
         Integer cost = 10000;  // Fixed cost as mentioned
 
@@ -132,9 +147,11 @@ public class CustomerPlaceOrderInformationViewController
         List<Booking> bookingList = BinaryFileHelper.readAllObjects(bookFile);
         bookingList.add(currentBooking);
         BinaryFileHelper.writeAllObjects(bookFile, bookingList);
+
+
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Booking Confirmed");
+        a.showAndWait();
     }
 
-    @javafx.fxml.FXML
-    public void defaultLocationOnMouseClickedButton(Event event) {
-    }
 }

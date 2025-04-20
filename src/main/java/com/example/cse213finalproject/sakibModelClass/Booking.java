@@ -10,7 +10,7 @@ public class Booking implements Serializable {
     protected LocalDate pickupDate, dropOffDate;
 
     public Booking(int totalCost, String customerName, String customerId, String bookingID, LocalDate pickupDate, LocalDate dropOffDate) {
-        this.totalCost = Integer.parseInt(null);
+        this.totalCost = Integer.parseInt("10000");
         this.customerName = customerName;;
         this.customerId = customerId;
         this.bookingID = bookingID;

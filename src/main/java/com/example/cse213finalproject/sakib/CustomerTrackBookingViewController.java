@@ -20,12 +20,20 @@ public class CustomerTrackBookingViewController implements SceneSwitch
     private TableView<Booking> trackBookingTableView;
     @javafx.fxml.FXML
     private TableColumn<Booking, String> activeBookingIdTableColumn;
-    @javafx.fxml.FXML
-    private TextField idForTrackingTextField;
+
+    private File bookingFile = new File("data/sakib/booking.bin");
 
     @javafx.fxml.FXML
     public void initialize() {
         activeBookingIdTableColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("bookingID"));
+        loadBookingData();
+    }
+
+    public void loadBookingData(){
+        List<Booking> bookingList = BinaryFileHelper.readAllObjects(bookingFile);
+        trackBookingTableView.getItems().clear();
+        trackBookingTableView.getItems().addAll(bookingList);
+
     }
 
     @javafx.fxml.FXML
