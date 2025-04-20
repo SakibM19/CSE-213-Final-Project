@@ -6,14 +6,12 @@ import java.util.Random;
 
 public class Booking implements Serializable {
     protected int  totalCost;
-    protected String customerName, vehicleName, vehicleID, customerId, bookingID;
+    protected String customerName,customerId, bookingID;
     protected LocalDate pickupDate, dropOffDate;
 
-    public Booking(int totalCost, String customerName, String vehicleName, String vehicleID, String customerId, String bookingID, LocalDate pickupDate, LocalDate dropOffDate) {
-        this.totalCost = totalCost;
-        this.customerName = customerName;
-        this.vehicleName = vehicleName;
-        this.vehicleID = vehicleID;
+    public Booking(int totalCost, String customerName, String customerId, String bookingID, LocalDate pickupDate, LocalDate dropOffDate) {
+        this.totalCost = Integer.parseInt(null);
+        this.customerName = customerName;;
         this.customerId = customerId;
         this.bookingID = bookingID;
         this.pickupDate = pickupDate;
@@ -25,7 +23,6 @@ public class Booking implements Serializable {
         return "Booking{" +
                 "bookingID=" + bookingID +
                 ", totalCost=" + totalCost +
-                ", vehicleID=" + vehicleID +
 
                 ", pickupDate=" + pickupDate +
                 ", dropOffDate=" + dropOffDate +
@@ -49,22 +46,6 @@ public class Booking implements Serializable {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
-    }
-
-    public String getVehicleName() {
-        return vehicleName;
-    }
-
-    public void setVehicleName(String vehicleName) {
-        this.vehicleName = vehicleName;
-    }
-
-    public String getVehicleID() {
-        return vehicleID;
-    }
-
-    public void setVehicleID(String vehicleID) {
-        this.vehicleID = vehicleID;
     }
 
     public String getCustomerId() {

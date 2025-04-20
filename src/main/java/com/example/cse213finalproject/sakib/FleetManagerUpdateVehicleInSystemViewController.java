@@ -59,13 +59,14 @@ public class FleetManagerUpdateVehicleInSystemViewController{
 
     @javafx.fxml.FXML
     public void removeVehicleOnMouseClickedButton(Event event) {
-        String idToRemove = enterVehicleIDTextField.getText();
+        String x = enterVehicleIDTextField.getText();
 
         List<Vehicle> vehicles = BinaryFileHelper.readAllObjects(vehicleFile);
 
-        for (int i = 0; i < vehicles.size(); i++) {
-            if (vehicles.get(i).getVehicleID().equals(idToRemove)) {
-                vehicles.remove(i);
+
+        for (Vehicle v : vehicles) {
+            if (v.getVehicleID().equals(x)) {
+                vehicles.remove(v);
                 break;
             }
         }

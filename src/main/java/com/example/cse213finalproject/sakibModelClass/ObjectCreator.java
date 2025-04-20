@@ -40,34 +40,34 @@ public class ObjectCreator {
             LocalDate pickupDate = today.plusDays(i);
             LocalDate dropOffDate = pickupDate.plusDays(random.nextInt(5) + 1);
 
-            orders.add(new Order(
-                    "Customer " + i,
-                    Order.generateOrderID(),
-                    Booking.generateBookingID(),
-                    "VEH00" + i,
-                    "CUST00" + i,
-                    pickupDate,
-                    dropOffDate,
-                    50.0f + random.nextInt(50) // Random daily rate between 50-100
-            ));
-        }
-
-        // Create 10 Booking objects
-        for (int i = 1; i <= 10; i++) {
-            LocalDate pickupDate = today.plusDays(i);
-            LocalDate dropOffDate = pickupDate.plusDays(random.nextInt(5) + 1);
-
-            bookings.add(new Booking(
-                    500 + random.nextInt(1000), // Random total cost
-                    "Customer " + i,
-                    "Vehicle Model " + i,
-                    "VH00" + i,
-                    "CUST00" + i,
-                    Booking.generateBookingID(),
-                    pickupDate,
-                    dropOffDate
-            ));
-        }
+//            orders.add(new Order(
+//                    "Customer " + i,
+//                    Order.generateOrderID(),
+//                    Booking.generateBookingID(),
+//                    "VEH00" + i,
+//                    "CUST00" + i,
+//                    pickupDate,
+//                    dropOffDate,
+//                    50.0f + random.nextInt(50) // Random daily rate between 50-100
+//            ));
+       }
+//
+//        // Create 10 Booking objects
+//        for (int i = 1; i <= 10; i++) {
+//            LocalDate pickupDate = today.plusDays(i);
+//            LocalDate dropOffDate = pickupDate.plusDays(random.nextInt(5) + 1);
+//
+//            bookings.add(new Booking(
+//                    500 + random.nextInt(1000), // Random total cost
+//                    "Customer " + i,
+//                    "Vehicle Model " + i,
+//                    "VH00" + i,
+//                    "CUST00" + i,
+//                    Booking.generateBookingID(),
+//                    pickupDate,
+//                    dropOffDate
+//            ));
+//        }
 
 
 

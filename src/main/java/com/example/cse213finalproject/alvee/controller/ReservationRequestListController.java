@@ -73,12 +73,12 @@ public class ReservationRequestListController {
         String selectedModel = availableCarComboBox.getValue();
         for (Vehicle v : vehicleList) {
             if (v.getVehicleModel().equals(selectedModel)) {
-                b.setVehicleID(v.getVehicleID());
+//                b.setVehicleID(v.getVehicleID());
                 break;
             }
         }
 
-        b.setVehicleName(availableCarComboBox.getValue());
+//        b.setVehicleName(availableCarComboBox.getValue());
         b.setPickupDate(startDatePicker.getValue());
         b.setDropOffDate(endDatePicker.getValue());
 
@@ -94,7 +94,7 @@ public class ReservationRequestListController {
         File file = new File("data/sakib/booking.bin");
         BinaryFileHelper.writeAllObjects(file, bookingList);
 
-        carNameText.setText(b.getVehicleName());
+//        carNameText.setText(b.getVehicleName());
         startDateText.setText(b.getPickupDate().toString());
         endDateText.setText(b.getDropOffDate().toString());
         b = null;
@@ -117,7 +117,7 @@ public class ReservationRequestListController {
         for (Booking b : bookingList) {
             if (bookingIdTextField.getText().equals(b.getBookingID())) {
                 customerNameText.setText(b.getCustomerName());
-                carNameText.setText(b.getVehicleName());
+//                carNameText.setText(b.getVehicleName());
                 startDateText.setText(b.getPickupDate().toString());
                 endDateText.setText(b.getDropOffDate().toString());
                 this.b = b;

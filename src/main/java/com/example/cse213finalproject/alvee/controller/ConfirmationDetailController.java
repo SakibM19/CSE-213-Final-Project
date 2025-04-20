@@ -46,31 +46,31 @@ public class ConfirmationDetailController
 
     @FXML
     public void handleConfirmButtonOnAction(ActionEvent actionEvent) {
-        float perDayCost = 0;
-        for (Vehicle v: vehicleList) {
-            if (v.getVehicleID().equals(b.getVehicleID())){
-                perDayCost = v.getPerDayCost();
-                break;
-            }
-        }
+//        float perDayCost = 0;
+//        for (Vehicle v: vehicleList) {
+//            if (v.getVehicleID().equals(b.getVehicleID())){
+//                perDayCost = v.getPerDayCost();
+//                break;
+//            }
+//        }
 
-        Order o = new Order(
-                b.getCustomerName(),
-                OrderIdGenerator.generateOrderId(),
-                b.getBookingID(),
-                b.getVehicleID(),
-                b.getCustomerId(),
-                b.getPickupDate(),
-                b.getDropOffDate(),
-                perDayCost
-        );
-        orderList.add(o);
-
-        File file = new File("data/sakib/order.bin");
-        BinaryFileHelper.writeAllObjects(file, orderList);
-
-        bookingList.remove(b);
-        BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookingList);
+//        Order o = new Order(
+//                b.getCustomerName(),
+//                OrderIdGenerator.generateOrderId(),
+//                b.getBookingID(),
+//                b.getVehicleID(),
+//                b.getCustomerId(),
+//                b.getPickupDate(),
+//                b.getDropOffDate(),
+//                perDayCost
+//        );
+//        orderList.add(o);
+//
+//        File file = new File("data/sakib/order.bin");
+//        BinaryFileHelper.writeAllObjects(file, orderList);
+//
+//        bookingList.remove(b);
+//        BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookingList);
 
     }
 
@@ -81,15 +81,15 @@ public class ConfirmationDetailController
 
     @FXML
     public void handleSearchButtonOnClick(ActionEvent actionEvent) {
-        for (Booking b: bookingList){
-            if (bookingIdTextField.getText().equals(b.getBookingID())){
-                customerNameText.setText(b.getCustomerName());
-                carNameText.setText(b.getVehicleName());
-                startDateText.setText(b.getPickupDate().toString());
-                endDateText.setText(b.getDropOffDate().toString());
-                this.b = b;
-                break;
-            }
-        }
-    }
+//        for (Booking b: bookingList){
+//            if (bookingIdTextField.getText().equals(b.getBookingID())){
+//                customerNameText.setText(b.getCustomerName());
+//                carNameText.setText(b.getVehicleName());
+//                startDateText.setText(b.getPickupDate().toString());
+//                endDateText.setText(b.getDropOffDate().toString());
+//                this.b = b;
+//                break;
+//            }
+//        }
+   }
 }
