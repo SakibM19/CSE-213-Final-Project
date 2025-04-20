@@ -41,16 +41,18 @@ public class CustomerFeedbackBookingListViewController {
     private ComboBox<Integer> cleanlinessComboBox;
     @javafx.fxml.FXML
     private TextField vehicleIdInputTextField;
+    private List<Feedback> feedbackList;
 
-    private final File feedbackFile = new File("data/sakib/feedback.bin");
 
     @javafx.fxml.FXML
     public void initialize() {
+        this.feedbackList = BinaryFileHelper.readAllObjects(new File("data/sakib/feedback.bin"));
         vehicleNumberTableColumn.setCellValueFactory(new PropertyValueFactory<>("vehicleID"));
         cleanlinessTableColumn.setCellValueFactory(new PropertyValueFactory<>("cleanliness"));
         comfortTableColumn.setCellValueFactory(new PropertyValueFactory<>("comfort"));
         vehicleConditionTableColumn.setCellValueFactory(new PropertyValueFactory<>("vehicleCondition"));
         additionalCommentTableColumn.setCellValueFactory(new PropertyValueFactory<>("additionalComment"));
+
 
         cleanlinessComboBox.getItems().addAll(1, 2, 3, 4, 5);
         comfortComboBox.getItems().addAll(1, 2, 3, 4, 5);
@@ -72,7 +74,9 @@ public class CustomerFeedbackBookingListViewController {
 
         Feedback feedback = new Feedback(current.getId(), vehicleID, vehicleCondition, cleanliness, comfort, additionalComments);
 
-        BinaryFileHelper.saveObject(feedbackFile, feedback);
+
+        feedbackList.add(feedback);
+        BinaryFileHelper.writeAllObjects(new File("data/sakib/feedback.bin"),feedbackList);
 
 
         Alert a = new Alert(Alert.AlertType.INFORMATION);
@@ -84,8 +88,8 @@ public class CustomerFeedbackBookingListViewController {
     }
 
     private void loadFeedbackTable() {
-        List<Feedback> allFeedback = BinaryFileHelper.readAllObjects(feedbackFile);
-        feedbackTableView.getItems().setAll(allFeedback);
+        feedbackTableView.getItems().clear();
+        feedbackTableView.getItems().addAll(feedbackList);
     }
 
 

@@ -5,7 +5,9 @@ import com.example.cse213finalproject.sakibModelClass.Customer;
 import com.example.cse213finalproject.sakibModelClass.Order;
 import com.example.cse213finalproject.sakibModelClass.Vehicle;
 import com.example.cse213finalproject.util.BinaryFileHelper;
+import com.example.cse213finalproject.util.OrderIdGenerator;
 import com.example.cse213finalproject.util.SessionManager;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.scene.control.*;
 
@@ -20,13 +22,14 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class CustomerPlaceOrderInformationViewController
 {
-    @javafx.fxml.FXML
-    private ComboBox<Integer> seatsWantedComboBox;
     @javafx.fxml.FXML
     private DatePicker dropoffDatePicker;
     @javafx.fxml.FXML
@@ -34,22 +37,38 @@ public class CustomerPlaceOrderInformationViewController
     @javafx.fxml.FXML
     private TextField dropoffLocationTextField;
     @javafx.fxml.FXML
-    private ComboBox<String> vehicleTypeWantedComboBox;
-    @javafx.fxml.FXML
     private TextField pickupLocationTextField;
 
 
-    private File bookFile = new File("data/sakib/booking.bin");
-    private File orderFile = new File("data/sakib/order.bin");
+    private
+
     Customer current = SessionManager.getLoggedInCustomer();
     @javafx.fxml.FXML
     private CheckBox locationCheckBox;
+    @javafx.fxml.FXML
+    private ComboBox<String> brandComboBox;
+    @javafx.fxml.FXML
+    private ComboBox<String> vehicleModelComboBox;
+    private List<Vehicle> vehicleList;
+//    private  availableBrand;
+    private final List<Vehicle> availableVehicle = new ArrayList<>();
+    private List<String> modelOfSelectedBrand;
 
     @javafx.fxml.FXML
     public void initialize() {
-
-        seatsWantedComboBox.getItems().addAll(2, 5, 7);
-        vehicleTypeWantedComboBox.getItems().addAll("Sedan","SUV");
+        List<String> availableBrand = new ArrayList<>();
+        this.modelOfSelectedBrand = new ArrayList<>();
+        this.vehicleList = BinaryFileHelper.readAllObjects(new File("data/sakib/fleet.bin"));
+        for (Vehicle v: vehicleList){
+            if (v.getStatus().equals("Available")){
+                availableBrand.add(v.getBrand());
+                availableVehicle.add(v);
+            }
+        }
+        Set<String> removedDuplicate = new LinkedHashSet<>(availableBrand);
+        availableBrand.clear();
+        availableBrand.addAll(removedDuplicate);
+        brandComboBox.getItems().addAll(availableBrand);
 
     }
 
@@ -93,22 +112,32 @@ public class CustomerPlaceOrderInformationViewController
         LocalDate pd = pickupDatePicker.getValue();
 
         String customerId = current.getId();
-        String bookingId = "b" + customerId + generate4DigitRandomNumber();
         String orderId = "o" + customerId + generate4DigitRandomNumber();
         String customerName = current.getName();
-        Float cost = 10000f;  // no database so I am considering a fixed amount.
+        float cost = 10000f;  // no database so I am considering a fixed amount.
 
+        Vehicle selectedV = new Vehicle();
+        for (Vehicle v: vehicleList){
+            if (vehicleModelComboBox.getValue().equals(v.getVehicleModel())){
+                selectedV = v;
+                break;
+            }
+        }
+
+
+//        String customerName, String orderID, String customerID, LocalDate pickupDate, LocalDate dropOffDate, float dailyCost, String vehicleId, String vehicleBrand
         Order currentorder = new Order(
                 customerName,
                 orderId,
-                bookingId,
                 customerId,
                 pd,
                 dd,
-                cost
+                selectedV.getPerDayCost(),
+                selectedV.getVehicleID(),
+                selectedV.getVehicleModel()
         );
 
-
+        File orderFile = new File("data/sakib/order.bin");
         List<Order> orderList = BinaryFileHelper.readAllObjects(orderFile);
         orderList.add(currentorder);
         BinaryFileHelper.writeAllObjects(orderFile,orderList);
@@ -129,10 +158,18 @@ public class CustomerPlaceOrderInformationViewController
         LocalDate pd = pickupDatePicker.getValue();
 
         String customerId = current.getId();
-        String bookingId = "b" + customerId + generate4DigitRandomNumber();
-        String orderId = "o" + customerId + generate4DigitRandomNumber();
+        String bookingId = OrderIdGenerator.generateBookingId();
         String customerName = current.getName();
-        Integer cost = 10000;  // Fixed cost as mentioned
+        int cost = 10000;  // Fixed cost as mentioned
+        String vId = "";
+        for (Vehicle v: vehicleList){
+            if (vehicleModelComboBox.getValue().equals(v.getVehicleModel())){
+                vId = v.getVehicleID();
+                break;
+            }
+        }
+
+//        int totalCost, String customerName, String customerId, String bookingID, LocalDate pickupDate, LocalDate dropOffDate, String vehicleId, String vehicleModel
 
 
         Booking currentBooking = new Booking(
@@ -141,9 +178,12 @@ public class CustomerPlaceOrderInformationViewController
                 customerId,
                 bookingId,
                 pd,
-                dd
+                dd,
+                vId,
+                vehicleModelComboBox.getValue()
         );
 
+        File bookFile = new File("data/sakib/booking.bin");
         List<Booking> bookingList = BinaryFileHelper.readAllObjects(bookFile);
         bookingList.add(currentBooking);
         BinaryFileHelper.writeAllObjects(bookFile, bookingList);
@@ -154,4 +194,15 @@ public class CustomerPlaceOrderInformationViewController
         a.showAndWait();
     }
 
+    @javafx.fxml.FXML
+    public void handleGetModelOnAction(ActionEvent actionEvent) {
+        modelOfSelectedBrand.clear();
+        for (Vehicle v: availableVehicle){
+            if (v.getBrand().equals(brandComboBox.getValue())){
+                modelOfSelectedBrand.add(v.getVehicleModel());
+            }
+        }
+        vehicleModelComboBox.getItems().clear();
+        vehicleModelComboBox.getItems().addAll(modelOfSelectedBrand);
+    }
 }

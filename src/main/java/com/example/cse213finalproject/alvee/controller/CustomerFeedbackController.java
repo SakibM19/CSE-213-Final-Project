@@ -1,81 +1,53 @@
 package com.example.cse213finalproject.alvee.controller;
-//
-//import com.example.cse213finalproject.alvee.model.Feedback;
-//import javafx.beans.property.ReadOnlyStringWrapper;
-//import javafx.collections.FXCollections;
-//import javafx.collections.ObservableList;
-//import javafx.event.ActionEvent;
-//import javafx.fxml.FXML;
-//import javafx.scene.control.*;
-//import javafx.scene.text.Text;
-//
-//public class CustomerFeedbackController {
-//
-//    @FXML
-//    private TableColumn<Feedback, String> idCol;
-//    @FXML
-//    private TableColumn<Feedback, String> avgRatingCol;
-//    @FXML
-//    private TableColumn<Feedback, String> commentCol;
-//    @FXML
-//    private TableView<Feedback> feedbackTableView;
-//    @FXML
-//    private Label commentLabel;
-//    @FXML
-//    private Text carRatingText, cleanlinessRatingText, comfortRatingText;
-//    @FXML
-//    private TextField replyTextField;
-//
-//    private ObservableList<Feedback> feedbackList = FXCollections.observableArrayList();
-//
-//    @FXML
-//    public void initialize() {
-//        // Set up column data (use PropertyValueFactory or lambdas)
-//        idCol.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().feedbackId));
-//        avgRatingCol.setCellValueFactory(cellData -> {
-//            Feedback f = cellData.getValue();
-//            int avg = (f.vehicleCondition + f.cleanliness + f.comfort) / 3;
-//            return new ReadOnlyStringWrapper(String.valueOf(avg));
-//        });
-//        commentCol.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().additionalComment));
-//
-//        // Sample data (remove in real app)
-//        feedbackList.addAll(
-//                new Feedback("FB101", 4, 5, 4, "Nice car!", null),
-//                new Feedback("FB102", 2, 3, 3, "Could be cleaner.", null)
-//        );
-//
-//        feedbackTableView.setItems(feedbackList);
-//
-//        // Handle row click
-//        feedbackTableView.setOnMouseClicked(event -> {
-//            Feedback selected = feedbackTableView.getSelectionModel().getSelectedItem();
-//            if (selected != null) {
-//                showFeedbackDetails(selected);
-//            }
-//        });
-//    }
-//
-//    private Feedback currentFeedback; // to track selected item
-//
-//    private void showFeedbackDetails(Feedback feedback) {
-//        currentFeedback = feedback;
-//
-//        carRatingText.setText(String.valueOf(feedback.vehicleCondition));
-//        cleanlinessRatingText.setText(String.valueOf(feedback.cleanliness));
-//        comfortRatingText.setText(String.valueOf(feedback.comfort));
-//        commentLabel.setText(feedback.additionalComment);
-//        replyTextField.setText(feedback.csrReply != null ? feedback.csrReply : "");
-//    }
-//
-//    @FXML
-//    public void handleSendButtonOnAction(ActionEvent event) {
-//        if (currentFeedback != null) {
-//            currentFeedback.csrReply = replyTextField.getText();
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setHeaderText("Reply sent!");
-//            alert.setContentText("Your reply was saved to feedback ID: " + currentFeedback.feedbackId);
-//            alert.showAndWait();
-//        }
-//    }
-//}
+
+import com.example.cse213finalproject.sakibModelClass.Feedback;
+import com.example.cse213finalproject.util.BinaryFileHelper;
+import com.example.cse213finalproject.util.SceneSwitcher;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.File;
+import java.util.List;
+
+public class CustomerFeedbackController
+{
+    @javafx.fxml.FXML
+    private TableColumn<Feedback, Integer> vehicleRatingCol;
+    @javafx.fxml.FXML
+    private TableColumn<Feedback, String> shortNoteCol;
+    @javafx.fxml.FXML
+    private TableColumn<Feedback, Integer> comfortRatingCol;
+    @javafx.fxml.FXML
+    private TableView<Feedback> feedbackTableView;
+    @javafx.fxml.FXML
+    private TableColumn<Feedback, String> customerIdCol;
+    @javafx.fxml.FXML
+    private TableColumn<Feedback, String> vehicleIdCol;
+    private List<Feedback> feedbackList;
+
+    @javafx.fxml.FXML
+    public void initialize() {
+        this.feedbackList = BinaryFileHelper.readAllObjects(new File("data/sakib/feedback.bin"));
+
+        comfortRatingCol.setCellValueFactory(new PropertyValueFactory<>("comfort"));
+        customerIdCol.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
+        shortNoteCol.setCellValueFactory(new PropertyValueFactory<>("additionalComment"));
+        vehicleIdCol.setCellValueFactory(new PropertyValueFactory<>("vehicleID"));
+        vehicleRatingCol.setCellValueFactory(new PropertyValueFactory<>("vehicleCondition"));
+
+        feedbackTableView.getItems().addAll(feedbackList);
+    }
+
+    @javafx.fxml.FXML
+    public void handleReportButtonOnClick(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "make-report.fxml", "Make Report");
+    }
+
+    @javafx.fxml.FXML
+    public void handleBackButtonOnClick(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "CSR-dashboard.fxml", "Dashboard");
+    }
+}

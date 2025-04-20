@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.List;
 
 public class ConfirmationDetailController
@@ -46,32 +47,32 @@ public class ConfirmationDetailController
 
     @FXML
     public void handleConfirmButtonOnAction(ActionEvent actionEvent) {
-//        float perDayCost = 0;
-//        for (Vehicle v: vehicleList) {
-//            if (v.getVehicleID().equals(b.getVehicleID())){
-//                perDayCost = v.getPerDayCost();
-//                break;
-//            }
-//        }
+        float perDayCost = 0;
+        for (Vehicle v: vehicleList) {
+            if (v.getVehicleID().equals(b.getVehicleId())){
+                perDayCost = v.getPerDayCost();
+                break;
+            }
+        }
+//        String customerName, String orderID, String bookingID, String customerID, LocalDate pickupDate, LocalDate dropOffDate,String vehicleId, String vehicleModel,  float dailyCost
+        Order o = new Order(
+                b.getCustomerName(),
+                OrderIdGenerator.generateOrderId(),
+                b.getBookingID(),
+                b.getCustomerID(),
+                b.getPickupDate(),
+                b.getDropOffDate(),
+                b.getVehicleId(),
+                b.getVehicleModel(),
+                perDayCost
+        );
+        orderList.add(o);
 
-//        Order o = new Order(
-//                b.getCustomerName(),
-//                OrderIdGenerator.generateOrderId(),
-//                b.getBookingID(),
-//                b.getVehicleID(),
-//                b.getCustomerId(),
-//                b.getPickupDate(),
-//                b.getDropOffDate(),
-//                perDayCost
-//        );
-//        orderList.add(o);
-//
-//        File file = new File("data/sakib/order.bin");
-//        BinaryFileHelper.writeAllObjects(file, orderList);
-//
-//        bookingList.remove(b);
-//        BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookingList);
+        File file = new File("data/sakib/order.bin");
+        BinaryFileHelper.writeAllObjects(file, orderList);
 
+        bookingList.remove(b);
+        BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookingList);
     }
 
     @FXML
@@ -81,15 +82,15 @@ public class ConfirmationDetailController
 
     @FXML
     public void handleSearchButtonOnClick(ActionEvent actionEvent) {
-//        for (Booking b: bookingList){
-//            if (bookingIdTextField.getText().equals(b.getBookingID())){
-//                customerNameText.setText(b.getCustomerName());
-//                carNameText.setText(b.getVehicleName());
-//                startDateText.setText(b.getPickupDate().toString());
-//                endDateText.setText(b.getDropOffDate().toString());
-//                this.b = b;
-//                break;
-//            }
-//        }
+        for (Booking b: bookingList){
+            if (bookingIdTextField.getText().equals(b.getBookingID())){
+                customerNameText.setText(b.getCustomerName());
+                carNameText.setText(b.getVehicleModel());
+                startDateText.setText(b.getPickupDate().toString());
+                endDateText.setText(b.getDropOffDate().toString());
+                this.b = b;
+                break;
+            }
+        }
    }
 }

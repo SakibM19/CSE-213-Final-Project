@@ -188,27 +188,47 @@ public class ObjectCreator {
         ));
 
         List<Vehicle> vehicles = new ArrayList<>();
+        // Toyota (4)
+        vehicles.add(new Vehicle("VH031", "Avalon", "Sedan", "Toyota", 5, 52.0f));
+        vehicles.add(new Vehicle("VH032", "4Runner", "SUV", "Toyota", 5, 76.0f));
+        vehicles.add(new Vehicle("VH033", "Tacoma", "Pickup Truck", "Toyota", 4, 70.0f));
+        vehicles.add(new Vehicle("VH034", "Venza", "Crossover", "Toyota", 5, 68.0f));
 
-        // Create 10 Vehicle objects with realistic data
-        vehicles.add(new Vehicle("VH001", "Camry", "Sedan", "Toyota", 5, 50.0f));
-        vehicles.add(new Vehicle("VH002", "Civic", "Sedan", "Honda", 5, 45.0f));
-        vehicles.add(new Vehicle("VH003", "F-150", "Pickup Truck", "Ford", 3, 70.0f));
-        vehicles.add(new Vehicle("VH004", "Sienna", "Minivan", "Toyota", 7, 65.0f));
-        vehicles.add(new Vehicle("VH005", "Model 3", "Electric", "Tesla", 5, 90.0f));
-        vehicles.add(new Vehicle("VH006", "Silverado", "Pickup Truck", "Chevrolet", 3, 75.0f));
-        vehicles.add(new Vehicle("VH007", "Odyssey", "Minivan", "Honda", 8, 68.0f));
-        vehicles.add(new Vehicle("VH008", "Accord", "Sedan", "Honda", 5, 48.0f));
-        vehicles.add(new Vehicle("VH009", "Wrangler", "SUV", "Jeep", 5, 85.0f));
-        vehicles.add(new Vehicle("VH010", "Rogue", "SUV", "Nissan", 5, 60.0f));
+// Honda (4)
+        vehicles.add(new Vehicle("VH035", "Insight", "Hybrid", "Honda", 5, 59.0f));
+        vehicles.add(new Vehicle("VH036", "Ridgeline", "Pickup Truck", "Honda", 5, 72.0f));
+        vehicles.add(new Vehicle("VH037", "Pilot", "SUV", "Honda", 7, 75.0f));
+        vehicles.add(new Vehicle("VH038", "Fit", "Compact", "Honda", 5, 48.0f));
+
+// Ford (4)
+        vehicles.add(new Vehicle("VH039", "Edge", "SUV", "Ford", 5, 73.0f));
+        vehicles.add(new Vehicle("VH040", "Fusion", "Sedan", "Ford", 5, 51.0f));
+        vehicles.add(new Vehicle("VH041", "Ranger", "Pickup Truck", "Ford", 4, 69.0f));
+        vehicles.add(new Vehicle("VH042", "Escape", "SUV", "Ford", 5, 65.0f));
+
+// Chevrolet (4)
+        vehicles.add(new Vehicle("VH043", "Trax", "Compact SUV", "Chevrolet", 5, 60.0f));
+        vehicles.add(new Vehicle("VH044", "Impala", "Sedan", "Chevrolet", 5, 55.0f));
+        vehicles.add(new Vehicle("VH045", "Blazer", "SUV", "Chevrolet", 5, 74.0f));
+        vehicles.add(new Vehicle("VH046", "Colorado", "Pickup Truck", "Chevrolet", 4, 71.0f));
+
+// Nissan (4)
+        vehicles.add(new Vehicle("VH047", "Altima", "Sedan", "Nissan", 5, 50.0f));
+        vehicles.add(new Vehicle("VH048", "Frontier", "Pickup Truck", "Nissan", 4, 68.0f));
+        vehicles.add(new Vehicle("VH049", "Murano", "SUV", "Nissan", 5, 72.0f));
+        vehicles.add(new Vehicle("VH050", "Versa", "Compact", "Nissan", 5, 45.0f));
+
+
+
 
         // Print some sample objects to verify
         System.out.println("Sample Customer: " + customers.get(0));
-        System.out.println("Sample Order: " + orders.get(0));
-        System.out.println("Sample Booking: " + bookings.get(0));
+//        System.out.println("Sample Order: " + orders.get(0));
+//        System.out.println("Sample Booking: " + bookings.get(0));
         System.out.println("Sample CustomerQuery: " + customerQueries.get(0));
 
         BinaryFileHelper.writeAllObjects(new File("data/alvee/customer-query.bin"), customerQueries);
-        BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookings);
+//        BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookings);
         BinaryFileHelper.writeAllObjects(new File("data/user/customer.bin"), customers);
         BinaryFileHelper.writeAllObjects(new File("data/sakib/fleet.bin"), vehicles);
         BinaryFileHelper.writeAllObjects(new File("data/user/csr.bin"), CSRList);

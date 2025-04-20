@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.alvee.controller.MakeReportController">
+   <children>
+      <Text layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Report">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="summaryReportTextArea" layoutX="60.0" layoutY="109.0" prefHeight="146.0" prefWidth="302.0" />
+      <Text layoutX="60.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Summary" />
+      <ComboBox fx:id="feedbackTypeComboBox" layoutX="60.0" layoutY="275.0" prefHeight="36.0" prefWidth="180.0" promptText="Feedback Type" />
+      <Button layoutX="271.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleSaveButtonOnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: #3e3e3e;" text="Save" textFill="WHITE" />
+      <TableView fx:id="reportTableView" layoutX="417.0" layoutY="109.0" prefHeight="440.0" prefWidth="444.0">
+        <columns>
+          <TableColumn fx:id="feedbackTypeCol" prefWidth="98.39999389648438" text="Feedback Type" />
+          <TableColumn fx:id="summaryCol" prefWidth="345.60003662109375" text="Summary" />
+        </columns>
+      </TableView>
+      <Button layoutX="59.0" layoutY="513.0" mnemonicParsing="false" onAction="#handleBackButtonOnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: #3e3e3e;" text="back" textFill="WHITE" />
+   </children>
+</AnchorPane>
