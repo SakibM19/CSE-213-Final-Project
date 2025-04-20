@@ -47,6 +47,7 @@ public class CarOwnerDashboardController
 
     @javafx.fxml.FXML
     public void requestMaintainenceAction(Event event) {
+        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerRequestMaintainanceView.fxml", event);
     }
 
     @javafx.fxml.FXML
