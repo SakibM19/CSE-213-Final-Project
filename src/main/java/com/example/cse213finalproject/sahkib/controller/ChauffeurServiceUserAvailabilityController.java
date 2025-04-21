@@ -1,9 +1,7 @@
 package com.example.cse213finalproject.sahkib.controller;
 
-import java.io.IOException;
-
+import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -11,23 +9,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
-public class CarOwnerCarListController
-{
+import java.io.IOException;
 
-    @FXML
+import static com.example.cse213finalproject.commonClass.SceneSwitch.switchScene;
+
+public class ChauffeurServiceUserAvailabilityController {
+    @javafx.fxml.FXML
     private ComboBox chooseVehicleComboBox1;
-    @FXML
+    @javafx.fxml.FXML
     private ComboBox chooseVehicleComboBox;
 
     @javafx.fxml.FXML
-    public void initialize() {
+    public void backAction(ActionEvent actionEvent) {
+        switchScene("/com/example/cse213finalproject/sahkib/ChauffeurServiceUserDashBoardView.fxml", event);
     }
-
-    @FXML
-    public void backAction(Event event) {
-        switchScene("/com/example/cse213finalproject/sahkib/CarOwnerDashboardView.fxml", event);
-    }
-
     private void switchScene(String fxmlFile, Event event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -41,3 +36,6 @@ public class CarOwnerCarListController
         }
     }
 }
+
+
+

@@ -8,9 +8,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
 import javafx.stage.Stage;
 
 public class CarOwnerAddCarController {
+    @FXML
+    private TableColumn statusCol;
+    @FXML
+    private TableColumn brandCol;
+    @FXML
+    private TableView carListView;
+    @FXML
+    private TableColumn modelCol;
+    @FXML
+    private TableColumn vehicleIdCol;
+
     @javafx.fxml.FXML
     public void initialize() {
     }

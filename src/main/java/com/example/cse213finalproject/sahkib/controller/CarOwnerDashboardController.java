@@ -12,16 +12,19 @@ public class CarOwnerDashboardController
 {
 
     @javafx.fxml.FXML
+    private Text csrName;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void rentListAction(Event event) {
         switchScene("/com/example/cse213finalproject/sahkib/CarOwnerCarListView.fxml", event);
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void addCarAction(Event event) {
         switchScene("/com/example/cse213finalproject/sahkib/CarOwnerAddCarView.fxml", event);
     }
