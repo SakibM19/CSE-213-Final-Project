@@ -1,6 +1,5 @@
 package com.example.cse213finalproject.alvee.controller;
 
-import com.example.cse213finalproject.alvee.model.SupportReport;
 import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
