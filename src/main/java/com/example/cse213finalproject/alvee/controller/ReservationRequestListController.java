@@ -1,8 +1,6 @@
 package com.example.cse213finalproject.alvee.controller;
 
 import com.example.cse213finalproject.alvee.model.CsrInteractionHistory;
-import com.example.cse213finalproject.alvee.model.CustomerQuery;
-import com.example.cse213finalproject.alvee.model.ReservationRequest;
 import com.example.cse213finalproject.sakibModelClass.Booking;
 import com.example.cse213finalproject.sakibModelClass.Vehicle;
 import com.example.cse213finalproject.util.BinaryFileHelper;

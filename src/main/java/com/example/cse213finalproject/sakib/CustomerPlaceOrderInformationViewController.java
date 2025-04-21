@@ -112,7 +112,7 @@ public class CustomerPlaceOrderInformationViewController
         LocalDate pd = pickupDatePicker.getValue();
 
         String customerId = current.getId();
-        String orderId = "o" + customerId + generate4DigitRandomNumber();
+        String orderId = OrderIdGenerator.generateOrderId();
         String customerName = current.getName();
         float cost = 10000f;  // no database so I am considering a fixed amount.
 

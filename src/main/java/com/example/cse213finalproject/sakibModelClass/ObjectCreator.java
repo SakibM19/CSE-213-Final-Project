@@ -230,7 +230,7 @@ public class ObjectCreator {
         BinaryFileHelper.writeAllObjects(new File("data/alvee/customer-query.bin"), customerQueries);
 //        BinaryFileHelper.writeAllObjects(new File("data/sakib/booking.bin"), bookings);
         BinaryFileHelper.writeAllObjects(new File("data/user/customer.bin"), customers);
-        BinaryFileHelper.writeAllObjects(new File("data/sakib/fleet.bin"), vehicles);
+//        BinaryFileHelper.writeAllObjects(new File("data/sakib/fleet.bin"), vehicles);
         BinaryFileHelper.writeAllObjects(new File("data/user/csr.bin"), CSRList);
         BinaryFileHelper.writeAllObjects(new File("data/user/inspector.bin"), inspectorList);
 

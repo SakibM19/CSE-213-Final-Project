@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class History implements Serializable {
-    private String historyId;
-    private String type;
-    private LocalDate date;
+    protected String historyId;
+    protected String type;
+    protected LocalDate date;
 
     public History(String historyId, String type, LocalDate date) {
         this.historyId = historyId;
