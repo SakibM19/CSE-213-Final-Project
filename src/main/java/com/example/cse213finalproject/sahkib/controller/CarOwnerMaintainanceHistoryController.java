@@ -11,6 +11,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class CarOwnerMaintainanceHistoryController {
+    @FXML
+    private TableColumn interactionTypeCol;
+    @FXML
+    private TableColumn dateCol;
+    @FXML
+    private ComboBox typeComboBox;
+    @FXML
+    private TableColumn inspectionIdCol;
+    @FXML
+    private TableView historyTableView;
+    @FXML
+    private TableColumn historyIdCol;
+
     @javafx.fxml.FXML
     public void initialize() {
     }

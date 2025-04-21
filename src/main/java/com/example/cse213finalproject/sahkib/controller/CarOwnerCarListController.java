@@ -8,10 +8,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 public class CarOwnerCarListController
 {
+
+    @FXML
+    private ComboBox chooseVehicleComboBox1;
+    @FXML
+    private ComboBox chooseVehicleComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
