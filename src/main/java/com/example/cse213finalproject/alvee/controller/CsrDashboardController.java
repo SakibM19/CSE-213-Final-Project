@@ -53,7 +53,7 @@ public class CsrDashboardController
 
     @javafx.fxml.FXML
     public void handleConfirmBookingOnAction(ActionEvent actionEvent) {
-        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "confirm-order.fxml", "Confirm Booking");
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "confirmation-detail.fxml", "Confirm Booking");
     }
 
     @javafx.fxml.FXML
@@ -74,5 +74,10 @@ public class CsrDashboardController
     @javafx.fxml.FXML
     public void handleFeedbackOnAction(ActionEvent actionEvent) {
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "customer-feedback.fxml", "Customer Feedback");
+    }
+
+    @javafx.fxml.FXML
+    public void handleBookingDetailsOnAction(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "confirm-order.fxml", "Customer Feedback");
     }
 }

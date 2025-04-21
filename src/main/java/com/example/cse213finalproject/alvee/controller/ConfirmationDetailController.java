@@ -77,7 +77,7 @@ public class ConfirmationDetailController
 
     @FXML
     public void handleBackButtonOnClick(ActionEvent actionEvent) {
-        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "confirm-order.fxml", "Confirm Booking");
+        SceneSwitcher.switchScene((Node) actionEvent.getSource(), "csr-dashboard.fxml", "Confirm Booking");
     }
 
     @FXML

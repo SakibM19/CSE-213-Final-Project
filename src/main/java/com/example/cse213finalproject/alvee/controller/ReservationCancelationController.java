@@ -87,15 +87,15 @@ public class ReservationCancelationController {
 
     @javafx.fxml.FXML
     public void handleSearchButtonOnClick(ActionEvent actionEvent) {
-//        for (Booking b : bookingList) {
-//            if (bookingIdTextField.getText().equals(b.getBookingID())) {
-//                customerNameText.setText(b.getCustomerName());
-//                carNameText.setText(b.getVehicleName());
-//                startDateText.setText(b.getPickupDate().toString());
-//                endDateText.setText(b.getDropOffDate().toString());
-//                this.b = b;
-//                break;
-//            }
-//        }
+        for (Booking b : bookingList) {
+            if (bookingIdTextField.getText().equals(b.getBookingID())) {
+                customerNameText.setText(b.getCustomerName());
+                carNameText.setText(b.getVehicleModel());
+                startDateText.setText(b.getPickupDate().toString());
+                endDateText.setText(b.getDropOffDate().toString());
+                this.b = b;
+                break;
+            }
+        }
     }
 }

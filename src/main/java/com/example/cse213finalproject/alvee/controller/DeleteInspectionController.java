@@ -10,6 +10,8 @@ import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 import java.io.File;
 import java.time.LocalDate;
@@ -20,7 +22,6 @@ public class DeleteInspectionController {
     private TextField inspectionIdTextField;
     private List<Inspection> inspectionList;
     private Inspector i;
-
     private List<InspectionHistory> inspectionHistoryList;
 
     @javafx.fxml.FXML
@@ -41,19 +42,46 @@ public class DeleteInspectionController {
 
     @javafx.fxml.FXML
     public void handleDeleteButtonOnClick(ActionEvent actionEvent) {
+        String inspectionId = inspectionIdTextField.getText().trim();
 
-        List<Inspection> newInspectionList = i.deleteInspection(inspectionIdTextField.getText(), inspectionList);
+        if (inspectionId.isEmpty()) {
+            showAlert("Please enter an inspection ID.");
+            return;
+        }
+
+        boolean found = inspectionList.stream().anyMatch(ins -> ins.getInspectionId().equals(inspectionId));
+        if (!found) {
+            showAlert("Inspection ID not found.");
+            return;
+        }
+
+        List<Inspection> newInspectionList = i.deleteInspection(inspectionId, inspectionList);
         BinaryFileHelper.writeAllObjects(new File("data/alvee/inspection.bin"), newInspectionList);
 
         InspectionHistory inspectionHistory = new InspectionHistory(
                 OrderIdGenerator.generateInspectionHistoryId(),
                 "Delete",
                 LocalDate.now(),
-                inspectionIdTextField.getText(),
-                SessionManager.getLoggedInInspector().getEmployeeID()
+                inspectionId,
+                i.getEmployeeID()
         );
 
         inspectionHistoryList.add(inspectionHistory);
         BinaryFileHelper.writeAllObjects(new File("data/alvee/inspectionHistory.bin"), inspectionHistoryList);
+
+        showAlert("Inspection deleted successfully!", AlertType.INFORMATION);
+        inspectionIdTextField.clear();
+    }
+
+    private void showAlert(String message) {
+        showAlert(message, AlertType.WARNING);
+    }
+
+    private void showAlert(String message, AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle("Notification");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
