@@ -15,14 +15,14 @@
          </font>
       </Text>
       <ComboBox fx:id="chooseVehicleComboBox" layoutX="329.0" layoutY="212.0" prefHeight="36.0" prefWidth="239.0" promptText="Vehicle Type" />
-      <Button layoutX="375.0" layoutY="399.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #3e3e3e;" text="Request Chauffeur" textFill="WHITE" />
+      <Button layoutX="375.0" layoutY="399.0" mnemonicParsing="false" onAction="#requestChauffeurOnClick" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #3e3e3e;" text="Request Chauffeur" textFill="WHITE" />
       <Text layoutX="77.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Request Chauffeur availability ">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Text>
       <ComboBox fx:id="chooseVehicleComboBox1" layoutX="329.0" layoutY="264.0" prefHeight="36.0" prefWidth="239.0" promptText="Seat Capacity" />
-      <TextField layoutX="329.0" layoutY="317.0" prefHeight="36.0" prefWidth="239.0" text="Cost Per Day" />
+      <TextField fx:id="costPerDayTextField" layoutX="329.0" layoutY="317.0" prefHeight="36.0" prefWidth="239.0" text="Cost Per Day" />
       <Button layoutX="57.0" layoutY="509.0" mnemonicParsing="false" onAction="#backAction" prefHeight="36.0" prefWidth="92.0" style="-fx-background-color: #3e3e3e;" text="Back" textFill="WHITE" />
    </children>
 </AnchorPane>
