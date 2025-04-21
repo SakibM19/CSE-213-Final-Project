@@ -83,7 +83,7 @@ public class CustomerCurrentBookingStatusViewController
                 bookingIdLabel.setText(b.getBookingID());
                 dropoffDateLabel.setText(b.getDropOffDate().toString());
                 pickupDateLabel.setText(b.getPickupDate().toString());
-                vehicleIdLabel.setText("Waiting to be assigned");
+                vehicleIdLabel.setText(b.getVehicleModel());
                 totalCostLabel.setText(Integer.toString(b.getTotalCost()));
 
 

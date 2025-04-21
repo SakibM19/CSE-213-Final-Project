@@ -36,11 +36,6 @@ public class FleetManagerDashboardViewController
     }
 
 
-    @Deprecated
-    public void logOutOnMouseClickedButton(Event event) {
-        switchScene("/com/example/cse213finalproject/sakib/fleetManagerDashboardView.fxml", event);
-    }
-
     @javafx.fxml.FXML
     public void trackVehicleOnMouseClickedButton(Event event) {
         switchScene("/com/example/cse213finalproject/sakib/fleetManagerTrackVehicleStatusView.fxml", event);
@@ -59,7 +54,7 @@ public class FleetManagerDashboardViewController
 
     @javafx.fxml.FXML
     public void handelViolationOnMouseClickedButton(Event event) {
-        switchScene("/com/example/cse213finalproject/sakib/fleetManagerCustomerViolationView.fxml", event);
+        switchScene("/com/example/cse213finalproject/sakib/fleetManagerViolation.fxml", event);
     }
 
     @javafx.fxml.FXML
