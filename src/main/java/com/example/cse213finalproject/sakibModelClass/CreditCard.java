@@ -59,4 +59,9 @@ public class CreditCard {
                 ", expiryDate=" + expiryDate +
                 '}';
     }
+
+
+    private int checkBalance(){
+        return 0;
+    }
 }
