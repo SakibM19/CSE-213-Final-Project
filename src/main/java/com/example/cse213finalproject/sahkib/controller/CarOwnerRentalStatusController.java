@@ -8,9 +8,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class CarOwnerRentalStatusController {
+    @FXML
+    private Text carNameText;
+    @FXML
+    private Text startDateText;
+    @FXML
+    private TextField bookingIdTextField;
+    @FXML
+    private Text customerNameText;
+    @FXML
+    private Text endDateText;
+
     @javafx.fxml.FXML
     public void initialize() {
     }

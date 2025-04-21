@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sahkib.controller.ChauffeurServiceUserReviewController">
+    <children>
+        <Text layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rate &amp; Review ">
+            <font>
+                <Font name="Arial Bold" size="24.0" />
+            </font>
+        </Text>
+        <TextField fx:id="inspectionIdTextField" layoutX="350.0" layoutY="184.0" prefHeight="36.0" prefWidth="201.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-background-radius: 5; -fx-border-radius: 5;" />
+        <Button layoutX="395.0" layoutY="300.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="115.0" style="-fx-background-color: #3e3e3e;" text="Update" textFill="WHITE" />
+        <Text layoutX="350.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle ID:" />
+        <Button layoutX="62.0" layoutY="497.0" mnemonicParsing="false" onAction="#backAction" prefHeight="36.0" prefWidth="112.0" style="-fx-background-color: #3e3e3e;" text="Back" textFill="WHITE" />
+        <TextField fx:id="damagesTextField" layoutX="350.0" layoutY="245.0" prefHeight="36.0" prefWidth="201.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-background-radius: 5; -fx-border-radius: 5;" />
+        <Text layoutX="350.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rate and Review:" />
+    </children>
+</AnchorPane>

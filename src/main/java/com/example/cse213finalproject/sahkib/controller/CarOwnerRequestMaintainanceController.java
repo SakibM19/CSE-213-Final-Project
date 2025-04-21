@@ -11,6 +11,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class CarOwnerRequestMaintainanceController {
+    @FXML
+    private TextField damagesTextField;
+    @FXML
+    private TextField inspectionIdTextField;
+
     @javafx.fxml.FXML
     public void initialize() {
     }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.cse213finalproject.shibli.CorporateTravelerController"
+      spacing="10" alignment="CENTER" prefWidth="400" prefHeight="300">
+    <Label fx:id="welcomeLabel" text="Loading..." />
+    <Button fx:id="newBookingButton" text="New Group Booking" onAction="#handleNewBooking"/>
+</VBox>

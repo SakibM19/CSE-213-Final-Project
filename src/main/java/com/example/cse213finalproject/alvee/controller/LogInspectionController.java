@@ -1,3 +1,4 @@
+// Refactored LogInspectionController
 package com.example.cse213finalproject.alvee.controller;
 
 import com.example.cse213finalproject.alvee.model.Inspection;
@@ -10,6 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 import java.io.File;
 import java.util.List;
@@ -26,7 +29,7 @@ public class LogInspectionController {
     @javafx.fxml.FXML
     private TextField extraNoteTextField;
     private List<Inspection> inspectionList;
-    private Inspector i;
+    private Inspector inspector;
     @javafx.fxml.FXML
     private TextField damagesTextField;
     private List<Vehicle> vehicleList;
@@ -36,42 +39,78 @@ public class LogInspectionController {
         statusComboBox.getItems().addAll("Available", "Not Available");
         cleaningStatusComboBox.getItems().addAll("Yes", "No");
 
-        File inspectionFile = new File("data/alvee/inspection.bin");
-        this.inspectionList = BinaryFileHelper.readAllObjects(inspectionFile);
-
-        File vehicleFile = new File("data/sakib/fleet.bin");
-        this.vehicleList = BinaryFileHelper.readAllObjects(vehicleFile);
-
-        this.i = SessionManager.getLoggedInInspector();
+        this.inspectionList = BinaryFileHelper.readAllObjects(new File("data/alvee/inspection.bin"));
+        this.vehicleList = BinaryFileHelper.readAllObjects(new File("data/sakib/fleet.bin"));
+        this.inspector = SessionManager.getLoggedInInspector();
     }
 
     @javafx.fxml.FXML
     public void handleSubmitButtonOnClick(ActionEvent actionEvent) {
-        boolean isVehicle = false;
-        for (Vehicle v : vehicleList) {
-            if (v.getVehicleID().equals(vehicleIdTextField.getText())) {
-                isVehicle = true;
-                break;
-            }
-        }
-//        String vehicleId, String damages, double fuelLevel, boolean cleaningStatus, boolean isAvailable, String extraNote
-        if (!isVehicle) {
+        String vehicleId = vehicleIdTextField.getText().trim();
+        String damages = damagesTextField.getText().trim();
+        String fuelText = fuelLevelTextField.getText().trim();
+        String cleaningStatus = cleaningStatusComboBox.getValue();
+        String availability = statusComboBox.getValue();
+        String extraNote = extraNoteTextField.getText().trim();
+
+        if (vehicleId.isEmpty() || damages.isEmpty() || fuelText.isEmpty() || cleaningStatus == null || availability == null) {
+            showAlert("Please fill out all required fields.");
             return;
         }
 
+        double fuelLevel;
+        try {
+            fuelLevel = Double.parseDouble(fuelText);
+            if (fuelLevel < 0 || fuelLevel > 100) {
+                showAlert("Fuel level must be between 0 and 100.");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            showAlert("Fuel level must be a valid number.");
+            return;
+        }
 
-        Inspection localInspection = i.logInspection(
-                vehicleIdTextField.getText(),
-                damagesTextField.getText(),
-                Float.parseFloat(fuelLevelTextField.getText()),
-                cleaningStatusComboBox.getValue(),
-                statusComboBox.getValue(),
-                extraNoteTextField.getText()
+        boolean vehicleExists = vehicleList.stream().anyMatch(v -> v.getVehicleID().equals(vehicleId));
+        if (!vehicleExists) {
+            showAlert("Vehicle ID does not exist in the system.");
+            return;
+        }
+
+        Inspection newInspection = inspector.logInspection(
+                vehicleId,
+                damages,
+                fuelLevel,
+                cleaningStatus,
+                availability,
+                extraNote
         );
-        localInspection.setIsAvailableAfterInspection("Not Available");
 
-        inspectionList.add(localInspection);
+        inspectionList.add(newInspection);
         BinaryFileHelper.writeAllObjects(new File("data/alvee/inspection.bin"), inspectionList);
+
+        showAlert("Inspection logged successfully!", AlertType.INFORMATION);
+        clearForm();
+    }
+
+    private void showAlert(String message) {
+        showAlert(message, AlertType.WARNING);
+    }
+
+    private void showAlert(String message, AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle("Notification");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void clearForm() {
+        vehicleIdTextField.clear();
+        damagesTextField.clear();
+        fuelLevelTextField.clear();
+        extraNoteTextField.clear();
+        cleaningStatusComboBox.setValue(null);
+        statusComboBox.setValue(null);
     }
 
     @javafx.fxml.FXML

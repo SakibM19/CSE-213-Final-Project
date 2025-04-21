@@ -6,6 +6,7 @@ import com.example.cse213finalproject.util.BinaryFileHelper;
 import com.example.cse213finalproject.util.SceneSwitcher;
 import com.example.cse213finalproject.util.SessionManager;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -16,56 +17,53 @@ import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
 
-public class CsrInteractionHistoryController
-{
-    @javafx.fxml.FXML
-    private TableColumn<CsrInteractionHistory, String> interactionTypeCol;
-    @javafx.fxml.FXML
-    private TableColumn<CsrInteractionHistory, LocalDate> dateCol;
-    @javafx.fxml.FXML
-    private ComboBox<String> typeComboBox;
-    @javafx.fxml.FXML
-    private TableView<CsrInteractionHistory> historyTableView;
-    @javafx.fxml.FXML
-    private TableColumn<CsrInteractionHistory, String> historyIdCol;
-    private List<CsrInteractionHistory> csrInteractionHistoryList;
+public class CsrInteractionHistoryController {
+    @FXML private TableColumn<CsrInteractionHistory, String> interactionTypeCol;
+    @FXML private TableColumn<CsrInteractionHistory, LocalDate> dateCol;
+    @FXML private ComboBox<String> typeComboBox;
+    @FXML private TableView<CsrInteractionHistory> historyTableView;
+    @FXML private TableColumn<CsrInteractionHistory, String> historyIdCol;
 
-    @javafx.fxml.FXML
+    private List<CsrInteractionHistory> csrInteractionHistoryList;
+    private final File historyFile = new File("data/alvee/csr-interaction-history.bin");
+
+    @FXML
     public void initialize() {
-        typeComboBox.getItems().addAll("Reply Query", "Modify Booking" , "Cancel Booking");
+        typeComboBox.getItems().addAll("Reply Query", "Modify Booking", "Cancel Booking");
+
         historyIdCol.setCellValueFactory(new PropertyValueFactory<>("historyId"));
         interactionTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-        File historyFile = new File("data/alvee/csr-interaction-history.bin");
-        this.csrInteractionHistoryList = BinaryFileHelper.readAllObjects(historyFile);
+        csrInteractionHistoryList = BinaryFileHelper.readAllObjects(historyFile);
+        String currentCsrId = SessionManager.getLoggedInCSR().getEmployeeID();
 
-        for (CsrInteractionHistory ih: csrInteractionHistoryList){
-            if (ih.getCsrId().equals(SessionManager.getLoggedInCSR().getEmployeeID())){
-                historyTableView.getItems().add(ih);
-            }
-        }
+        historyTableView.getItems().setAll(
+                CsrInteractionHistory.filterByCsrId(csrInteractionHistoryList, currentCsrId)
+        );
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleBackButton(ActionEvent actionEvent) {
         SceneSwitcher.switchScene((Node) actionEvent.getSource(), "csr-dashboard.fxml", "CSR Dashboard");
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleSearchButton(ActionEvent actionEvent) {
-        historyTableView.getItems().clear();
-        for (CsrInteractionHistory ih: csrInteractionHistoryList){
-            if (typeComboBox.getValue().equals(ih.getType()) && ih.getCsrId().equals(SessionManager.getLoggedInCSR().getEmployeeID())){
-                historyTableView.getItems().add(ih);
-            }
-        }
+        String selectedType = typeComboBox.getValue();
+        String currentCsrId = SessionManager.getLoggedInCSR().getEmployeeID();
+
+        historyTableView.getItems().setAll(
+                CsrInteractionHistory.filterByTypeAndCsrId(csrInteractionHistoryList, selectedType, currentCsrId)
+        );
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleDeleteHistoryButton(ActionEvent actionEvent) {
-        csrInteractionHistoryList.removeIf(ih -> ih.getCsrId().equals(SessionManager.getLoggedInCSR().getEmployeeID()));
-        BinaryFileHelper.writeAllObjects(new File("data/alvee/csr-interaction-history.bin"), csrInteractionHistoryList);
+        String currentCsrId = SessionManager.getLoggedInCSR().getEmployeeID();
+        csrInteractionHistoryList = CsrInteractionHistory.removeByCsrId(csrInteractionHistoryList, currentCsrId);
+
+        BinaryFileHelper.writeAllObjects(historyFile, csrInteractionHistoryList);
         historyTableView.getItems().clear();
     }
 }
