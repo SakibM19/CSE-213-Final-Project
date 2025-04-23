@@ -1,6 +1,6 @@
 package com.example.cse213finalproject.sakibModelClass;
 
-public class Payment {
+public abstract class Payment implements PayManage {
     private int paymentAmount, voucherAmount;
     private String paymentType;
 
@@ -46,4 +46,5 @@ public class Payment {
                 ", paymentType='" + paymentType + '\'' +
                 '}';
     }
+
 }
