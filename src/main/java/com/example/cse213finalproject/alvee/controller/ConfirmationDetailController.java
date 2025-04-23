@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 
 import java.io.File;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConfirmationDetailController
@@ -54,6 +55,7 @@ public class ConfirmationDetailController
                 break;
             }
         }
+
 //        String customerName, String orderID, String bookingID, String customerID, LocalDate pickupDate, LocalDate dropOffDate,String vehicleId, String vehicleModel,  float dailyCost
         Order o = new Order(
                 b.getCustomerName(),

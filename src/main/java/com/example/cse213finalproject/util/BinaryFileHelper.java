@@ -9,8 +9,6 @@ public class BinaryFileHelper {
     // Save a single object to the file (header once)
     public static void saveObject(File file, Object obj) {
         try {
-            createDirIfNotExists(file);
-
             boolean fileExists = file.exists();
             FileOutputStream fos = new FileOutputStream(file, true); // append = true
 
@@ -42,7 +40,7 @@ public class BinaryFileHelper {
                 }
             }
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace(); // Optionally handle errors differently
+            e.printStackTrace();
         }
 
         return objects;
@@ -58,15 +56,6 @@ public class BinaryFileHelper {
         }
     }
 
-    // Create parent directory if missing
-    private static void createDirIfNotExists(File file) {
-        File parent = file.getParentFile();
-        if (parent != null && !parent.exists()) {
-            parent.mkdirs();
-        }
-    }
-
-    // Inner class to avoid rewriting the stream header
     private static class AppendableObjectOutputStream extends ObjectOutputStream {
         public AppendableObjectOutputStream(OutputStream out) throws IOException {
             super(out);
@@ -74,7 +63,6 @@ public class BinaryFileHelper {
 
         @Override
         protected void writeStreamHeader() throws IOException {
-            // Skip writing the header
         }
     }
 }
