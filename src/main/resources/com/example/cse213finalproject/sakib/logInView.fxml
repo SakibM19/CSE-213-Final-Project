@@ -10,6 +10,7 @@
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy; -fx-background-color: #d8ebf7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.LogInViewController">
    <children>
@@ -104,5 +105,25 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
+      <Text layoutX="41.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fleet:" />
+      <Text layoutX="56.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text layoutX="55.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="43.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer" />
+      <Text layoutX="57.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email:" />
+      <Text layoutX="56.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="41.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspector" />
+      <Text layoutX="55.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text layoutX="54.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="41.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CSR" />
+      <Text layoutX="55.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text layoutX="54.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="117.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1234567" />
+      <Text layoutX="76.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fm123" />
+      <Text layoutX="96.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="customer0@example.com" />
+      <Text layoutX="118.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password0" />
+      <Text layoutX="71.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ins1002" />
+      <Text layoutX="116.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mikey456" />
+      <Text layoutX="76.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="csr1002" />
+      <Text layoutX="116.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mikey456" />
    </children>
 </AnchorPane>
