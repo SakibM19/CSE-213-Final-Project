@@ -119,8 +119,8 @@
       <Text layoutX="54.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
       <Text layoutX="117.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1234567" />
       <Text layoutX="76.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fm123" />
-      <Text layoutX="96.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="customer0@example.com" />
-      <Text layoutX="118.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password0" />
+      <Text layoutX="96.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="customer1@example.com" />
+      <Text layoutX="118.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password1" />
       <Text layoutX="71.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ins1002" />
       <Text layoutX="116.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mikey456" />
       <Text layoutX="76.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="csr1002" />
