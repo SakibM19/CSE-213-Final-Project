@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerFavouriteVehicleViewController">
+   <children>
+      <Label layoutX="321.0" layoutY="24.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="349.0" layoutY="87.0" prefHeight="34.0" prefWidth="199.0" text=" Favourite Vehicle">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.6129441857337952" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Line endX="241.20001220703125" layoutX="381.0" layoutY="118.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <TableView fx:id="favouriteVehicleTableView" layoutX="142.0" layoutY="308.0" prefHeight="105.0" prefWidth="612.0" style="-fx-border-color: navy;">
+        <columns>
+          <TableColumn fx:id="vehicleIdFavouriteTableColumn" prefWidth="609.6000061035156" text="Vehicle ID" />
+        </columns>
+      </TableView>
+      <Label layoutX="279.0" layoutY="274.0" prefHeight="34.0" prefWidth="344.0" text="Add a vehicle to my Favourite Vehicle List">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.024982456117868423" green="0.5052631497383118" blue="0.016842104494571686" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Line endX="289.20001220703125" layoutX="355.0" layoutY="303.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <TableView fx:id="pastOrderVehicleListTableView" layoutX="143.0" layoutY="142.0" prefHeight="131.0" prefWidth="612.0" style="-fx-border-color: navy;">
+         <columns>
+            <TableColumn fx:id="vehicleModelTableColumn" prefWidth="138.39996337890625" text="Vehicle Model" />
+            <TableColumn fx:id="vehicleTypeTableColumn" prefWidth="114.4000244140625" text="Vehicle Type" />
+            <TableColumn fx:id="vehicleIdTableColumn" prefWidth="107.20001220703125" text="Vehicle ID" />
+            <TableColumn fx:id="totalCostTableColumn" prefWidth="120.80001831054688" text="Average Cost" />
+            <TableColumn fx:id="brandFavouriteTableColumn" prefWidth="126.39996337890625" text="Brand" />
+         </columns>
+      </TableView>
+      <TextField fx:id="enterVehicleIdTextField" layoutX="459.0" layoutY="439.0" />
+      <Text layoutX="321.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Vehicle ID: ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6105263233184814" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Button layoutX="89.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: navy;" text="Back">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button layoutX="588.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#addToFavouriteOnMouseClickedButton" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: navy;" text="Add Vehicle to Favourite List" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

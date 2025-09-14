@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.alvee.controller.LogInspectionController">
+   <children>
+      <Text layoutX="60.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log Inspection">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="vehicleIdTextField" layoutX="60.0" layoutY="141.0" prefHeight="36.0" prefWidth="201.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-background-radius: 5; -fx-border-radius: 5;" />
+      <Button layoutX="720.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleSubmitButtonOnClick" prefHeight="36.0" prefWidth="115.0" style="-fx-background-color: #3e3e3e;" text="Submit" textFill="WHITE" />
+      <Text layoutX="60.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Vehicle Id:" />
+      <TextField fx:id="fuelLevelTextField" layoutX="61.0" layoutY="273.0" prefHeight="36.0" prefWidth="201.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-background-radius: 5; -fx-border-radius: 5;" />
+      <Text layoutX="61.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Fuel Level:" />
+      <ComboBox fx:id="cleaningStatusComboBox" layoutX="61.0" layoutY="329.0" prefHeight="36.0" prefWidth="202.0" promptText="Cleaning Status" />
+      <ComboBox fx:id="statusComboBox" layoutX="61.0" layoutY="381.0" prefHeight="36.0" prefWidth="202.0" promptText="Status" />
+      <Line endX="18.600006103515625" endY="228.20001220703125" layoutX="419.0" layoutY="195.0" startX="18.600006103515625" startY="-105.40000915527344" />
+      <TextField fx:id="extraNoteTextField" alignment="TOP_LEFT" layoutX="510.0" layoutY="152.0" prefHeight="174.0" prefWidth="326.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-background-radius: 5; -fx-border-radius: 5;" />
+      <Text layoutX="510.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra Note:" />
+      <Button layoutX="60.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleBackButtonOnAction" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: #3e3e3e;" text="Back" textFill="WHITE" />
+      <TextField fx:id="damagesTextField" layoutX="62.0" layoutY="203.0" prefHeight="36.0" prefWidth="201.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-background-radius: 5; -fx-border-radius: 5;" />
+      <Text layoutX="62.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Damage Information:" />
+   </children>
+</AnchorPane>
