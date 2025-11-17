@@ -1,8 +1,8 @@
 package com.example.cse213finalproject.util;
 
+import com.example.simulation_of_bangladesh_bank.HelloApplication;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -10,17 +10,12 @@ import java.io.IOException;
 
 public class SceneSwitcher {
 
-    public static void switchScene(Node sourceNode, String fxmlFileName, String title) {
-        try {
-            FXMLLoader loader = new FXMLLoader(SceneSwitcher.class.getResource("/com/example/cse213finalproject/alvee/" + fxmlFileName));
-            Parent root = loader.load();
-
-            Stage stage = (Stage) sourceNode.getScene().getWindow();
-            stage.setTitle(title);
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void sceneSwitch(ActionEvent actionEvent, String fxmlFile, String title) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFile));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.show();
     }
 }
