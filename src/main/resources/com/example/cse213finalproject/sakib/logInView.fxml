@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy; -fx-background-color: #d8ebf7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.LogInViewController">
+   <children>
+      <Label layoutX="318.0" layoutY="32.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="343.0" layoutY="132.0" text="Account Login">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.5250877141952515" blue="0.7684210538864136" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField fx:id="enterIdTextField" layoutX="342.0" layoutY="252.0" prefHeight="26.0" prefWidth="204.0" />
+      <PasswordField fx:id="enterPasswordPasswordField" layoutX="372.0" layoutY="348.0" />
+      <Label layoutX="340.0" layoutY="222.0" text="Enter Your ID or Email">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.5250877141952515" blue="0.7684210538864136" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="375.0" layoutY="322.0" text="Enter Password">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.5250877141952515" blue="0.7684210538864136" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="331.0" layoutY="418.0" mnemonicParsing="false" onMouseClicked="#loginOnMouseClickedButton" prefHeight="38.0" prefWidth="224.0" style="-fx-background-color: navy;" text="LogIn" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="41.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fleet:" />
+      <Text layoutX="56.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text layoutX="55.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="43.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer" />
+      <Text layoutX="57.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email:" />
+      <Text layoutX="56.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="41.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspector" />
+      <Text layoutX="55.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text layoutX="54.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="41.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CSR" />
+      <Text layoutX="55.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:" />
+      <Text layoutX="54.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+      <Text layoutX="117.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1234567" />
+      <Text layoutX="76.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fm123" />
+      <Text layoutX="96.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="customer1@example.com" />
+      <Text layoutX="118.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password1" />
+      <Text layoutX="71.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ins1002" />
+      <Text layoutX="116.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mikey456" />
+      <Text layoutX="76.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="csr1002" />
+      <Text layoutX="116.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mikey456" />
+   </children>
+</AnchorPane>

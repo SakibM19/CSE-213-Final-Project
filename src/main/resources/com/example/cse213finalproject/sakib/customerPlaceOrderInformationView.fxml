@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane accessibleRole="DATE_PICKER" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerPlaceOrderInformationViewController">
+   <children>
+      <Label layoutX="335.0" layoutY="24.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="296.0" layoutY="105.0" prefHeight="34.0" prefWidth="351.0" text="Place Order or Booking Section">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.6129441857337952" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Line endX="241.20001220703125" layoutX="395.0" layoutY="138.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <DatePicker fx:id="pickupDatePicker" layoutX="190.0" layoutY="186.0" />
+      <Label layoutX="71.0" layoutY="186.0" text="Set Pickup Date: ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <DatePicker fx:id="dropoffDatePicker" layoutX="190.0" layoutY="233.0" />
+      <Label layoutX="71.0" layoutY="235.0" text="Set Dropoff Date: ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="289.0" text="Give Pickup Location:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pickupLocationTextField" layoutX="228.0" layoutY="288.0" prefHeight="26.0" prefWidth="312.0" />
+      <Label layoutX="71.0" layoutY="342.0" text="Give Dropoff Location:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="dropoffLocationTextField" layoutX="228.0" layoutY="341.0" prefHeight="26.0" prefWidth="312.0" />
+      <ComboBox fx:id="brandComboBox" layoutX="183.0" layoutY="396.0" prefWidth="150.0" promptText="Select Brand" />
+      <Label layoutX="71.0" layoutY="398.0" text="Vehicle Brand:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="vehicleModelComboBox" layoutX="183.0" layoutY="441.0" prefWidth="150.0" promptText="Select Model" />
+      <Label layoutX="71.0" layoutY="443.0" text="Vehicle Model:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="79.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: navy;" text="Back">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button layoutX="600.0" layoutY="440.0" mnemonicParsing="false" onAction="#createBookingOnMouseClickedButton" onMouseClicked="#createBookingOnMouseClickedButton" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: navy;" text="Create Booking" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="600.0" layoutY="509.0" mnemonicParsing="false" onAction="#placeOrderOnMouseClickedButton" onMouseClicked="#placeOrderOnMouseClickedButton" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: navy;" text="Place Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="locationCheckBox" layoutX="610.0" layoutY="314.0" mnemonicParsing="false" text="Use My default Location" textFill="#860000">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="358.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleGetModelOnAction" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: navy;" text="Load Model" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

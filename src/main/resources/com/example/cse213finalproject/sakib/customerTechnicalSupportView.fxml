@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: navy; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sakib.CustomerTechnicalSupportViewController">
+   <children>
+      <Label layoutX="334.0" layoutY="44.0" text=" RENT A CAR">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.22208121418952942" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Line endX="241.20001220703125" layoutX="394.0" layoutY="158.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.39836257696151733" blue="0.39836257696151733" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Line>
+      <Label layoutX="345.0" layoutY="125.0" prefHeight="34.0" prefWidth="242.0" text="TECHNICAL SUPPORT">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7368420958518982" green="0.509421706199646" blue="0.054580897092819214" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.23223350942134857" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="vehicleBreakdownRadioButton" layoutX="396.0" layoutY="196.0" mnemonicParsing="false" text="Vehicle Breakdown">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8799999952316284" blue="0.18426395952701569" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.621052622795105" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <toggleGroup>
+            <ToggleGroup fx:id="isssueType" />
+         </toggleGroup>
+      </RadioButton>
+      <Label layoutX="109.0" layoutY="187.0" prefHeight="34.0" prefWidth="287.0" text="Please select the issue you are facing: ">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8799999952316284" blue="0.18426395952701569" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.6000000238418579" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="flatTireRadioButton" layoutX="396.0" layoutY="224.0" mnemonicParsing="false" text="Flat Tire" toggleGroup="$isssueType">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8799999952316284" blue="0.18426395952701569" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.621052622795105" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </RadioButton>
+      <RadioButton fx:id="batteryIssueRadioButton" layoutX="396.0" layoutY="254.0" mnemonicParsing="false" text="Battery Issue" toggleGroup="$isssueType">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8799999952316284" blue="0.18426395952701569" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.621052622795105" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </RadioButton>
+      <RadioButton fx:id="accidentOrCollisionRadioButton" layoutX="396.0" layoutY="282.0" mnemonicParsing="false" text="Accident Or Collision" toggleGroup="$isssueType">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8799999952316284" blue="0.18426395952701569" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.621052622795105" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </RadioButton>
+      <RadioButton fx:id="otherIssuesRadioButton" layoutX="396.0" layoutY="312.0" mnemonicParsing="false" text="Other Issues" toggleGroup="$isssueType">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8799999952316284" blue="0.18426395952701569" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.621052622795105" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </RadioButton>
+      <Label layoutX="107.0" layoutY="360.0" prefHeight="34.0" prefWidth="384.0" text="Need immediate assistane? provide your location: ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8799999952316284" blue="0.18426395952701569" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06432748585939407" green="0.007719298359006643" blue="0.34736841917037964" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="immediatelocationTextField" layoutX="504.0" layoutY="365.0" prefHeight="26.0" prefWidth="266.0" />
+      <Button layoutX="141.0" layoutY="489.0" mnemonicParsing="false" onMouseClicked="#backOnMouseClickedButton" prefHeight="31.0" prefWidth="222.0" style="-fx-background-color: navy; -fx-border-color: navy;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="513.0" layoutY="489.0" mnemonicParsing="false" onMouseClicked="#submitAssistanceRequestOnMouseClickedButton" prefHeight="31.0" prefWidth="222.0" style="-fx-background-color: #d9a300; -fx-border-color: red;" text="Submit Assistance Request" textFill="#00058f">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="107.0" layoutY="411.0" prefHeight="34.0" prefWidth="384.0" text="Provide additional information:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8799999952316284" blue="0.18426395952701569" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06432748585939407" green="0.007719298359006643" blue="0.34736841917037964" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="additionalInformationTextField" layoutX="368.0" layoutY="416.0" prefHeight="26.0" prefWidth="402.0" />
+   </children>
+</AnchorPane>
