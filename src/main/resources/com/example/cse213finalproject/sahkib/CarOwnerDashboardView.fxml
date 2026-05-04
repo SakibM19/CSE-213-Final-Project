@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse213finalproject.sahkib.controller.CarOwnerDashboardController">
+   <children>
+      <Text fx:id="csrName" layoutX="67.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Owner Dashboard" />
+      <Line endX="750.5999755859375" layoutX="123.0" layoutY="69.0" startX="-100.0" strokeWidth="0.5" />
+      <Button layoutX="60.0" layoutY="96.0" mnemonicParsing="false" onAction="#rentListAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Rent List" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="262.0" layoutY="96.0" mnemonicParsing="false" onAction="#addCarAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Add New Car" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="463.0" layoutY="96.0" mnemonicParsing="false" onAction="#updateCarAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Update Car Details" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="662.0" layoutY="96.0" mnemonicParsing="false" onAction="#removeCatAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Remove Car" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="60.0" layoutY="216.0" mnemonicParsing="false" onAction="#rentalStatusAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Rental Status" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="262.0" layoutY="216.0" mnemonicParsing="false" onAction="#earningAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Earnings" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="463.0" layoutY="216.0" mnemonicParsing="false" onAction="#requestMaintainenceAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Request Maintainance" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="662.0" layoutY="216.0" mnemonicParsing="false" onAction="#maintainenceHistoryAction" prefHeight="90.0" prefWidth="178.0" style="-fx-background-color: #3e3e3e; -fx-border-radius: 10; -fx-background-radius: 10;" text="Maintainance History" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
